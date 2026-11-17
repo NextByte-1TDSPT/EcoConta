@@ -677,3 +677,32 @@ button:focus-visible {
     background-color: #303526;
     border-color: #657847;
 }
+
+/* PADRONIZAÇÃO DO ECOCONTA */
+
+.cabecalho-conteudo {
+    width: 90%;
+    max-width: 1400px;
+    min-height: 80px;
+    margin: 0 auto;
+    padding: 12px 0;
+}
+
+.logo {
+    font-size: 26px;
+}
+
+.logo svg {
+    width: 30px;
+    height: 30px;
+}
+
+.menu a {
+    font-size: 15px;
+    padding: 10px 15px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+

@@ -489,3 +489,84 @@ summary:focus-visible {
     }
 
 }
+
+
+/* AJUSTES PARA O PROTÓTIPO */
+
+.equipe {
+    max-width: none;
+    width: 100%;
+    padding: 70px 7% 100px;
+}
+
+.apresentacao {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.apresentacao h1 {
+    font-size: clamp(42px, 4.5vw, 76px);
+    font-weight: 800;
+}
+
+.descricao {
+    font-size: 20px;
+    max-width: 800px;
+}
+
+/* Cinco integrantes alinhados */
+
+.integrantes {
+    width: 100%;
+    max-width: 1500px;
+    margin: 45px auto 0;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 18px;
+    align-items: stretch;
+}
+
+.card {
+    width: 100%;
+    min-width: 0;
+    padding: 30px 14px;
+    background: #191916;
+    border: 1px solid #A4B86B;
+    border-radius: 22px;
+}
+
+.card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid #A4B86B;
+}
+
+.card h2 {
+    font-size: 18px;
+    white-space: normal;
+}
+
+.card a {
+    max-width: 210px;
+}
+
+/* Telas menores */
+
+@media (max-width: 1100px) {
+    .integrantes {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 650px) {
+    .integrantes {
+        grid-template-columns: 1fr;
+        max-width: 340px;
+    }
+
+    .apresentacao h1 {
+        font-size: 36px;
+    }
+}
