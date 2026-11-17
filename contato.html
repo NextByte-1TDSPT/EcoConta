@@ -1,0 +1,359 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contato | EcoConta</title>
+
+    <!-- FONTE POPPINS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/contato.css">
+
+    <!-- ÍCONES LUCIDE -->
+    <script
+        src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"
+        defer>
+    </script>
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="cabecalho">
+
+        <div class="container cabecalho-conteudo">
+
+            <!-- MESMA LOGO DAS OUTRAS PÁGINAS -->
+            <a href="index.html" class="logo">
+
+                <i data-lucide="leaf"
+                   class="logo-simbolo"
+                   aria-hidden="true"></i>
+
+                <span class="logo-nome">EcoConta</span>
+
+            </a>
+
+            <!-- MENU -->
+            <nav class="menu" aria-label="Menu principal">
+
+                <a href="index.html">Início</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="integrantes.html">Integrantes</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contato.html"
+                   class="ativo"
+                   aria-current="page">Contato</a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="pagina-contato">
+
+        <!-- PLANTA DECORATIVA SUPERIOR -->
+        <svg class="planta-superior"
+             viewBox="0 0 280 340"
+             aria-hidden="true">
+
+            <g fill="none" stroke="#718A43" stroke-width="3">
+                <path d="M155 -10 Q125 70 180 145 T150 325"/>
+                <path d="M190 -10 Q220 80 205 190 T245 305"/>
+                <path d="M110 -10 Q75 65 110 150"/>
+            </g>
+
+            <g fill="#A4B86B" stroke="#718A43" stroke-width="1.5">
+                <path d="M151 42 Q91 1 74 65 Q119 83 151 42Z"/>
+                <path d="M168 80 Q222 20 250 68 Q220 112 168 80Z"/>
+                <path d="M178 146 Q114 96 103 161 Q149 186 178 146Z"/>
+                <path d="M197 192 Q254 145 270 199 Q233 230 197 192Z"/>
+                <path d="M159 250 Q98 205 91 269 Q131 293 159 250Z"/>
+            </g>
+
+        </svg>
+
+        <div class="container contato-conteudo">
+
+            <!-- INFORMAÇÕES DE CONTATO -->
+            <section class="contato-informacoes">
+
+                <div class="etiqueta">
+                    <span>FALE CONOSCO</span>
+                    <span class="linha"></span>
+                </div>
+
+                <h1>
+                    Entre em <span>contato</span>
+                </h1>
+
+                <p class="contato-descricao">
+                    Dúvidas, sugestões ou parcerias?
+                    Mande uma mensagem, nossa equipe
+                    responde em breve.
+                </p>
+
+                <!-- CANAIS DE CONTATO -->
+                <div class="canais-contato">
+
+                    <div class="canal">
+
+                        <i data-lucide="mail"
+                           aria-hidden="true"></i>
+
+                        <span>contato@ecoconta.com</span>
+
+                    </div>
+
+                    <div class="canal">
+
+                        <i data-lucide="instagram"
+                           aria-hidden="true"></i>
+
+                        <span>@ecoconta</span>
+
+                    </div>
+
+                    <div class="canal">
+
+                        <i data-lucide="linkedin"
+                           aria-hidden="true"></i>
+
+                        <span>EcoConta</span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- FORMULÁRIO -->
+            <section class="contato-formulario"
+                     aria-label="Formulário de contato">
+
+                <form id="formulario-contato">
+
+                    <!-- NOME -->
+                    <div class="campo">
+
+                        <label for="nome">
+                            Nome completo *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nome"
+                            name="nome"
+                            placeholder="Seu nome"
+                            autocomplete="name"
+                            required>
+
+                    </div>
+
+                    <!-- EMAIL -->
+                    <div class="campo">
+
+                        <label for="email">
+                            E-mail *
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Seu e-mail"
+                            autocomplete="email"
+                            required>
+
+                    </div>
+
+                    <!-- ASSUNTO -->
+                    <div class="campo">
+
+                        <label for="assunto">
+                            Assunto *
+                        </label>
+
+                        <select
+                            id="assunto"
+                            name="assunto"
+                            required>
+
+                            <option value="" disabled selected>
+                                Selecione uma opção
+                            </option>
+
+                            <option value="duvida">
+                                Dúvida
+                            </option>
+
+                            <option value="sugestao">
+                                Sugestão
+                            </option>
+
+                            <option value="parceria">
+                                Parceria
+                            </option>
+
+                            <option value="outros">
+                                Outros
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- MENSAGEM -->
+                    <div class="campo">
+
+                        <label for="mensagem">
+                            Mensagem *
+                        </label>
+
+                        <textarea
+                            id="mensagem"
+                            name="mensagem"
+                            rows="5"
+                            placeholder="Escreva sua mensagem..."
+                            required></textarea>
+
+                    </div>
+
+                    <!-- BOTÃO -->
+                    <button type="submit" class="botao-enviar">
+
+                        <i data-lucide="send"
+                           aria-hidden="true"></i>
+
+                        Enviar mensagem
+
+                    </button>
+
+                    <p id="status-formulario"
+                       role="status"
+                       aria-live="polite"></p>
+
+                </form>
+
+            </section>
+
+        </div>
+
+        <!-- PLANTA DECORATIVA INFERIOR -->
+        <svg class="planta-inferior"
+             viewBox="0 0 230 210"
+             aria-hidden="true">
+
+            <path d="M0 195 Q85 178 205 205"
+                  stroke="#718A43"
+                  stroke-width="4"
+                  fill="none"/>
+
+            <path d="M80 185 Q-5 120 35 50 Q112 96 80 185Z"
+                  fill="#A4B86B"/>
+
+            <path d="M115 190 Q95 105 165 65 Q200 155 115 190Z"
+                  fill="#839D50"/>
+
+            <path d="M65 187 Q4 180 0 125 Q67 132 65 187Z"
+                  fill="#718A43"/>
+
+        </svg>
+        git
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="rodape">
+
+        <div class="container">
+
+            <div class="rodape-conteudo">
+
+                <div class="rodape-marca">
+
+                    <h2>EcoConta</h2>
+
+                    <p>
+                        Consumo inteligente, um futuro mais sustentável.
+                    </p>
+
+                </div>
+
+                <div class="rodape-navegacao">
+
+                    <h3>Navegação</h3>
+
+                    <a href="index.html">Início</a>
+                    <a href="sobre.html">Sobre</a>
+                    <a href="integrantes.html">Integrantes</a>
+                    <a href="faq.html">FAQ</a>
+                    <a href="contato.html">Contato</a>
+
+                </div>
+
+                <div class="rodape-projeto">
+
+                    <h3>Projeto acadêmico</h3>
+
+                    <p>FIAP — Global Solution 2026/2</p>
+                    <p>Equipe NextBythe</p>
+
+                </div>
+
+            </div>
+
+            <div class="rodape-inferior">
+
+                <p>
+                    © 2026 EcoConta. Todos os direitos reservados.
+                </p>
+
+                <p>
+                    Desenvolvido pela equipe NextBythe.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            // ATIVA OS ÍCONES LUCIDE
+            if (window.lucide) {
+                lucide.createIcons();
+            }
+
+            // FORMULÁRIO DEMONSTRATIVO
+            const formulario = document.getElementById("formulario-contato");
+            const status = document.getElementById("status-formulario");
+
+            formulario.addEventListener("submit", function (evento) {
+
+                evento.preventDefault();
+
+                if (formulario.checkValidity()) {
+                    status.textContent =
+                        "Formulário demonstrativo. Nenhuma mensagem foi enviada.";
+                }
+
+            });
+
+        });
+    </script>
+
+</body>
+</html>

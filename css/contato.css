@@ -1,0 +1,538 @@
+
+/* ========================================
+   ECOCONTA - PÁGINA CONTATO
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --fundo: #211F1A;
+    --verde: #A4B86B;
+    --verde-escuro: #718A43;
+    --verde-menu: #263D29;
+    --texto: #F5F0E9;
+    --texto-secundario: #C9C7BD;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--fundo);
+    color: var(--texto);
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ========================================
+   CABEÇALHO
+======================================== */
+
+.cabecalho {
+    background: var(--fundo);
+}
+
+.container {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.cabecalho-conteudo {
+    min-height: 80px;
+    padding: 12px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--verde);
+    font-size: 26px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.logo .logo-simbolo {
+    width: 34px;
+    height: 34px;
+    color: var(--verde);
+    stroke-width: 2;
+    flex-shrink: 0;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.menu a {
+    padding: 9px 15px;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--texto);
+    transition: background 0.2s, color 0.2s;
+}
+
+.menu a:hover,
+.menu a.ativo {
+    background: var(--verde-menu);
+    color: var(--verde);
+}
+
+/* ========================================
+   CONTEÚDO PRINCIPAL
+======================================== */
+
+.pagina-contato {
+    position: relative;
+    overflow: hidden;
+    min-height: 750px;
+    padding: 90px 0 115px;
+    background:
+        radial-gradient(
+            ellipse at center,
+            #29271F 0%,
+            #211F1A 75%
+        );
+}
+
+.contato-conteudo {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-items: start;
+    gap: 75px;
+}
+
+/* ========================================
+   INFORMAÇÕES DE CONTATO
+======================================== */
+
+.contato-informacoes {
+    padding-top: 20px;
+}
+
+.etiqueta {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 28px;
+    color: var(--texto);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.linha {
+    width: 110px;
+    height: 1px;
+    background: var(--verde);
+}
+
+.contato-informacoes h1 {
+    font-size: clamp(34px, 3.5vw, 52px);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -1.5px;
+    margin-bottom: 28px;
+}
+
+.contato-informacoes h1 span {
+    color: var(--verde);
+}
+
+.contato-descricao {
+    max-width: 430px;
+    color: var(--texto);
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+/* CANAIS */
+
+.canais-contato {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin-top: 55px;
+}
+
+.canal {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    font-size: 16px;
+}
+
+.canal svg {
+    width: 28px;
+    height: 28px;
+    color: var(--verde);
+    stroke-width: 1.8;
+    flex-shrink: 0;
+}
+
+/* ========================================
+   FORMULÁRIO
+======================================== */
+
+.contato-formulario {
+    width: 100%;
+    padding: 38px 38px 32px;
+    border: 1px solid var(--verde);
+    border-radius: 28px;
+    background: rgba(17, 17, 14, 0.25);
+}
+
+.contato-formulario form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.campo label {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+    width: 100%;
+    padding: 13px 16px;
+    background: transparent;
+    border: 1px solid var(--verde-escuro);
+    border-radius: 12px;
+    color: var(--texto);
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.campo input,
+.campo select {
+    min-height: 48px;
+}
+
+.campo textarea {
+    min-height: 115px;
+    resize: vertical;
+}
+
+.campo input::placeholder,
+.campo textarea::placeholder {
+    color: #A9A79F;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+    border-color: var(--verde);
+}
+
+.campo select {
+    cursor: pointer;
+    color: var(--texto-secundario);
+}
+
+.campo select option {
+    background: var(--fundo);
+    color: var(--texto);
+}
+
+/* BOTÃO ENVIAR */
+
+.botao-enviar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    align-self: center;
+
+    min-width: 230px;
+    margin-top: 5px;
+    padding: 13px 25px;
+
+    border: none;
+    border-radius: 35px;
+    background: var(--verde);
+    color: #211F1A;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.botao-enviar:hover {
+    background: #B6C985;
+    transform: translateY(-2px);
+}
+
+.botao-enviar svg {
+    width: 19px;
+    height: 19px;
+}
+
+#status-formulario {
+    font-size: 12px;
+    color: var(--verde);
+    text-align: center;
+}
+
+#status-formulario:empty {
+    display: none;
+}
+
+/* ========================================
+   PLANTAS DECORATIVAS
+======================================== */
+
+.planta-superior {
+    position: absolute;
+    top: -20px;
+    right: -15px;
+    width: 220px;
+    height: auto;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.planta-inferior {
+    position: absolute;
+    bottom: 0;
+    left: -10px;
+    width: 190px;
+    height: auto;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* ========================================
+   RODAPÉ
+======================================== */
+
+.rodape {
+    background: #191813;
+    border-top: 1px solid #45483A;
+    padding: 60px 0 25px;
+}
+
+.rodape-conteudo {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 55px;
+}
+
+.rodape-marca h2 {
+    color: var(--verde);
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+.rodape-marca p {
+    max-width: 330px;
+}
+
+.rodape h3 {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 17px;
+}
+
+.rodape p,
+.rodape-navegacao a {
+    color: var(--texto-secundario);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.rodape-navegacao {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.rodape-navegacao a:hover {
+    color: var(--verde);
+}
+
+.rodape-inferior {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 45px;
+    padding-top: 20px;
+    border-top: 1px solid #45483A;
+}
+
+/* ========================================
+   TABLETS
+======================================== */
+
+@media (max-width: 1000px) {
+
+    .cabecalho-conteudo {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .menu {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .contato-conteudo {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .contato-informacoes {
+        padding-top: 0;
+    }
+
+    .contato-descricao {
+        max-width: 650px;
+    }
+
+    .canais-contato {
+        margin-top: 35px;
+    }
+
+    .contato-formulario {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+}
+
+/* ========================================
+   CELULARES
+======================================== */
+
+@media (max-width: 650px) {
+
+    .container {
+        width: 90%;
+    }
+
+    .cabecalho-conteudo {
+        padding: 18px 0;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .logo .logo-simbolo {
+        width: 30px;
+        height: 30px;
+    }
+
+    .menu {
+        gap: 5px;
+    }
+
+    .menu a {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+    .pagina-contato {
+        padding: 65px 0 90px;
+    }
+
+    .contato-informacoes h1 {
+        font-size: 35px;
+        letter-spacing: -1px;
+    }
+
+    .contato-descricao {
+        font-size: 14px;
+    }
+
+    .etiqueta {
+        font-size: 11px;
+        gap: 12px;
+    }
+
+    .linha {
+        width: 65px;
+    }
+
+    .canal {
+        gap: 15px;
+        font-size: 13px;
+    }
+
+    .canal svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .contato-formulario {
+        padding: 25px 20px;
+        border-radius: 22px;
+    }
+
+    .campo label {
+        font-size: 13px;
+    }
+
+    .campo input,
+    .campo select,
+    .campo textarea {
+        font-size: 13px;
+    }
+
+    .botao-enviar {
+        width: 100%;
+        min-width: 0;
+        font-size: 14px;
+    }
+
+    .planta-superior {
+        width: 120px;
+        opacity: 0.45;
+    }
+
+    .planta-inferior {
+        width: 110px;
+    }
+
+    .rodape-conteudo {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .rodape-inferior {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
