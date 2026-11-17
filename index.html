@@ -1,0 +1,557 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="EcoConta: acompanhe seu consumo de água e energia de forma inteligente e sustentável.">
+
+    <title>EcoConta | Consumo Inteligente</title>
+
+    <!-- FONTE POPPINS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- ÍCONES LUCIDE -->
+    <script
+        src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"
+        defer>
+    </script>
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="cabecalho">
+
+        <nav class="navegacao" aria-label="Menu principal">
+
+            <a href="index.html" class="logo">
+                <i data-lucide="leaf"
+                   class="logo-simbolo"
+                   aria-hidden="true"></i>
+                <span class="logo-nome">EcoConta</span>
+            </a>
+
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+                aria-controls="menu-principal">
+
+                <i data-lucide="menu" aria-hidden="true"></i>
+            </button>
+
+            <ul class="menu" id="menu-principal">
+                <li>
+                    <a href="index.html" aria-current="page">Início</a>
+                </li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="integrantes.html">Integrantes</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main>
+
+        <!-- PRIMEIRA SEÇÃO -->
+        <section class="hero">
+
+            <!-- DECORAÇÃO BOTÂNICA -->
+            <div class="hero-decoracao" aria-hidden="true">
+
+                <svg
+                    viewBox="0 0 650 600"
+                    xmlns="http://www.w3.org/2000/svg">
+
+                    <defs>
+
+                        <!-- GRADIENTE DA FOLHA PRINCIPAL -->
+                        <linearGradient
+                            id="folha-verde"
+                            x1="0" y1="0"
+                            x2="1" y2="1">
+
+                            <stop offset="0%" stop-color="#71834B"/>
+                            <stop offset="55%" stop-color="#34402A"/>
+                            <stop offset="100%" stop-color="#182319"/>
+
+                        </linearGradient>
+
+                        <!-- GRADIENTE DA FOLHA ESCURA -->
+                        <linearGradient
+                            id="folha-escura"
+                            x1="0" y1="0"
+                            x2="1" y2="1">
+
+                            <stop offset="0%" stop-color="#465935"/>
+                            <stop offset="100%" stop-color="#101B13"/>
+
+                        </linearGradient>
+
+                    </defs>
+
+
+                    <!-- CURVA BEGE / PALHA -->
+                    <path
+                        d="M650 0
+                           C490 100 350 220 285 390
+                           C250 475 235 550 230 600
+                           L650 600 Z"
+                        fill="#C8AA83"/>
+
+
+                    <!-- FOLHA AO FUNDO - MAIS PRÓXIMA -->
+                    <path
+                        d="M650 120
+                           C490 145 370 270 310 440
+                           C285 510 280 565 290 600
+                           L650 600 Z"
+                        fill="url(#folha-escura)"/>
+
+
+                    <!-- FOLHA PRINCIPAL - MAIS PRÓXIMA -->
+                    <path
+                        d="M650 290
+                           C510 260 345 310 245 435
+                           C195 495 170 555 155 600
+                           L650 600 Z"
+                        fill="url(#folha-verde)"/>
+
+
+                    <!-- NERVURA PRINCIPAL -->
+                    <path
+                        d="M245 600
+                           C350 500 475 410 650 350"
+                        fill="none"
+                        stroke="#9DAE70"
+                        stroke-width="3"
+                        opacity="0.55"/>
+
+
+                    <!-- NERVURAS SECUNDÁRIAS -->
+                    <g
+                        fill="none"
+                        stroke="#A4B86B"
+                        stroke-width="2"
+                        opacity="0.3">
+
+                        <path d="M345 510 Q340 450 365 405"/>
+                        <path d="M405 465 Q415 405 450 360"/>
+                        <path d="M470 420 Q490 375 535 340"/>
+                        <path d="M355 505 Q415 525 475 520"/>
+                        <path d="M425 455 Q500 470 570 455"/>
+
+                    </g>
+
+                </svg>
+
+            </div>
+
+
+            <!-- TEXTO PRINCIPAL -->
+            <div class="hero-conteudo">
+
+                <span class="hero-etiqueta">
+                    TECNOLOGIA E SUSTENTABILIDADE
+                </span>
+
+                <h1>EcoConta</h1>
+
+                <h2>
+                    Consumo inteligente,
+                    um futuro mais sustentável.
+                </h2>
+
+                <p class="hero-descricao">
+                    Transforme a maneira como você acompanha
+                    o consumo de água e energia da sua casa.
+                    Economize recursos, reduza gastos e
+                    contribua para um futuro sustentável.
+                </p>
+
+                <div class="hero-botoes">
+
+                    <a href="acesso.html"
+                       class="botao botao-principal">
+                        Começar agora
+                    </a>
+
+                    <a href="sobre.html"
+                       class="botao botao-secundario">
+                        Conheça o projeto
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- SÍMBOLO PRINCIPAL -->
+            <div class="hero-visual">
+
+                <svg
+                    class="logo-ecoconta"
+                    viewBox="0 0 400 350"
+                    xmlns="http://www.w3.org/2000/svg"
+                    role="img"
+                    aria-label="EcoConta: casa sustentável com folha e tomada">
+
+                    <!-- FORMA ORGÂNICA -->
+                    <path
+                        d="M80 150 C120 110 160 105 195 55
+                           C240 -5 340 20 350 105
+                           C365 185 295 220 230 255
+                           C160 295 75 300 45 250
+                           C15 205 35 175 80 150Z"
+                        fill="#687D41"/>
+
+                    <!-- RAIOS -->
+                    <g
+                        stroke="#A4B86B"
+                        stroke-width="5"
+                        stroke-linecap="round">
+
+                        <path d="M100 65 L88 40"/>
+                        <path d="M130 55 L130 27"/>
+                        <path d="M75 90 L48 80"/>
+
+                    </g>
+
+                    <!-- CONTORNO DA CASA -->
+                    <g
+                        fill="none"
+                        stroke="#F5F0E9"
+                        stroke-width="9"
+                        stroke-linecap="round"
+                        stroke-linejoin="round">
+
+                        <path d="M100 165 L200 80 L300 165"/>
+
+                        <path
+                            d="M120 175 V265
+                               Q120 275 130 275 H275"/>
+
+                        <path d="M280 175 V235"/>
+
+                    </g>
+
+                    <!-- FOLHA CENTRAL -->
+                    <g
+                        fill="none"
+                        stroke="#A4B86B"
+                        stroke-width="7"
+                        stroke-linecap="round"
+                        stroke-linejoin="round">
+
+                        <path
+                            d="M170 245
+                               C155 205 175 160 240 150
+                               C240 205 215 245 170 245Z"/>
+
+                        <path
+                            d="M165 275
+                               C175 230 195 205 225 180"/>
+
+                    </g>
+
+                    <!-- TOMADA -->
+                    <g
+                        fill="none"
+                        stroke="#A4B86B"
+                        stroke-width="7"
+                        stroke-linecap="round"
+                        stroke-linejoin="round">
+
+                        <path d="M300 225 V200"/>
+                        <path d="M325 225 V200"/>
+
+                        <path
+                            d="M290 225 H335 V242
+                               C335 270 290 270 290 242Z"/>
+
+                        <path
+                            d="M312 260 V275
+                               Q312 290 290 290 H180"/>
+
+                    </g>
+
+                </svg>
+
+            </div>
+
+        </section>
+
+
+        <!-- SOBRE A PLATAFORMA -->
+        <section class="apresentacao">
+
+            <div class="secao-conteudo">
+
+                <span class="secao-etiqueta">
+                    SOBRE A PLATAFORMA
+                </span>
+
+                <h2>
+                    Sua casa mais inteligente.
+                    Seu consumo mais consciente.
+                </h2>
+
+                <p>
+                    O EcoConta é uma plataforma desenvolvida
+                    para ajudar famílias a compreenderem
+                    e acompanharem o consumo residencial
+                    de água e energia elétrica.
+                </p>
+
+                <p>
+                    Por meio de informações organizadas,
+                    metas de economia e recomendações,
+                    buscamos incentivar hábitos mais
+                    conscientes e sustentáveis.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- FUNCIONALIDADES -->
+        <section class="funcionalidades">
+
+            <div class="secao-titulo">
+
+                <span class="secao-etiqueta">
+                    FUNCIONALIDADES
+                </span>
+
+                <h2>
+                    Tecnologia que transforma
+                    seu consumo.
+                </h2>
+
+                <p>
+                    Conheça os recursos que ajudam você
+                    a economizar e cuidar do planeta.
+                </p>
+
+            </div>
+
+
+            <div class="cards-funcionalidades">
+
+                <!-- ÁGUA -->
+                <article class="card">
+
+                    <i data-lucide="droplets"
+                       class="card-icone"
+                       aria-hidden="true"></i>
+
+                    <h3>Consumo de água</h3>
+
+                    <p>
+                        Acompanhe seu consumo de água
+                        e identifique oportunidades
+                        para economizar.
+                    </p>
+
+                </article>
+
+
+                <!-- ENERGIA -->
+                <article class="card">
+
+                    <i data-lucide="zap"
+                       class="card-icone"
+                       aria-hidden="true"></i>
+
+                    <h3>Consumo de energia</h3>
+
+                    <p>
+                        Visualize informações sobre
+                        seu consumo de energia elétrica
+                        e acompanhe sua evolução.
+                    </p>
+
+                </article>
+
+
+                <!-- METAS -->
+                <article class="card">
+
+                    <i data-lucide="target"
+                       class="card-icone"
+                       aria-hidden="true"></i>
+
+                    <h3>Metas de economia</h3>
+
+                    <p>
+                        Estabeleça metas de consumo
+                        e acompanhe seu progresso
+                        ao longo do tempo.
+                    </p>
+
+                </article>
+
+
+                <!-- ECOBOT -->
+                <article class="card">
+
+                    <i data-lucide="bot"
+                       class="card-icone"
+                       aria-hidden="true"></i>
+
+                    <h3>EcoBot</h3>
+
+                    <p>
+                        Receba recomendações para
+                        desenvolver hábitos mais
+                        sustentáveis no dia a dia.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- CHAMADA FINAL -->
+        <section class="chamada-final">
+
+            <div class="chamada-conteudo">
+
+                <span class="secao-etiqueta">
+                    FAÇA PARTE DA MUDANÇA
+                </span>
+
+                <h2>
+                    Pequenas atitudes.
+                    Grandes transformações.
+                </h2>
+
+                <p>
+                    Comece a acompanhar seu consumo
+                    e descubra como pequenas mudanças
+                    podem fazer a diferença.
+                </p>
+
+                <a href="acesso.html"
+                   class="botao botao-principal">
+                    Começar com EcoConta
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+    <footer class="rodape">
+
+        <div class="rodape-conteudo">
+
+            <div class="rodape-marca">
+
+                <h2>EcoConta</h2>
+
+                <p>
+                    Consumo inteligente,
+                    um futuro mais sustentável.
+                </p>
+
+            </div>
+
+            <div class="rodape-links">
+
+                <h3>Navegação</h3>
+
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="integrantes.html">Integrantes</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+
+            </div>
+
+            <div class="rodape-projeto">
+
+                <h3>Projeto acadêmico</h3>
+
+                <p>FIAP — Global Solution 2026/2</p>
+                <p>Equipe NextBythe</p>
+
+            </div>
+
+        </div>
+
+        <div class="rodape-inferior">
+
+            <p>
+                © 2026 EcoConta.
+                Todos os direitos reservados.
+            </p>
+
+            <p>
+                Desenvolvido pela equipe NextBythe.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            // INICIALIZA OS ÍCONES
+            if (window.lucide) {
+                lucide.createIcons();
+            }
+
+            // MENU MOBILE
+            const botaoMenu = document.querySelector(".menu-toggle");
+            const menu = document.querySelector(".menu");
+
+            botaoMenu.addEventListener("click", function () {
+
+                const aberto = menu.classList.toggle("ativo");
+
+                botaoMenu.setAttribute(
+                    "aria-expanded",
+                    String(aberto)
+                );
+
+                botaoMenu.setAttribute(
+                    "aria-label",
+                    aberto ? "Fechar menu" : "Abrir menu"
+                );
+
+            });
+
+        });
+    </script>
+
+</body>
+</html>
