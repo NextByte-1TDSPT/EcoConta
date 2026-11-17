@@ -3,368 +3,227 @@
 <html lang="pt-BR">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Sobre | EcoConta</title>
+    <title>Sobre | EcoConta</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  >
+    <link rel="stylesheet" href="css/sobre.css">
 
-  <!-- CSS original do projeto -->
-  <link rel="stylesheet" href="css/style.css">
-
-  <!-- CSS exclusivo da página Sobre -->
-  <link rel="stylesheet" href="css/sobre.css">
-
-  <!-- CSS com as plantas incorporadas em Base64 -->
-  <link rel="stylesheet" href="css/sobre-plantas.css">
-
-  <!-- Biblioteca de ícones -->
-  <script
-    src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"
-    defer>
-  </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
-<body class="sobre-pagina">
+<body>
 
-  <!-- =====================================
-       CABEÇALHO
-       ===================================== -->
+    <!-- CABEÇALHO -->
+    <header class="cabecalho">
+        <div class="container cabecalho-conteudo">
 
-  <header class="cabecalho">
+            <a href="index.html" class="logo">
+                <i data-lucide="leaf"></i>
+                <span>EcoConta</span>
+            </a>
 
-    <nav class="navegacao" aria-label="Navegação principal">
-
-      <a href="index.html" class="logo">
-        <i data-lucide="leaf" class="logo-simbolo"></i>
-        <span class="logo-nome">EcoConta</span>
-      </a>
-
-      <button
-        class="menu-toggle"
-        type="button"
-        aria-label="Abrir menu"
-        aria-controls="menu-principal"
-        aria-expanded="false">
-
-        <i data-lucide="menu"></i>
-
-      </button>
-
-      <ul class="menu" id="menu-principal">
-
-        <li>
-          <a href="index.html">Início</a>
-        </li>
-
-        <li>
-          <a href="sobre.html" aria-current="page">Sobre</a>
-        </li>
-
-        <li>
-          <a href="integrantes.html">Integrantes</a>
-        </li>
-
-        <li>
-          <a href="faq.html">FAQ</a>
-        </li>
-
-        <li>
-          <a href="contato.html">Contato</a>
-        </li>
-
-      </ul>
-
-    </nav>
-
-  </header>
-
-
-  <main class="sobre-conteudo">
-
-    <!-- =====================================
-         1. CONHEÇA O PROJETO
-         ===================================== -->
-
-    <section class="sobre-hero">
-
-      <div class="sobre-hero-conteudo">
-
-        <span class="sobre-etiqueta">
-          CONHEÇA O PROJETO
-        </span>
-
-        <h1>
-          Consumo consciente<br>
-          começa com informação.
-        </h1>
-
-        <p>
-          O EcoConta nasceu para ajudar pessoas a compreenderem
-          melhor o consumo de água e energia em suas residências,
-          transformando dados em decisões mais sustentáveis.
-        </p>
-
-      </div>
-
-      <!-- Planta pendente da introdução -->
-      <div
-        class="sobre-hero-folhas"
-        aria-hidden="true">
-      </div>
-
-    </section>
-
-
-    <!-- =====================================
-         2. O DESAFIO
-         ===================================== -->
-
-    <section class="sobre-secao sobre-desafio">
-
-      <div class="sobre-texto">
-
-        <span class="sobre-etiqueta">
-          O DESAFIO
-        </span>
-
-        <h2>
-          O desperdício muitas<br>
-          vezes passa despercebido.
-        </h2>
-
-        <p>
-          Água e energia fazem parte da nossa rotina,
-          mas nem sempre sabemos quanto estamos consumindo.
-          A falta de acompanhamento dificulta a identificação
-          de desperdícios e a adoção de hábitos mais econômicos.
-        </p>
-
-      </div>
-
-      <div class="sobre-destaque">
-
-        <div
-          class="sobre-destaque-icones"
-          aria-hidden="true">
-
-          <i data-lucide="droplet"></i>
-
-          <span class="sobre-divisor"></span>
-
-          <i data-lucide="zap"></i>
+            <nav class="menu">
+                <a href="index.html">Início</a>
+                <a href="sobre.html" class="ativo">Sobre</a>
+                <a href="integrantes.html">Integrantes</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contato.html">Contato</a>
+            </nav>
 
         </div>
+    </header>
 
-        <h3>
-          Entender o consumo é o<br>
-          primeiro passo para mudar.
-        </h3>
+    <main>
 
-      </div>
+        <!-- APRESENTAÇÃO -->
+        <section class="apresentacao container">
 
-    </section>
+            <div class="texto-apresentacao">
+                <span class="etiqueta">CONHEÇA O PROJETO</span>
 
+                <h1>
+                    Consumo consciente<br>
+                    começa com informação.
+                </h1>
 
-    <!-- =====================================
-         3. NOSSA SOLUÇÃO
-         ===================================== -->
+                <p>
+                    O EcoConta nasceu para ajudar pessoas a compreenderem
+                    melhor o consumo de água e energia em suas residências,
+                    transformando dados em decisões mais sustentáveis.
+                </p>
+            </div>
 
-    <section class="sobre-secao sobre-solucao">
+            <div class="planta planta-topo" aria-hidden="true">
+                <span class="ramo">
+                    <span class="folha f1"></span>
+                    <span class="folha f2"></span>
+                    <span class="folha f3"></span>
+                    <span class="folha f4"></span>
+                    <span class="folha f5"></span>
+                    <span class="folha f6"></span>
+                </span>
+            </div>
 
-      <div class="sobre-texto">
+        </section>
 
-        <span class="sobre-etiqueta">
-          NOSSA SOLUÇÃO
-        </span>
+        <!-- O DESAFIO -->
+        <section class="secao desafio container">
 
-        <h2>
-          Tecnologia para uma<br>
-          rotina mais sustentável.
-        </h2>
+            <div class="texto-secao">
+                <span class="etiqueta">O DESAFIO</span>
 
-        <p>
-          O EcoConta é uma plataforma digital que permite
-          registrar e acompanhar o consumo residencial de
-          água e energia. Por meio de indicadores visuais,
-          metas de economia e orientações do EcoBot,
-          buscamos facilitar a compreensão dos hábitos
-          de consumo.
-        </p>
+                <h2>
+                    O desperdício muitas<br>
+                    vezes passa despercebido.
+                </h2>
 
-      </div>
+                <p>
+                    Água e energia fazem parte da nossa rotina, mas nem sempre
+                    sabemos quanto estamos consumindo. A falta de acompanhamento
+                    dificulta a identificação de desperdícios e a adoção de
+                    hábitos mais econômicos.
+                </p>
+            </div>
 
-    </section>
+            <div class="card-consumo">
 
+                <div class="icones-consumo">
+                    <i data-lucide="droplet"></i>
+                    <span class="separador"></span>
+                    <i data-lucide="zap"></i>
+                </div>
 
-    <!-- =====================================
-         4. NOSSA MISSÃO
-         ===================================== -->
+                <h3>
+                    Entender o consumo é o<br>
+                    primeiro passo para mudar.
+                </h3>
 
-    <section class="sobre-missao">
+            </div>
 
-      <!-- Monstera inferior esquerda -->
-      <div
-        class="missao-planta missao-monstera"
-        aria-hidden="true">
-      </div>
+        </section>
 
-      <!-- Folhas pendentes superiores -->
-      <div
-        class="missao-planta missao-pendente"
-        aria-hidden="true">
-      </div>
+        <!-- NOSSA SOLUÇÃO -->
+        <section class="secao solucao container">
 
-      <div class="sobre-missao-conteudo">
+            <div class="texto-secao">
+                <span class="etiqueta">NOSSA SOLUÇÃO</span>
 
-        <span class="sobre-etiqueta">
-          NOSSA MISSÃO
-        </span>
+                <h2>
+                    Tecnologia para uma<br>
+                    rotina mais sustentável.
+                </h2>
 
-        <h2>
-          Pequenas mudanças podem<br>
-          gerar grandes impactos.
-        </h2>
+                <p>
+                    O EcoConta é uma plataforma digital que permite registrar
+                    e acompanhar o consumo residencial de água e energia.
+                    Por meio de indicadores visuais, metas de economia e
+                    orientações do EcoBot, buscamos facilitar a compreensão
+                    dos hábitos de consumo.
+                </p>
+            </div>
 
-        <p>
-          Nossa missão é incentivar o uso responsável dos
-          recursos naturais, aproximando tecnologia,
-          educação ambiental e economia doméstica.
-        </p>
+        </section>
 
-      </div>
+        <!-- NOSSA MISSÃO -->
+        <section class="missao container">
 
-    </section>
+            <div class="folha-costela" aria-hidden="true">
+                <svg viewBox="0 0 260 300">
+                    <path d="M120 290 C85 230 20 180 35 105 C47 42 119 9 186 27 C246 46 257 121 223 182 C193 234 155 267 120 290Z"
+                          fill="#55733b"/>
+                    <path d="M120 290 Q135 153 183 39"
+                          fill="none" stroke="#a3bc71" stroke-width="5"/>
+                    <path d="M128 225 Q72 205 38 153 M137 180 Q78 146 42 105 M149 137 Q102 99 88 42 M155 210 Q202 198 235 143 M163 157 Q214 138 238 99 M173 104 Q203 86 211 57"
+                          fill="none" stroke="#293f2b" stroke-width="10"
+                          stroke-linecap="round"/>
+                </svg>
+            </div>
 
+            <div class="planta planta-missao" aria-hidden="true">
+                <span class="ramo">
+                    <span class="folha f1"></span>
+                    <span class="folha f2"></span>
+                    <span class="folha f3"></span>
+                    <span class="folha f4"></span>
+                    <span class="folha f5"></span>
+                    <span class="folha f6"></span>
+                </span>
+            </div>
 
-    <!-- =====================================
-         5. CONHEÇA A PLATAFORMA
-         ===================================== -->
+            <div class="missao-conteudo">
+                <span class="etiqueta">NOSSA MISSÃO</span>
 
-    <section class="sobre-chamada">
+                <h2>
+                    Pequenas mudanças podem<br>
+                    gerar grandes impactos.
+                </h2>
 
-      <div class="sobre-chamada-texto">
+                <p>
+                    Nossa missão é incentivar o uso responsável dos recursos
+                    naturais, aproximando tecnologia, educação ambiental e
+                    economia doméstica.
+                </p>
+            </div>
 
-        <h2>
-          Conheça a plataforma.
-        </h2>
+        </section>
 
-        <p>
-          Veja na prática como o EcoConta pode te ajudar
-          a consumir com mais consciência e eficiência.
-        </p>
+        <!-- CHAMADA FINAL -->
+        <section class="chamada container">
 
-      </div>
+            <div>
+                <h2>Conheça a plataforma.</h2>
 
-      <a href="index.html" class="sobre-botao">
+                <p>
+                    Veja na prática como o EcoConta pode te ajudar a consumir
+                    com mais consciência e eficiência.
+                </p>
+            </div>
 
-        Acessar o EcoConta
+            <a href="index.html" class="botao-acessar">
+                Acessar o EcoConta
+                <i data-lucide="arrow-right"></i>
+            </a>
 
-        <i data-lucide="arrow-right"></i>
+        </section>
 
-      </a>
+    </main>
 
-    </section>
+    <!-- RODAPÉ -->
+    <footer class="rodape">
+        <div class="container rodape-conteudo">
 
-  </main>
+            <div>
+                <h3>EcoConta</h3>
+                <p>
+                    Tecnologia e sustentabilidade para um consumo
+                    residencial mais consciente.
+                </p>
+            </div>
 
+            <div>
+                <h4>Navegação</h4>
+                <a href="index.html">Início</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="integrantes.html">Integrantes</a>
+            </div>
 
-  <!-- =====================================
-       RODAPÉ
-       ===================================== -->
+            <div>
+                <h4>Projeto acadêmico</h4>
+                <p>Global Solution 2026/2</p>
+                <p>FIAP</p>
+                <p>Equipe NextBythe</p>
+            </div>
 
-  <footer class="rodape">
+        </div>
+    </footer>
 
-    <div class="rodape-conteudo">
-
-      <div>
-
-        <h2>EcoConta</h2>
-
-        <p>
-          Tecnologia e sustentabilidade para um
-          consumo residencial mais consciente.
-        </p>
-
-      </div>
-
-      <div>
-
-        <h3>Navegação</h3>
-
-        <ul>
-          <li><a href="index.html">Início</a></li>
-          <li><a href="sobre.html">Sobre</a></li>
-          <li><a href="integrantes.html">Integrantes</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="contato.html">Contato</a></li>
-        </ul>
-
-      </div>
-
-      <div>
-
-        <h3>Projeto acadêmico</h3>
-
-        <p>Global Solution 2026/2</p>
-        <p>FIAP</p>
-        <p>Equipe NextBythe</p>
-
-      </div>
-
-    </div>
-
-    <div class="rodape-inferior">
-
-      <p>© 2026 EcoConta. Projeto acadêmico.</p>
-
-      <p>Desenvolvido pela equipe NextBythe.</p>
-
-    </div>
-
-  </footer>
-
-
-  <!-- =====================================
-       MENU RESPONSIVO E ÍCONES
-       ===================================== -->
-
-  <script>
-
-    document.addEventListener("DOMContentLoaded", () => {
-
-      if (window.lucide) {
+    <script>
         lucide.createIcons();
-      }
-
-      const botao = document.querySelector(".menu-toggle");
-      const menu = document.querySelector(".menu");
-
-      if (botao && menu) {
-
-        botao.addEventListener("click", () => {
-
-          const aberto = menu.classList.toggle("ativo");
-
-          botao.setAttribute(
-            "aria-expanded",
-            String(aberto)
-          );
-
-        });
-
-      }
-
-    });
-
-  </script>
+    </script>
 
 </body>
 </html>

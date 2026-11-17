@@ -659,3 +659,21 @@ button:focus-visible {
     }
 
 }
+
+
+
+/* DESTAQUE DA PÁGINA ATUAL */
+
+.menu a {
+    display: inline-block;
+    padding: 9px 17px;
+    border: 1px solid transparent;
+    border-radius: 30px;
+}
+
+.menu a.ativo,
+.menu a[aria-current="page"] {
+    color: #a8bd72;
+    background-color: #303526;
+    border-color: #657847;
+}

@@ -1,0 +1,610 @@
+
+/* CONFIGURAÇÕES GERAIS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #201f1b;
+    color: #f5f0e9;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: 92%;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+/* CABEÇALHO */
+
+.cabecalho {
+    height: 80px;
+}
+
+.cabecalho-conteudo {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #a8bd72;
+    font-size: 29px;
+    font-weight: 700;
+}
+
+.logo svg {
+    width: 30px;
+    height: 30px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.menu a {
+    padding: 9px 17px;
+    border-radius: 30px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.menu a:hover,
+.menu a.ativo {
+    color: #a8bd72;
+    background: #303526;
+    border: 1px solid #657847;
+}
+
+/* ETIQUETAS */
+
+.etiqueta {
+    display: block;
+    color: #a8bd72;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+/* APRESENTAÇÃO */
+
+.apresentacao {
+    min-height: 350px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #49483e;
+}
+
+.texto-apresentacao {
+    width: 68%;
+    position: relative;
+    z-index: 2;
+    transform: translateX(-100px);
+}
+
+.texto-apresentacao h1 {
+    font-size: clamp(35px, 4.2vw, 62px);
+    line-height: 1.13;
+    letter-spacing: -2px;
+    margin-bottom: 22px;
+}
+
+.texto-apresentacao p {
+    max-width: 600px;
+    color: #d0cbbf;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* SEÇÕES */
+
+.secao {
+    min-height: 285px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 50px 0;
+    border-bottom: 1px solid #49483e;
+}
+
+.texto-secao {
+    max-width: 610px;
+    transform: translateX(-100px);
+}
+
+.texto-secao h2 {
+    font-size: clamp(29px, 3vw, 43px);
+    line-height: 1.2;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
+}
+
+.texto-secao p {
+    color: #d0cbbf;
+    font-size: 15px;
+    line-height: 1.85;
+}
+
+/* CARD DE ÁGUA E ENERGIA */
+
+.card-consumo {
+    width: 340px;
+    min-width: 300px;
+    padding: 35px 25px;
+    text-align: center;
+    border-radius: 28px;
+    border: 1px solid #8da75b;
+    background: linear-gradient(135deg, #313e25, #1c2519);
+    box-shadow: 0 0 35px rgba(128, 160, 75, 0.13);
+}
+
+.icones-consumo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 24px;
+    color: #b3cc76;
+}
+
+.icones-consumo svg {
+    width: 48px;
+    height: 48px;
+    stroke-width: 1.5;
+}
+
+.separador {
+    width: 1px;
+    height: 52px;
+    background: #8da75b;
+}
+
+.card-consumo h3 {
+    font-size: 18px;
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+/* SOLUÇÃO */
+
+.solucao {
+    min-height: 285px;
+}
+
+/* MISSÃO */
+
+.missao {
+    min-height: 300px;
+    margin-top: 35px;
+    margin-bottom: 45px;
+    padding: 55px 30px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid #809d4e;
+    border-radius: 30px;
+    background:
+        radial-gradient(circle at 20% 90%, #40512b, transparent 50%),
+        linear-gradient(120deg, #303b22, #1d271a);
+    box-shadow: 0 0 35px rgba(123, 157, 75, 0.15);
+}
+
+.missao-conteudo {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 780px;
+}
+
+.missao h2 {
+    font-size: clamp(30px, 3.3vw, 45px);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.missao p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #e5e5d9;
+}
+
+.folha-costela {
+    position: absolute;
+    width: 230px;
+    bottom: -65px;
+    left: -45px;
+    transform: rotate(-25deg);
+    opacity: 0.9;
+    filter: drop-shadow(10px 8px 8px #10180e);
+}
+
+.folha-costela svg {
+    width: 100%;
+}
+
+/* FOLHAGENS DIGITAIS */
+
+/* Remove apenas a folha do topo */
+.planta-topo {
+    display: none;
+}
+
+.planta {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    pointer-events: none;
+}
+
+.planta-missao {
+    top: -95px;
+    right: -55px;
+    transform: rotate(-10deg) scale(0.85);
+}
+
+.ramo {
+    position: absolute;
+    top: 0;
+    right: 65px;
+    width: 5px;
+    height: 270px;
+    background: linear-gradient(#718a49, #304a2b);
+    border-radius: 100%;
+    transform: rotate(24deg);
+    transform-origin: top;
+}
+
+.folha {
+    position: absolute;
+    display: block;
+    width: 85px;
+    height: 125px;
+    border-radius: 5% 85% 12% 85%;
+    background:
+        linear-gradient(
+            112deg,
+            transparent 47%,
+            rgba(181, 210, 124, 0.5) 49%,
+            transparent 51%
+        ),
+        radial-gradient(
+            ellipse at 30% 25%,
+            #849e50 0%,
+            #597b3c 40%,
+            #304b2e 75%,
+            #1c3022 100%
+        );
+    box-shadow:
+        inset 8px 5px 18px rgba(190, 215, 135, 0.15),
+        8px 12px 18px rgba(0, 0, 0, 0.25);
+    transform-origin: 10% 10%;
+}
+
+.f1 {
+    top: 5px;
+    left: -95px;
+    transform: rotate(-60deg) scale(1);
+}
+
+.f2 {
+    top: 30px;
+    left: 5px;
+    transform: rotate(60deg) scale(0.95);
+}
+
+.f3 {
+    top: 95px;
+    left: -100px;
+    transform: rotate(-65deg) scale(0.9);
+}
+
+.f4 {
+    top: 120px;
+    left: 10px;
+    transform: rotate(55deg) scale(0.85);
+}
+
+.f5 {
+    top: 185px;
+    left: -90px;
+    transform: rotate(-55deg) scale(0.75);
+}
+
+.f6 {
+    top: 205px;
+    left: 0;
+    transform: rotate(45deg) scale(0.7);
+}
+
+/* CHAMADA FINAL */
+
+.chamada {
+    min-height: 170px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 35px;
+    margin-bottom: 50px;
+}
+
+.chamada h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.chamada p {
+    max-width: 530px;
+    color: #d0cbbf;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.botao-acessar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    padding: 17px 32px;
+    border-radius: 40px;
+    background: #aec678;
+    color: #182016;
+    font-size: 15px;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: 0.3s;
+}
+
+.botao-acessar:hover {
+    background: #c4da94;
+    transform: translateY(-2px);
+}
+
+.botao-acessar svg {
+    width: 19px;
+}
+
+/* RODAPÉ */
+
+.rodape {
+    border-top: 1px solid #44453b;
+    padding: 55px 0;
+}
+
+.rodape-conteudo {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+}
+
+.rodape h3 {
+    color: #a8bd72;
+    font-size: 24px;
+    margin-bottom: 14px;
+}
+
+.rodape h4 {
+    font-size: 15px;
+    margin-bottom: 18px;
+}
+
+.rodape p,
+.rodape a {
+    display: block;
+    color: #c9c6b9;
+    font-size: 13px;
+    line-height: 2;
+}
+
+.rodape a:hover {
+    color: #a8bd72;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 900px) {
+
+    .texto-apresentacao {
+        width: 80%;
+    }
+
+    .secao {
+        gap: 30px;
+    }
+
+    .card-consumo {
+        min-width: 260px;
+        width: 290px;
+    }
+
+    .missao-conteudo {
+        max-width: 75%;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .cabecalho {
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .cabecalho-conteudo {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .menu a {
+        font-size: 12px;
+        padding: 7px 11px;
+    }
+
+    .apresentacao {
+        min-height: 380px;
+        padding: 60px 0;
+    }
+
+    .texto-apresentacao {
+        width: 100%;
+        transform: none;
+    }
+
+    .texto-apresentacao h1 {
+        font-size: 35px;
+    }
+
+    .texto-apresentacao h1 br,
+    .texto-secao h2 br,
+    .missao h2 br {
+        display: none;
+    }
+
+    .secao {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 55px 0;
+    }
+
+    .texto-secao {
+        transform: none;
+    }
+
+    .texto-secao h2 {
+        font-size: 30px;
+    }
+
+    .card-consumo {
+        width: 100%;
+    }
+
+    .missao {
+        padding: 65px 22px;
+    }
+
+    .missao-conteudo {
+        max-width: 100%;
+    }
+
+    .missao h2 {
+        font-size: 29px;
+    }
+
+    .folha-costela {
+        opacity: 0.2;
+    }
+
+    .planta-missao {
+        opacity: 0.25;
+    }
+
+    .chamada {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px 0;
+    }
+
+    .chamada h2 {
+        font-size: 27px;
+    }
+
+    .rodape-conteudo {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+
+/* AUMENTAR TEXTOS SEM ALTERAR OS TÍTULOS */
+
+.texto-apresentacao p,
+.texto-secao p,
+.missao p,
+.chamada p {
+    font-size: 18px;
+}
+
+.card-consumo h3 {
+    font-size: 19px;
+}
+
+.rodape p,
+.rodape a {
+    font-size: 15px;
+}
+
+
+/* MENU DO MESMO TAMANHO DA HOME */
+
+.menu a {
+    font-size: 19px;
+    font-weight: 400;
+}
+
+.menu {
+    gap: 24px;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 700px) {
+    .menu a {
+        font-size: 14px;
+    }
+
+    .menu {
+        gap: 10px;
+    }
+}
+
+
+/* TEXTOS DO RODAPÉ */
+
+.rodape p,
+.rodape a {
+    font-size: 17px;
+}
+
+/* REDUÇÃO LEVE DOS TEXTOS */
+
+.texto-apresentacao h1 {
+    font-size: 52px;
+}
+
+.texto-secao h2 {
+    font-size: 38px;
+}
+
+.texto-apresentacao p,
+.texto-secao p {
+    font-size: 17px;
+}
