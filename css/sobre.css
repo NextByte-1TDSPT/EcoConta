@@ -1,0 +1,333 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #211F1A;
+    color: #F5F0E9;
+}
+
+.container {
+    width: 90%;
+    max-width: 1450px;
+    margin: 0 auto;
+}
+
+/* CABEÇALHO */
+
+.cabecalho {
+    padding: 20px 0;
+}
+
+.cabecalho-conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #A4B86B;
+    text-decoration: none;
+    font-size: 29px;
+    font-weight: 700;
+}
+
+.logo svg {
+    width: 34px;
+    height: 34px;
+    fill: none;
+    stroke: #A4B86B;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.menu a {
+    color: #F5F0E9;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 12px 20px;
+    border-radius: 30px;
+}
+
+.menu a:hover,
+.menu a.ativo {
+    background-color: #293D27;
+    color: #A4B86B;
+}
+
+/* APRESENTAÇÃO */
+
+.apresentacao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    padding: 65px 0 55px;
+    border-bottom: 1px solid #48463D;
+}
+
+.apresentacao-texto {
+    flex: 1.4;
+}
+
+.etiqueta {
+    display: block;
+    color: #A4B86B;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.apresentacao h1 {
+    font-size: clamp(35px, 3.3vw, 57px);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 25px;
+}
+
+.apresentacao p,
+.missao-texto p,
+.plataforma p {
+    font-size: 18px;
+    line-height: 1.8;
+    max-width: 680px;
+}
+
+.ilustracao {
+    flex: 0.8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ilustracao img {
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    display: block;
+}
+
+/* MISSÃO */
+
+.missao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    padding: 55px 0;
+    border-bottom: 1px solid #48463D;
+}
+
+.missao-texto {
+    flex: 1;
+}
+
+.missao h2,
+.plataforma h2 {
+    font-size: clamp(30px, 2.6vw, 42px);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.beneficios {
+    display: flex;
+    gap: 22px;
+}
+
+.beneficio {
+    width: 155px;
+    min-height: 155px;
+    background-color: #293D27;
+    border: 1px solid #688344;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+}
+
+.beneficio svg {
+    width: 43px;
+    height: 43px;
+    fill: none;
+    stroke: #A4B86B;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    margin-bottom: 15px;
+}
+
+.beneficio p {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+/* PLATAFORMA */
+
+.plataforma {
+    padding: 55px 0 75px;
+}
+
+.plataforma h2 {
+    margin-bottom: 15px;
+}
+
+.plataforma p {
+    max-width: 650px;
+    margin-bottom: 25px;
+}
+
+.botao {
+    display: inline-block;
+    background-color: #A4B86B;
+    color: #211F1A;
+    padding: 13px 28px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.botao:hover {
+    background-color: #B8CC80;
+}
+
+/* RODAPÉ */
+
+.rodape {
+    background-color: #211F1A;
+    border-top: 1px solid #48463D;
+    padding: 70px 0 25px;
+}
+
+.rodape-conteudo {
+    display: grid;
+    grid-template-columns: 1.6fr 0.8fr 0.8fr;
+    gap: 60px;
+    padding-bottom: 85px;
+}
+
+.rodape-marca h2 {
+    color: #A4B86B;
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+.rodape-marca p,
+.rodape-projeto p,
+.rodape-navegacao a {
+    font-size: 17px;
+    line-height: 1.9;
+    color: #F5F0E9;
+}
+
+.rodape-navegacao h3,
+.rodape-projeto h3 {
+    font-size: 21px;
+    margin-bottom: 28px;
+}
+
+.rodape-navegacao a {
+    display: block;
+    text-decoration: none;
+    margin-bottom: 12px;
+}
+
+.rodape-navegacao a:hover {
+    color: #A4B86B;
+}
+
+.rodape-inferior {
+    border-top: 1px solid #48463D;
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    font-size: 14px;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 1100px) {
+    .cabecalho-conteudo {
+        flex-wrap: wrap;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .menu a {
+        font-size: 16px;
+    }
+
+    .apresentacao,
+    .missao {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .ilustracao {
+        align-self: center;
+    }
+
+    .beneficios {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 768px) {
+    .rodape-conteudo {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding-bottom: 40px;
+    }
+
+    .rodape-inferior {
+        flex-direction: column;
+    }
+
+    .apresentacao h1 {
+        font-size: 36px;
+    }
+
+    .menu a {
+        font-size: 15px;
+        padding: 10px;
+    }
+}
+
+.logo svg {
+    width: 36px !important;
+    height: 36px !important;
+    fill: none !important;
+    stroke: #A4B86B !important;
+    stroke-width: 1.8px !important;
+    stroke-linecap: round !important;
+    stroke-linejoin: round !important;
+}
+
+.logo svg path {
+    fill: none !important;
+    stroke: #A4B86B !important;
+}
