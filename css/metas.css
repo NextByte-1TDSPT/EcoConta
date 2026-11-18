@@ -1,0 +1,249 @@
+/* ==========================================
+   ECOCONTA - PÁGINA DE METAS E RECOMPENSAS
+   Usa as variáveis e componentes do style.css
+   ========================================== */
+
+
+/* 1. ESPAÇAMENTO DAS SEÇÕES */
+
+.metas-intro {
+    padding-bottom: 40px;
+}
+
+.metas-secao {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    border-top: 1px solid var(--borda);
+}
+
+
+/* 2. RESPONSIVIDADE */
+
+@media (max-width: 768px) {
+
+    .metas-intro {
+        padding-bottom: 20px;
+    }
+
+    .metas-secao {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+}
+
+
+/* 3. METAS: FORMULÁRIO E LISTA */
+
+.metas-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr);
+    gap: 30px;
+    align-items: start;
+}
+
+.metas-form {
+    background-color: var(--verde-escuro);
+    border: 1px solid #49583B;
+    border-radius: 24px;
+    padding: 35px 28px;
+}
+
+.metas-form h3 {
+    color: var(--bege);
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.metas-campo {
+    margin-bottom: 20px;
+}
+
+.metas-campo label {
+    display: block;
+    color: var(--bege);
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.metas-campo input,
+.metas-campo select {
+    width: 100%;
+    background-color: var(--fundo);
+    color: var(--bege);
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+    padding: 12px 16px;
+    font-size: 14px;
+}
+
+.metas-campo input:focus,
+.metas-campo select:focus {
+    outline: none;
+    border-color: var(--verde-claro);
+}
+
+.metas-campo input[aria-invalid="true"],
+.metas-campo select[aria-invalid="true"] {
+    border-color: #D98A7A;
+}
+
+.metas-erro {
+    display: block;
+    min-height: 20px;
+    color: #E8A798;
+    font-size: 13px;
+    margin-top: 6px;
+}
+
+.metas-status {
+    color: var(--verde-claro);
+    font-size: 14px;
+    margin-top: 15px;
+    min-height: 21px;
+}
+
+.metas-lista {
+    display: grid;
+    gap: 20px;
+}
+
+.metas-vazio {
+    color: var(--texto-suave);
+    font-size: 15px;
+    border: 1px dashed var(--borda);
+    border-radius: 24px;
+    padding: 40px 28px;
+    text-align: center;
+}
+
+
+/* 4. CARD DE META E BARRA DE PROGRESSO */
+
+.metas-card {
+    background-color: var(--verde-escuro);
+    border: 1px solid #49583B;
+    border-radius: 24px;
+    padding: 28px;
+}
+
+.metas-card-topo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.metas-card-icone {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    color: var(--verde-claro);
+    stroke-width: 1.7;
+}
+
+.metas-card-titulo {
+    flex: 1;
+    min-width: 0;
+}
+
+.metas-card-titulo h3 {
+    color: var(--bege);
+    font-size: 18px;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+.metas-card-titulo p {
+    color: #D3D6C9;
+    font-size: 13px;
+}
+
+.metas-remover {
+    background: transparent;
+    border: 1px solid var(--borda);
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--texto-suave);
+    cursor: pointer;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.metas-remover:hover {
+    color: var(--bege);
+    border-color: var(--verde-claro);
+}
+
+.metas-remover svg {
+    width: 18px;
+    height: 18px;
+}
+
+.metas-progresso-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.metas-progresso-info strong {
+    color: var(--bege);
+}
+
+.metas-progresso-info span {
+    color: var(--verde-claro);
+    font-weight: 600;
+}
+
+.metas-barra {
+    height: 10px;
+    background-color: var(--fundo);
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.metas-barra-preenchimento {
+    height: 100%;
+    background-color: var(--verde-claro);
+    border-radius: 30px;
+    transition: width 0.5s ease;
+}
+
+.metas-detalhes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 20px;
+    color: #D3D6C9;
+    font-size: 13px;
+    margin-top: 15px;
+}
+
+
+/* 5. RESPONSIVIDADE DA SEÇÃO DE METAS */
+
+@media (max-width: 1024px) {
+
+    .metas-layout {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 400px) {
+
+    .metas-card {
+        padding: 22px 18px;
+    }
+
+    .metas-form {
+        padding: 28px 20px;
+    }
+
+}

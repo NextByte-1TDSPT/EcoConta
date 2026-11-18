@@ -114,7 +114,58 @@
 
             </div>
 
-            <!-- Formulário e cards de metas entram no commit 2 -->
+            <div class="metas-layout">
+
+                <!-- FORMULÁRIO: NOVA META -->
+                <form class="metas-form" id="form-meta" novalidate>
+
+                    <h3>Nova meta</h3>
+
+                    <div class="metas-campo">
+                        <label for="meta-nome">Nome da meta</label>
+                        <input type="text" id="meta-nome" name="nome"
+                               placeholder="Ex.: Banhos mais curtos"
+                               maxlength="40" autocomplete="off">
+                        <span class="metas-erro" id="erro-nome"
+                              role="alert"></span>
+                    </div>
+
+                    <div class="metas-campo">
+                        <label for="meta-tipo">Recurso</label>
+                        <select id="meta-tipo" name="tipo">
+                            <option value="">Selecione</option>
+                            <option value="agua">Água</option>
+                            <option value="energia">Energia</option>
+                        </select>
+                        <span class="metas-erro" id="erro-tipo"
+                              role="alert"></span>
+                    </div>
+
+                    <div class="metas-campo">
+                        <label for="meta-reducao">
+                            Redução desejada (%)
+                        </label>
+                        <input type="number" id="meta-reducao"
+                               name="reducao" min="5" max="50"
+                               step="1" placeholder="Entre 5 e 50">
+                        <span class="metas-erro" id="erro-reducao"
+                              role="alert"></span>
+                    </div>
+
+                    <button type="submit" class="botao botao-principal">
+                        Criar meta
+                    </button>
+
+                    <p class="metas-status" id="status-form"
+                       role="status"></p>
+
+                </form>
+
+                <!-- LISTA DE METAS -->
+                <div class="metas-lista" id="lista-metas"
+                     aria-live="polite"></div>
+
+            </div>
 
         </section>
 
