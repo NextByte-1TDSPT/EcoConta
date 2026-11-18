@@ -13,6 +13,8 @@ const RECURSOS = {
         unidade: "m³",
         referencia: 15,
         atual: 13.8,
+        inicial: 13.8,
+        passoSimulacao: 0.5,
         icone: "droplets"
     },
     energia: {
@@ -20,6 +22,8 @@ const RECURSOS = {
         unidade: "kWh",
         referencia: 180,
         atual: 165,
+        inicial: 165,
+        passoSimulacao: 5,
         icone: "zap"
     }
 };
@@ -51,7 +55,8 @@ function calcularProgresso(meta) {
 
     return {
         valorMeta: valorMeta,
-        percentual: Math.round(percentual)
+        percentual: Math.round(percentual),
+        atingida: percentual >= 100
     };
 }
 
@@ -112,6 +117,8 @@ function criarCard(meta) {
 }
 
 function renderizarMetas() {
+    renderizarRewards();
+
     const lista = document.getElementById("lista-metas");
     lista.innerHTML = "";
 
@@ -356,6 +363,128 @@ function configurarAlertas() {
 }
 
 
+/* ---------- ECOREWARDS ---------- */
+
+const PONTOS_ANTERIORES = 120;   // pontos acumulados em meses passados
+const BONUS_DUAS_METAS = 50;
+
+const NIVEIS_ECO = [
+    { nome: "Semente", minimo: 0 },
+    { nome: "Broto", minimo: 200 },
+    { nome: "Árvore", minimo: 350 },
+    { nome: "Floresta", minimo: 500 }
+];
+
+// Soma os pontos das metas de cada recurso e aplica o bônus
+function calcularEcoPoints() {
+    let agua = 0;
+    let energia = 0;
+    let aguaAtingida = false;
+    let energiaAtingida = false;
+
+    metas.forEach(function (meta) {
+        const progresso = calcularProgresso(meta);
+
+        if (meta.tipo === "agua") {
+            agua += progresso.percentual;
+            if (progresso.atingida) { aguaAtingida = true; }
+        } else {
+            energia += progresso.percentual;
+            if (progresso.atingida) { energiaAtingida = true; }
+        }
+    });
+
+    const bonus = (aguaAtingida && energiaAtingida) ? BONUS_DUAS_METAS : 0;
+
+    return {
+        agua: agua,
+        energia: energia,
+        bonus: bonus,
+        total: PONTOS_ANTERIORES + agua + energia + bonus
+    };
+}
+
+function descobrirNivel(total) {
+    let indice = 0;
+
+    NIVEIS_ECO.forEach(function (nivel, i) {
+        if (total >= nivel.minimo) { indice = i; }
+    });
+
+    return indice;
+}
+
+function renderizarRewards() {
+    const pontos = calcularEcoPoints();
+
+    document.getElementById("saldo-pontos").textContent = pontos.total;
+    document.getElementById("pontos-agua").textContent = pontos.agua;
+    document.getElementById("pontos-energia").textContent = pontos.energia;
+    document.getElementById("pontos-bonus").textContent = pontos.bonus;
+
+    // Bônus
+    const cardBonus = document.getElementById("card-bonus");
+    const statusBonus = document.getElementById("bonus-status");
+
+    if (pontos.bonus > 0) {
+        cardBonus.classList.add("metas-pontos-ativo");
+        statusBonus.textContent = "Bônus conquistado!";
+    } else {
+        cardBonus.classList.remove("metas-pontos-ativo");
+        statusBonus.textContent =
+            "Atinja uma meta de água e uma de energia.";
+    }
+
+    // Nível atual e progresso até o próximo
+    const indice = descobrirNivel(pontos.total);
+    const atual = NIVEIS_ECO[indice];
+    const proximo = NIVEIS_ECO[indice + 1];
+
+    document.getElementById("nivel-nome").textContent =
+        "Nível " + atual.nome;
+
+    let percentualNivel = 100;
+    let texto = "Você chegou ao nível máximo.";
+
+    if (proximo) {
+        const faixa = proximo.minimo - atual.minimo;
+        percentualNivel =
+            Math.round(((pontos.total - atual.minimo) / faixa) * 100);
+        texto = "Faltam " + (proximo.minimo - pontos.total) +
+                " pontos para o nível " + proximo.nome + ".";
+    }
+
+    document.getElementById("nivel-info").textContent = texto;
+    document.getElementById("barra-nivel")
+        .setAttribute("aria-valuenow", percentualNivel);
+    document.getElementById("barra-nivel-preenchimento")
+        .style.width = percentualNivel + "%";
+}
+
+function configurarSimulacao() {
+    // Reduz o consumo atual para demonstrar o ganho de pontos
+    document.getElementById("btn-simular")
+        .addEventListener("click", function () {
+            Object.keys(RECURSOS).forEach(function (chave) {
+                const recurso = RECURSOS[chave];
+                recurso.atual = Math.max(
+                    0,
+                    Math.round((recurso.atual - recurso.passoSimulacao) * 10) / 10
+                );
+            });
+            renderizarMetas();
+        });
+
+    document.getElementById("btn-restaurar")
+        .addEventListener("click", function () {
+            Object.keys(RECURSOS).forEach(function (chave) {
+                RECURSOS[chave].atual = RECURSOS[chave].inicial;
+            });
+            renderizarMetas();
+        });
+}
+
+
 /* ---------- INICIALIZAÇÃO ---------- */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -386,6 +515,7 @@ document.addEventListener("DOMContentLoaded", function () {
     renderizarMetas();
     configurarAlertas();
     renderizarAlertas();
+    configurarSimulacao();
 
     // Remover meta (um único ouvinte para todos os botões)
     document.getElementById("lista-metas")

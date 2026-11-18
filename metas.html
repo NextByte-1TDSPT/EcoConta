@@ -232,7 +232,87 @@
 
             </div>
 
-            <!-- Saldo e pontuação entram no commit 4 -->
+            <div class="metas-rewards">
+
+                <!-- SALDO E NÍVEL -->
+                <div class="metas-saldo">
+
+                    <i data-lucide="award" class="metas-saldo-icone"
+                       aria-hidden="true"></i>
+
+                    <p class="metas-saldo-rotulo">Saldo de EcoPoints</p>
+                    <p class="metas-saldo-valor" id="saldo-pontos">0</p>
+                    <p class="metas-nivel" id="nivel-nome"></p>
+
+                    <div class="metas-barra" id="barra-nivel"
+                         role="progressbar" aria-label="Progresso do nível"
+                         aria-valuemin="0" aria-valuemax="100"
+                         aria-valuenow="0">
+                        <div class="metas-barra-preenchimento"
+                             id="barra-nivel-preenchimento"></div>
+                    </div>
+
+                    <p class="metas-nivel-info" id="nivel-info"></p>
+
+                </div>
+
+                <!-- PONTUAÇÃO POR CATEGORIA -->
+                <div class="metas-pontuacao">
+
+                    <article class="metas-pontos-card">
+                        <i data-lucide="droplets" class="metas-card-icone"
+                           aria-hidden="true"></i>
+                        <h3>Água</h3>
+                        <p class="metas-pontos-valor" id="pontos-agua">0</p>
+                        <p class="metas-pontos-texto">pontos</p>
+                    </article>
+
+                    <article class="metas-pontos-card">
+                        <i data-lucide="zap" class="metas-card-icone"
+                           aria-hidden="true"></i>
+                        <h3>Energia</h3>
+                        <p class="metas-pontos-valor" id="pontos-energia">0</p>
+                        <p class="metas-pontos-texto">pontos</p>
+                    </article>
+
+                    <article class="metas-pontos-card" id="card-bonus">
+                        <i data-lucide="sparkles" class="metas-card-icone"
+                           aria-hidden="true"></i>
+                        <h3>Bônus</h3>
+                        <p class="metas-pontos-valor" id="pontos-bonus">0</p>
+                        <p class="metas-pontos-texto" id="bonus-status"></p>
+                    </article>
+
+                </div>
+
+            </div>
+
+            <!-- SIMULAÇÃO DE ECONOMIA (DEMONSTRATIVO) -->
+            <div class="metas-simulacao">
+
+                <p>
+                    Teste o sistema: simule uma economia de
+                    0,5 m³ de água e 5 kWh de energia.
+                </p>
+
+                <div class="metas-simulacao-botoes">
+                    <button type="button" class="botao botao-principal"
+                            id="btn-simular">
+                        Simular economia
+                    </button>
+                    <button type="button" class="botao botao-secundario"
+                            id="btn-restaurar">
+                        Restaurar valores
+                    </button>
+                </div>
+
+            </div>
+
+            <p class="metas-regras">
+                Cada meta vale até 100 pontos, de acordo com o progresso.
+                Se você atingir uma meta de água e uma de energia,
+                ganha 50 pontos de bônus.
+            </p>
 
         </section>
 
