@@ -247,3 +247,148 @@
     }
 
 }
+
+
+/* 6. ALERTAS DE CONSUMO */
+
+.metas-alertas-barra {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.metas-filtros {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.metas-filtro {
+    background: transparent;
+    color: var(--bege);
+    border: 1px solid var(--borda);
+    border-radius: 30px;
+    padding: 9px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.metas-filtro:hover {
+    border-color: var(--verde-claro);
+}
+
+.metas-filtro[aria-pressed="true"] {
+    background-color: var(--verde-claro);
+    border-color: var(--verde-claro);
+    color: var(--fundo);
+}
+
+.metas-contagem {
+    color: var(--texto-suave);
+    font-size: 14px;
+}
+
+.metas-alertas {
+    display: grid;
+    gap: 15px;
+}
+
+.metas-alerta {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    background-color: var(--verde-escuro);
+    border: 1px solid #49583B;
+    border-left-width: 5px;
+    border-radius: 20px;
+    padding: 22px 24px;
+}
+
+.metas-alerta-icone {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    stroke-width: 1.7;
+}
+
+.metas-alerta-corpo {
+    flex: 1;
+    min-width: 0;
+}
+
+.metas-alerta-cabecalho {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 14px;
+    margin-bottom: 8px;
+}
+
+.metas-selo {
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 30px;
+    padding: 3px 12px;
+    background-color: var(--fundo);
+}
+
+.metas-alerta-recurso,
+.metas-alerta-quando {
+    color: var(--texto-suave);
+    font-size: 13px;
+}
+
+.metas-alerta h3 {
+    color: var(--bege);
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.metas-alerta p {
+    color: #D3D6C9;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* Cor por nível (o texto do selo e o ícone também indicam o nível) */
+.metas-alerta-critico {
+    border-left-color: #E8A798;
+}
+
+.metas-alerta-critico .metas-alerta-icone,
+.metas-alerta-critico .metas-selo {
+    color: #E8A798;
+}
+
+.metas-alerta-atencao {
+    border-left-color: #E0C46B;
+}
+
+.metas-alerta-atencao .metas-alerta-icone,
+.metas-alerta-atencao .metas-selo {
+    color: #E0C46B;
+}
+
+.metas-alerta-info {
+    border-left-color: var(--verde-claro);
+}
+
+.metas-alerta-info .metas-alerta-icone,
+.metas-alerta-info .metas-selo {
+    color: var(--verde-claro);
+}
+
+@media (max-width: 400px) {
+
+    .metas-alerta {
+        padding: 18px 16px;
+        gap: 12px;
+    }
+
+}

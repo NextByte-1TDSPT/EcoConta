@@ -187,7 +187,30 @@
 
             </div>
 
-            <!-- Lista de alertas entra no commit 3 -->
+            <div class="metas-alertas-barra">
+
+                <div class="metas-filtros" role="group"
+                     aria-label="Filtrar alertas por recurso">
+                    <button type="button" class="metas-filtro"
+                            data-filtro="todos" aria-pressed="true">
+                        Todos
+                    </button>
+                    <button type="button" class="metas-filtro"
+                            data-filtro="agua" aria-pressed="false">
+                        Água
+                    </button>
+                    <button type="button" class="metas-filtro"
+                            data-filtro="energia" aria-pressed="false">
+                        Energia
+                    </button>
+                </div>
+
+                <p class="metas-contagem" id="contagem-alertas"
+                   aria-live="polite"></p>
+
+            </div>
+
+            <div class="metas-alertas" id="lista-alertas"></div>
 
         </section>
 

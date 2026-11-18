@@ -213,6 +213,149 @@ function configurarFormulario() {
 }
 
 
+/* ---------- ALERTAS DE CONSUMO ---------- */
+
+const NIVEIS = {
+    critico: { rotulo: "Crítico", icone: "triangle-alert" },
+    atencao: { rotulo: "Atenção", icone: "circle-alert" },
+    info: { rotulo: "Informação", icone: "info" }
+};
+
+let alertas = [
+    {
+        id: 1,
+        nivel: "critico",
+        tipo: "agua",
+        titulo: "Possível vazamento",
+        mensagem: "O consumo de água está 40% acima da média " +
+                  "dos últimos 3 dias. Verifique torneiras e descargas.",
+        quando: "Hoje, 08:15"
+    },
+    {
+        id: 2,
+        nivel: "atencao",
+        tipo: "energia",
+        titulo: "Pico de energia à noite",
+        mensagem: "O consumo subiu entre 18h e 21h. " +
+                  "Chuveiro e ar-condicionado foram os maiores gastos.",
+        quando: "Ontem, 21:30"
+    },
+    {
+        id: 3,
+        nivel: "info",
+        tipo: "energia",
+        titulo: "Você está perto da meta",
+        mensagem: "Faltam 12 kWh de redução para bater " +
+                  "sua meta de energia.",
+        quando: "Ontem, 10:00"
+    },
+    {
+        id: 4,
+        nivel: "info",
+        tipo: "agua",
+        titulo: "Água abaixo da referência",
+        mensagem: "Você consumiu 13,8 m³ neste mês, " +
+                  "abaixo da referência de 15 m³.",
+        quando: "2 dias atrás"
+    }
+];
+
+let filtroAlertas = "todos";
+
+function criarAlerta(alerta) {
+    const nivel = NIVEIS[alerta.nivel];
+    const recurso = RECURSOS[alerta.tipo];
+
+    const item = document.createElement("article");
+    item.className = "metas-alerta metas-alerta-" + alerta.nivel;
+
+    item.innerHTML = `
+        <i data-lucide="${nivel.icone}" class="metas-alerta-icone"
+           aria-hidden="true"></i>
+        <div class="metas-alerta-corpo">
+            <div class="metas-alerta-cabecalho">
+                <span class="metas-selo">${nivel.rotulo}</span>
+                <span class="metas-alerta-recurso">${recurso.rotulo}</span>
+                <span class="metas-alerta-quando">${alerta.quando}</span>
+            </div>
+            <h3>${alerta.titulo}</h3>
+            <p>${alerta.mensagem}</p>
+        </div>
+        <button type="button" class="metas-remover metas-dispensar"
+                data-id="${alerta.id}"
+                aria-label="Dispensar alerta: ${alerta.titulo}">
+            <i data-lucide="x" aria-hidden="true"></i>
+        </button>
+    `;
+
+    return item;
+}
+
+function renderizarAlertas() {
+    const lista = document.getElementById("lista-alertas");
+    const contagem = document.getElementById("contagem-alertas");
+    lista.innerHTML = "";
+
+    const visiveis = alertas.filter(function (alerta) {
+        return filtroAlertas === "todos" || alerta.tipo === filtroAlertas;
+    });
+
+    contagem.textContent = visiveis.length === 1
+        ? "1 alerta ativo"
+        : visiveis.length + " alertas ativos";
+
+    if (visiveis.length === 0) {
+        const vazio = document.createElement("p");
+        vazio.className = "metas-vazio";
+        vazio.textContent =
+            "Nenhum alerta no momento. Seu consumo está dentro do esperado.";
+        lista.appendChild(vazio);
+        return;
+    }
+
+    visiveis.forEach(function (alerta) {
+        lista.appendChild(criarAlerta(alerta));
+    });
+
+    if (window.lucide) {
+        lucide.createIcons();
+    }
+}
+
+function configurarAlertas() {
+    // Filtros: todos, água ou energia
+    const botoes = document.querySelectorAll(".metas-filtro");
+
+    botoes.forEach(function (botao) {
+        botao.addEventListener("click", function () {
+            filtroAlertas = botao.dataset.filtro;
+
+            botoes.forEach(function (outro) {
+                outro.setAttribute(
+                    "aria-pressed",
+                    String(outro === botao)
+                );
+            });
+
+            renderizarAlertas();
+        });
+    });
+
+    // Dispensar alerta (um único ouvinte para todos os botões)
+    document.getElementById("lista-alertas")
+        .addEventListener("click", function (evento) {
+            const botao = evento.target.closest(".metas-dispensar");
+            if (botao) {
+                const id = Number(botao.dataset.id);
+                alertas = alertas.filter(function (alerta) {
+                    return alerta.id !== id;
+                });
+                renderizarAlertas();
+            }
+        });
+}
+
+
 /* ---------- INICIALIZAÇÃO ---------- */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -241,6 +384,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // METAS
     configurarFormulario();
     renderizarMetas();
+    configurarAlertas();
+    renderizarAlertas();
 
     // Remover meta (um único ouvinte para todos os botões)
     document.getElementById("lista-metas")
