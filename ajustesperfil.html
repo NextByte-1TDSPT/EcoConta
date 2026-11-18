@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Configure seu perfil residencial no EcoConta.">
+    <title>Configuração residencial | EcoConta</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/navegacao.css">
+    <link rel="stylesheet" href="css/base-acesso-perfil.css">
+    <link rel="stylesheet" href="css/rodape.css">
+    <link rel="stylesheet" href="css/ajustesperfil.css">
+    <script src="js/dados.js" defer></script>
+    <script src="js/navegacao.js" defer></script>
+    <script src="js/ajustesperfil.js" defer></script>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <nav class="navegacao" aria-label="Menu principal">
+            <a href="index.html" class="logo"><i class="fas fa-leaf logo-simbolo" aria-hidden="true"></i><span
+                    class="logo-nome">EcoConta</span></a>
+            <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false"
+                aria-controls="menu-principal"><i class="fas fa-bars" aria-hidden="true"></i></button>
+            <ul class="menu" id="menu-principal">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="ecobot.html">EcoBot</a></li>
+                <li><a href="integrantes.html">Integrantes</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="acesso.html" data-link-conta>Minha conta</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="ajustesperfil-pagina">
+        <div class="ajustesperfil-topo">
+            <div><span class="etiqueta">SEU ECO PERFIL</span>
+                <h1>Vamos conhecer sua casa?</h1>
+                <p>Leva cerca de 3 minutos. Você poderá alterar essas informações depois.</p>
+            </div>
+            <button type="button" class="salvar-sair" id="salvar-sair">Salvar e sair</button>
+        </div>
+
+        <ol class="passos" aria-label="Etapas da configuração">
+            <li class="passo atual" data-step-indicator="1"><span>1</span><b>Residência</b></li>
+            <li class="passo" data-step-indicator="2"><span>2</span><b>Moradores</b></li>
+            <li class="passo" data-step-indicator="3"><span>3</span><b>Estrutura</b></li>
+            <li class="passo" data-step-indicator="4"><span>4</span><b>Equipamentos</b></li>
+            <li class="passo" data-step-indicator="5"><span>5</span><b>Conclusão</b></li>
+        </ol>
+
+        <form id="form-ajustesperfil" novalidate>
+            <section class="etapa ativa" data-step="1">
+                <span class="numero-etapa">ETAPA 1 DE 5</span>
+                <h2>Conte sobre sua residência</h2>
+                <p class="subtitulo-etapa">Essas informações ajudam a contextualizar o consumo da sua casa.</p>
+                <div class="grade-campos">
+                    <div class="campo"><label for="nome-residencia">Nome da residência</label><input
+                            id="nome-residencia" type="text" placeholder="Ex.: Minha casa" required><span class="erro"
+                            data-error="nome-residencia"></span><span class="ajuda">Ex.: “Casa”, “Apto. Centro”</span>
+                    </div>
+                    <div class="campo"><label for="regiao">Região / Estado</label><select id="regiao" required>
+                            <option value="">Selecione seu estado</option>
+                            <option value="AC">Acre</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="AP">Amapá</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="BA">Bahia</option>
+                            <option value="CE">Ceará</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="ES">Espírito Santo</option>
+                            <option value="GO">Goiás</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="PA">Pará</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="PR">Paraná</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="PI">Piauí</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="TO">Tocantins</option>
+                        </select><span class="ajuda">Usado como referência regional. Não busca tarifas externas.</span>
+                    </div>
+                    <div class="campo campo-largo"><label>Tipo de imóvel</label>
+                        <div class="opcoes-cartao">
+                            <label class="opcao-cartao"><input type="radio" name="tipo-imovel" value="Apartamento"
+                                    required><span class="opcao-icone"><i
+                                        class="fas fa-building"></i></span><span><b>Apartamento</b><span
+                                        class="opcao-descricao">Condomínio ou edifício</span></span><i
+                                    class="fas fa-circle-check opcao-check"></i></label>
+                            <label class="opcao-cartao"><input type="radio" name="tipo-imovel" value="Casa"><span
+                                    class="opcao-icone"><i class="fas fa-house"></i></span><span><b>Casa</b><span
+                                        class="opcao-descricao">Imóvel térreo ou sobrado</span></span><i
+                                    class="fas fa-circle-check opcao-check"></i></label>
+                        </div><span class="erro" data-error="tipo-imovel"></span>
+                    </div>
+                    <div class="campo"><label for="cidade">Cidade</label><input id="cidade" type="text"
+                            placeholder="Ex.: São Paulo"><span class="ajuda">Cidade onde fica a residência.</span></div>
+                    <div class="campo"><label for="area">Área aproximada</label>
+                        <div class="campo-sufixo"><input id="area" type="number" min="1" max="10000"
+                                placeholder="Opcional"><span>m²</span></div><span class="ajuda">Se não souber, deixe em
+                            branco.</span>
+                    </div>
+                    <div class="campo"><label for="concessionaria">Concessionária (opcional)</label><input
+                            id="concessionaria" type="text" placeholder="Ex.: Sabesp / Enel SP"><span
+                            class="ajuda">Informe as empresas que aparecem nas suas contas.</span></div>
+                </div>
+            </section>
+
+            <section class="etapa" data-step="2">
+                <span class="numero-etapa">ETAPA 2 DE 5</span>
+                <h2>Quem mora na residência?</h2>
+                <p class="subtitulo-etapa">A quantidade de moradores ajuda a contextualizar o consumo doméstico.</p>
+                <div class="grade-campos">
+                    <div class="campo"><label>Quantidade de moradores</label>
+                        <div class="contador"><button type="button" data-counter="moradores" data-change="-1"
+                                aria-label="Diminuir moradores"><i class="fas fa-minus"></i></button><output
+                                id="moradores-valor">1</output><button type="button" data-counter="moradores"
+                                data-change="1" aria-label="Aumentar moradores"><i class="fas fa-plus"></i></button>
+                        </div><span class="ajuda">Inclua quem mora a maior parte do mês.</span>
+                    </div>
+                    <div class="campo"><label>Crianças (até 12 anos)</label>
+                        <div class="contador"><button type="button" data-counter="criancas" data-change="-1"
+                                aria-label="Diminuir crianças"><i class="fas fa-minus"></i></button><output
+                                id="criancas-valor">0</output><button type="button" data-counter="criancas"
+                                data-change="1" aria-label="Aumentar crianças"><i class="fas fa-plus"></i></button>
+                        </div><span class="ajuda">Opcional.</span>
+                    </div>
+                    <div class="campo campo-largo"><label>A residência costuma ficar vazia?</label>
+                        <div class="opcoes-pilula" id="rotina-opcoes">
+                            <label><input type="radio" name="rotina" value="Dias úteis, durante o dia" checked><span><i
+                                        class="fas fa-check"></i> Dias úteis, durante o dia</span></label>
+                            <label><input type="radio" name="rotina" value="Fins de semana"><span>Fins de
+                                    semana</span></label>
+                            <label><input type="radio" name="rotina" value="Viagens frequentes"><span>Viagens
+                                    frequentes</span></label>
+                            <label><input type="radio" name="rotina" value="Raramente fica vazia"><span>Raramente fica
+                                    vazia</span></label>
+                        </div><span class="ajuda">Usamos essa informação para contextualizar períodos de
+                            ausência.</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="etapa" data-step="3">
+                <span class="numero-etapa">ETAPA 3 DE 5</span>
+                <h2>Estrutura da residência</h2>
+                <p class="subtitulo-etapa">Banheiros, piscina e jardim podem influenciar os hábitos de consumo.</p>
+                <div class="grade-campos grade-estrutura">
+                    <div class="campo"><label>Quantidade de banheiros</label>
+                        <div class="contador"><button type="button" data-counter="banheiros" data-change="-1"
+                                aria-label="Diminuir banheiros"><i class="fas fa-minus"></i></button><output
+                                id="banheiros-valor">1</output><button type="button" data-counter="banheiros"
+                                data-change="1" aria-label="Aumentar banheiros"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                    <div class="campo campo-largo"><label>Possui piscina?</label>
+                        <div class="opcoes-cartao opcoes-sim-nao">
+                            <label class="opcao-cartao"><input type="radio" name="piscina" value="Sim"><span
+                                    class="opcao-icone"><i class="fas fa-water"></i></span><span><b>Sim</b></span><i
+                                    class="fas fa-circle-check opcao-check"></i></label>
+                            <label class="opcao-cartao"><input type="radio" name="piscina" value="Não" checked><span
+                                    class="opcao-icone"><i class="fas fa-xmark"></i></span><span><b>Não</b></span><i
+                                    class="fas fa-circle-check opcao-check"></i></label>
+                        </div>
+                    </div>
+                    <div class="campo campo-largo"><label>Possui jardim ou área com irrigação?</label>
+                        <div class="opcoes-cartao opcoes-sim-nao">
+                            <label class="opcao-cartao"><input type="radio" name="jardim" value="Sim"><span
+                                    class="opcao-icone"><i class="fas fa-seedling"></i></span><span><b>Sim</b></span><i
+                                    class="fas fa-circle-check opcao-check"></i></label>
+                            <label class="opcao-cartao"><input type="radio" name="jardim" value="Não" checked><span
+                                    class="opcao-icone"><i class="fas fa-xmark"></i></span><span><b>Não</b></span><i
+                                    class="fas fa-circle-check opcao-check"></i></label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="etapa" data-step="4">
+                <span class="numero-etapa">ETAPA 4 DE 5</span>
+                <h2>Equipamentos e frequência de uso</h2>
+                <p class="subtitulo-etapa">Marque o que existe na casa e, quando aplicável, indique a frequência de uso.
+                </p>
+                <div class="lista-equipamentos" id="lista-equipamentos">
+                    <div class="equipamento">
+                        <input id="equipamento-1" type="checkbox" name="equipamento" value="Chuveiro elétrico">
+                        <label for="equipamento-1" class="equipamento-identidade"><span class="equipamento-icone"><i
+                                    class="fas fa-shower"></i></span><b>Chuveiro elétrico</b></label>
+                        <select aria-label="Frequência de uso do chuveiro" disabled>
+                            <option>Diariamente</option>
+                            <option>Alguns dias por semana</option>
+                            <option>Raramente</option>
+                        </select>
+                    </div>
+                    <div class="equipamento">
+                        <input id="equipamento-2" type="checkbox" name="equipamento" value="Máquina de lavar">
+                        <label for="equipamento-2" class="equipamento-identidade"><span class="equipamento-icone"><i
+                                    class="fas fa-soap"></i></span><b>Máquina de lavar</b></label>
+                        <select aria-label="Frequência de uso da máquina de lavar" disabled>
+                            <option>3x por semana</option>
+                            <option>1x por semana</option>
+                            <option>Diariamente</option>
+                            <option>Raramente</option>
+                        </select>
+                    </div>
+                    <div class="equipamento">
+                        <input id="equipamento-3" type="checkbox" name="equipamento" value="Ar-condicionado">
+                        <label for="equipamento-3" class="equipamento-identidade"><span class="equipamento-icone"><i
+                                    class="fas fa-snowflake"></i></span><b>Ar-condicionado</b></label>
+                        <select aria-label="Frequência de uso do ar-condicionado" disabled>
+                            <option>Todos os dias</option>
+                            <option>À noite</option>
+                            <option>Eventualmente</option>
+                        </select>
+                    </div>
+                    <div class="equipamento">
+                        <input id="equipamento-4" type="checkbox" name="equipamento" value="Lava-louças">
+                        <label for="equipamento-4" class="equipamento-identidade"><span class="equipamento-icone"><i
+                                    class="fas fa-utensils"></i></span><b>Lava-louças</b></label>
+                        <select aria-label="Frequência de uso da lava-louças" disabled>
+                            <option>Diariamente</option>
+                            <option>Algumas vezes por semana</option>
+                            <option>Raramente</option>
+                        </select>
+                    </div>
+                    <div class="equipamento">
+                        <input id="equipamento-5" type="checkbox" name="equipamento" value="Geladeira / freezer">
+                        <label for="equipamento-5" class="equipamento-identidade"><span class="equipamento-icone"><i
+                                    class="fas fa-temperature-low"></i></span><b>Geladeira / freezer</b></label>
+                        <select aria-label="Frequência de uso da geladeira" disabled>
+                            <option>Sempre ligado</option>
+                        </select>
+                    </div>
+                    <div class="equipamento">
+                        <input id="equipamento-6" type="checkbox" name="equipamento" value="Computador / home office">
+                        <label for="equipamento-6" class="equipamento-identidade"><span class="equipamento-icone"><i
+                                    class="fas fa-computer"></i></span><b>Computador / home office</b></label>
+                        <select aria-label="Frequência de uso do computador" disabled>
+                            <option>Dias úteis · 8 h</option>
+                            <option>Uso eventual</option>
+                            <option>Uso diário prolongado</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="adicionar-equipamento"><label for="equipamento-extra">Outro equipamento (opcional)</label>
+                    <div><input id="equipamento-extra" type="text" placeholder="Ex.: Secadora de roupas"><button
+                            type="button" id="adicionar-equipamento"><i class="fas fa-plus"></i> Adicionar</button>
+                    </div><span class="ajuda">Os equipamentos extras serão salvos junto ao seu perfil
+                        demonstrativo.</span>
+                </div>
+            </section>
+
+            <section class="etapa" data-step="5">
+                <span class="numero-etapa">ETAPA 5 DE 5</span>
+                <h2>Confira seu EcoPerfil</h2>
+                <p class="subtitulo-etapa">Revise as informações antes de concluir. Você poderá editá-las depois.</p>
+                <div class="resumo-ajustesperfil" id="resumo-ajustesperfil"></div>
+                <div class="nota-resumo"><i class="fas fa-circle-info"></i>
+                    <div><b>Sobre essas informações</b>
+                        <p>Este perfil inicial registra características da residência e hábitos informados. Ele não
+                            representa uma medição real nem uma previsão validada de consumo.</p>
+                    </div>
+                </div>
+                <label class="confirmacao"><input type="checkbox" id="confirmar-dados"><span>Confirmo que as informações
+                        estão corretas.</span></label>
+                <span class="erro" data-error="confirmar-dados"></span>
+            </section>
+
+            <div class="rodape-etapas">
+                <button type="button" class="botao-voltar" id="voltar-etapa"><i class="fas fa-arrow-left"></i>
+                    Voltar</button>
+                <span class="texto-ajuda-etapa" id="texto-ajuda-etapa">Campos opcionais podem ficar em branco.</span>
+                <button type="button" class="botao-continuar" id="continuar-etapa">Continuar <i
+                        class="fas fa-arrow-right"></i></button>
+                <button type="submit" class="botao-continuar oculto" id="concluir-ajustesperfil">Concluir perfil <i
+                        class="fas fa-check"></i></button>
+            </div>
+        </form>
+    </main>
+
+    <footer class="rodape">
+        <div class="container">
+            <div class="rodape-conteudo">
+                <div class="rodape-marca">
+                    <h2>EcoConta</h2>
+                    <p>Consumo inteligente, um futuro mais sustentável.</p>
+                </div>
+                <div class="rodape-navegacao">
+                    <h3>Navegação</h3><a href="index.html">Início</a><a href="sobre.html">Sobre</a><a
+                        href="integrantes.html">Integrantes</a><a href="faq.html">FAQ</a><a
+                        href="contato.html">Contato</a>
+                </div>
+                <div class="rodape-projeto">
+                    <h3>Projeto acadêmico</h3>
+                    <p>FIAP — Global Solution 2026/2</p>
+                    <p>Equipe NextBythe</p>
+                </div>
+            </div>
+            <div class="rodape-inferior">
+                <p>© 2026 EcoConta. Todos os direitos reservados.</p>
+                <p>Desenvolvido pela equipe NextBythe.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
