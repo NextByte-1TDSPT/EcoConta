@@ -1,0 +1,402 @@
+
+/* EcoBot — utiliza as variáveis e a fonte do css/style.css do grupo. */
+
+.ecobot-pagina {
+  width: min(1200px, 84%);
+  margin: 0 auto;
+  padding: 65px 0 100px;
+}
+
+.ecobot-intro {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 45px;
+}
+
+.ecobot-etiqueta {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--verde-claro);
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.ecobot-etiqueta svg {
+  width: 17px;
+  height: 17px;
+}
+
+.ecobot-intro h1 {
+  font-size: clamp(35px, 5vw, 56px);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+.ecobot-intro h1 span {
+  color: var(--verde-claro);
+}
+
+.ecobot-intro p {
+  color: var(--texto-suave);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* Estrutura principal */
+
+.ecobot-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.85fr) minmax(260px, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.ecobot-chat,
+.ecobot-painel {
+  background: #292820;
+  border: 1px solid var(--borda);
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+/* Cabeçalho do chat */
+
+.ecobot-chat-topo {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--borda);
+}
+
+.ecobot-avatar,
+.ecobot-painel-icone {
+  display: grid;
+  place-items: center;
+  background: #34402a;
+  color: var(--verde-claro);
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.ecobot-avatar {
+  width: 47px;
+  height: 47px;
+}
+
+.ecobot-avatar svg {
+  width: 25px;
+}
+
+.ecobot-chat-identidade {
+  flex: 1;
+}
+
+.ecobot-chat-identidade h2 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.ecobot-chat-identidade p {
+  font-size: 12px;
+  color: var(--texto-suave);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ecobot-status {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--verde-claro);
+}
+
+.ecobot-limpar {
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  color: var(--texto-suave);
+  background: transparent;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.ecobot-limpar:hover {
+  color: var(--verde-claro);
+  border-color: var(--verde-claro);
+}
+
+.ecobot-limpar svg {
+  width: 19px;
+  height: 19px;
+  display: block;
+}
+
+/* Mensagens */
+
+.ecobot-mensagens {
+  height: 390px;
+  overflow-y: auto;
+  padding: 25px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  scrollbar-color: var(--verde-oliva) transparent;
+}
+
+.ecobot-mensagem {
+  display: flex;
+  max-width: 88%;
+}
+
+.ecobot-mensagem.bot {
+  align-self: flex-start;
+}
+
+.ecobot-mensagem.usuario {
+  align-self: flex-end;
+}
+
+.ecobot-bolha {
+  padding: 14px 17px;
+  border-radius: 15px;
+  font-size: 14px;
+  line-height: 1.8;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
+.ecobot-mensagem.bot .ecobot-bolha {
+  background: #37392d;
+  color: var(--bege);
+  border-bottom-left-radius: 4px;
+}
+
+.ecobot-mensagem.usuario .ecobot-bolha {
+  background: var(--verde-oliva);
+  color: #fff;
+  border-bottom-right-radius: 4px;
+}
+
+/* Perguntas rápidas e formulário */
+
+.ecobot-chat-base {
+  border-top: 1px solid var(--borda);
+  padding: 20px 22px;
+}
+
+.ecobot-sugestoes-titulo {
+  font-size: 12px;
+  color: var(--texto-suave);
+  margin-bottom: 10px;
+}
+
+.ecobot-sugestoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.ecobot-sugestoes button {
+  border: 1px solid #63764b;
+  border-radius: 22px;
+  background: #303526;
+  color: var(--verde-claro);
+  padding: 9px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.ecobot-sugestoes button:hover {
+  background: #425137;
+}
+
+.ecobot-formulario {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ecobot-formulario input {
+  min-width: 0;
+  flex: 1;
+  padding: 15px 16px;
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  background: #211f1a;
+  color: var(--bege);
+  font-size: 14px;
+  outline: none;
+}
+
+.ecobot-formulario input:focus {
+  border-color: var(--verde-claro);
+}
+
+.ecobot-formulario input::placeholder {
+  color: #aaa59a;
+}
+
+.ecobot-formulario button {
+  display: grid;
+  place-items: center;
+  width: 49px;
+  height: 49px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--verde-oliva);
+  color: white;
+  cursor: pointer;
+}
+
+.ecobot-formulario button:hover {
+  background: #7e9552;
+}
+
+.ecobot-formulario button svg {
+  width: 19px;
+  height: 19px;
+}
+
+.ecobot-aviso {
+  color: var(--texto-suave);
+  font-size: 10px;
+  text-align: center;
+  margin-top: 12px;
+}
+
+/* Painéis laterais */
+
+.ecobot-lateral {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.ecobot-painel {
+  padding: 23px;
+}
+
+.ecobot-painel-icone {
+  width: 41px;
+  height: 41px;
+  margin-bottom: 15px;
+}
+
+.ecobot-painel-icone svg {
+  width: 21px;
+  height: 21px;
+}
+
+.ecobot-painel h2 {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.ecobot-painel p {
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--texto-suave);
+  margin-bottom: 15px;
+}
+
+.ecobot-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border: 0;
+  background: transparent;
+  color: var(--verde-claro);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+}
+
+.ecobot-link svg {
+  width: 15px;
+  height: 15px;
+}
+
+.ecobot-link:hover {
+  text-decoration: underline;
+}
+
+.ecobot-painel-alerta {
+  border-color: #6e6848;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Responsividade para tablets */
+
+@media (max-width: 950px) {
+  .ecobot-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .ecobot-lateral {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .ecobot-pagina {
+    width: 88%;
+  }
+}
+
+/* Responsividade para celulares */
+
+@media (max-width: 700px) {
+  .ecobot-pagina {
+    width: 90%;
+    padding: 40px 0 65px;
+  }
+
+  .ecobot-intro {
+    margin-bottom: 30px;
+  }
+
+  .ecobot-intro p {
+    font-size: 14px;
+  }
+
+  .ecobot-lateral {
+    grid-template-columns: 1fr;
+  }
+
+  .ecobot-mensagens {
+    height: 340px;
+    padding: 18px 14px;
+  }
+
+  .ecobot-chat-topo,
+  .ecobot-chat-base {
+    padding: 16px;
+  }
+
+  .ecobot-bolha {
+    font-size: 13px;
+  }
+
+  .ecobot-mensagem {
+    max-width: 95%;
+  }
+}
