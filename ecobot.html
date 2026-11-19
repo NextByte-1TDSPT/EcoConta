@@ -1,358 +1,301 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-        content="Converse com o EcoBot, assistente virtual da EcoConta, e descubra dicas para economizar água e energia.">
+    <meta
+      name="description"
+      content="Converse com o EcoBot, assistente virtual da EcoConta, e descubra dicas para economizar água e energia."
+    />
 
     <title>EcoBot | EcoConta</title>
 
     <!-- FONTE POPPINS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- CSS DO GRUPO -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
 
     <!-- CSS DO ECOBOT -->
-    <link rel="stylesheet" href="css/ecobot.css">
-<link rel="stylesheet" href="css/navegacao.css">
+    <link rel="stylesheet" href="css/ecobot.css" />
+    <link rel="stylesheet" href="css/navegacao.css" />
 
     <!-- ÍCONES LUCIDE -->
     <script
-        src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"
-        defer>
-    </script>
+      src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"
+      defer
+    ></script>
 
     <!-- JAVASCRIPT DO ECOBOT -->
     <script src="js/ecobot.js" defer></script>
+  </head>
 
-</head>
-
-<body>
-
+  <body>
     <!-- CABEÇALHO -->
-    <header class="cabecalho"><nav class="navegacao" aria-label="Menu principal"><a href="index.html" class="logo"><i data-lucide="leaf" class="logo-simbolo" aria-hidden="true"></i><span class="logo-nome">EcoConta</span></a><button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal"><i data-lucide="menu" aria-hidden="true"></i></button><ul class="menu" id="menu-principal"><li><a href="index.html">Início</a></li><li><a href="sobre.html">Sobre</a></li><li><a href="ecobot.html" class="ativo" aria-current="page">EcoBot</a></li><li><a href="integrantes.html">Integrantes</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contato.html">Contato</a></li><li><a href="acesso.html" data-link-conta>Minha conta</a></li></ul></nav></header>
+    <header class="cabecalho">
+      <nav class="navegacao" aria-label="Menu principal">
+        <a href="index.html" class="logo"
+          ><i data-lucide="leaf" class="logo-simbolo" aria-hidden="true"></i
+          ><span class="logo-nome">EcoConta</span></a
+        ><button
+          class="menu-toggle"
+          type="button"
+          aria-label="Abrir menu"
+          aria-expanded="false"
+          aria-controls="menu-principal"
+        >
+          <i data-lucide="menu" aria-hidden="true"></i>
+        </button>
+        <ul class="menu" id="menu-principal">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li>
+            <a href="ecobot.html" class="ativo" aria-current="page">EcoBot</a>
+          </li>
+          <li><a href="integrantes.html">Integrantes</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="acesso.html" data-link-conta>Minha conta</a></li>
+          <li><a href="dashboard.html">Painel</a></li>
+          <li><a href="consumo.html">Consumo</a></li>
+        </ul>
+      </nav>
+    </header>
 
     <!-- CONTEÚDO PRINCIPAL -->
     <main class="ecobot-pagina">
+      <!-- APRESENTAÇÃO DO ECOBOT -->
+      <section class="ecobot-intro">
+        <span class="ecobot-etiqueta">
+          <i data-lucide="sparkles" aria-hidden="true"></i>
+          ASSISTENTE INTELIGENTE
+        </span>
 
-        <!-- APRESENTAÇÃO DO ECOBOT -->
-        <section class="ecobot-intro">
+        <h1>Conheça o <span>EcoBot</span></h1>
 
-            <span class="ecobot-etiqueta">
-                <i data-lucide="sparkles" aria-hidden="true"></i>
-                ASSISTENTE INTELIGENTE
-            </span>
+        <p>
+          Seu assistente virtual para um consumo mais consciente. Tire suas
+          dúvidas, receba dicas personalizadas de economia e descubra como
+          pequenas atitudes podem transformar o futuro.
+        </p>
+      </section>
 
-            <h1>
-                Conheça o <span>EcoBot</span>
-            </h1>
-
-            <p>
-                Seu assistente virtual para um consumo mais
-                consciente. Tire suas dúvidas, receba dicas
-                personalizadas de economia e descubra como
-                pequenas atitudes podem transformar o futuro.
-            </p>
-
-        </section>
-
-        <!-- ÁREA PRINCIPAL -->
-        <section class="ecobot-layout"
-                 aria-label="Assistente virtual EcoBot">
-
-            <!-- CHAT -->
-            <div class="ecobot-chat">
-
-                <!-- CABEÇALHO DO CHAT -->
-                <div class="ecobot-chat-topo">
-
-                    <div class="ecobot-avatar">
-                        <i data-lucide="bot" aria-hidden="true"></i>
-                    </div>
-
-                    <div class="ecobot-chat-identidade">
-
-                        <h2>EcoBot</h2>
-
-                        <p>
-                            <span class="ecobot-status"></span>
-                            Assistente virtual da EcoConta
-                        </p>
-
-                    </div>
-
-                    <!-- LIMPAR CONVERSA -->
-                    <button
-                        type="button"
-                        class="ecobot-limpar"
-                        id="ecobot-limpar"
-                        aria-label="Limpar conversa"
-                        title="Limpar conversa">
-
-                        <i data-lucide="rotate-ccw"
-                           aria-hidden="true"></i>
-
-                    </button>
-
-                </div>
-
-                <!-- MENSAGENS DO CHAT -->
-                <div
-                    class="ecobot-mensagens"
-                    id="ecobot-mensagens"
-                    role="log"
-                    aria-label="Mensagens da conversa"
-                    aria-live="polite"
-                    aria-relevant="additions">
-
-                    <!-- Mensagens inseridas pelo JavaScript -->
-
-                </div>
-
-                <!-- PARTE INFERIOR DO CHAT -->
-                <div class="ecobot-chat-base">
-
-                    <p class="ecobot-sugestoes-titulo">
-                        Experimente perguntar:
-                    </p>
-
-                    <!-- PERGUNTAS RÁPIDAS -->
-                    <div class="ecobot-sugestoes">
-
-                        <button
-                            type="button"
-                            data-pergunta="Como economizar água?">
-                            💧 Economizar água
-                        </button>
-
-                        <button
-                            type="button"
-                            data-pergunta="Como economizar energia?">
-                            ⚡ Economizar energia
-                        </button>
-
-                        <button
-                            type="button"
-                            data-pergunta="Como funcionam os EcoPoints?">
-                            🏆 EcoPoints
-                        </button>
-
-                        <button
-                            type="button"
-                            data-pergunta="Quais são os alertas de consumo?">
-                            ⚠️ Alertas
-                        </button>
-
-                    </div>
-
-                    <!-- FORMULÁRIO DE MENSAGEM -->
-                    <form
-                        class="ecobot-formulario"
-                        id="ecobot-formulario">
-
-                        <label for="ecobot-input" class="sr-only">
-                            Digite sua mensagem
-                        </label>
-
-                        <input
-                            type="text"
-                            id="ecobot-input"
-                            name="mensagem"
-                            placeholder="Digite sua mensagem..."
-                            autocomplete="off"
-                            maxlength="300"
-                            required>
-
-                        <button
-                            type="submit"
-                            aria-label="Enviar mensagem"
-                            title="Enviar mensagem">
-
-                            <i data-lucide="send"
-                               aria-hidden="true"></i>
-
-                        </button>
-
-                    </form>
-
-                    <p class="ecobot-aviso">
-                        O EcoBot utiliza respostas demonstrativas.
-                        Nenhum dado real de consumo é consultado.
-                    </p>
-
-                </div>
-
+      <!-- ÁREA PRINCIPAL -->
+      <section class="ecobot-layout" aria-label="Assistente virtual EcoBot">
+        <!-- CHAT -->
+        <div class="ecobot-chat">
+          <!-- CABEÇALHO DO CHAT -->
+          <div class="ecobot-chat-topo">
+            <div class="ecobot-avatar">
+              <i data-lucide="bot" aria-hidden="true"></i>
             </div>
 
-            <!-- PAINÉIS LATERAIS -->
-            <aside class="ecobot-lateral"
-                   aria-label="Recomendações inteligentes">
+            <div class="ecobot-chat-identidade">
+              <h2>EcoBot</h2>
 
-                <!-- ECONOMIA DE ÁGUA -->
-                <article class="ecobot-painel">
+              <p>
+                <span class="ecobot-status"></span>
+                Assistente virtual da EcoConta
+              </p>
+            </div>
 
-                    <div class="ecobot-painel-icone">
-                        <i data-lucide="droplets"
-                           aria-hidden="true"></i>
-                    </div>
+            <!-- LIMPAR CONVERSA -->
+            <button
+              type="button"
+              class="ecobot-limpar"
+              id="ecobot-limpar"
+              aria-label="Limpar conversa"
+              title="Limpar conversa"
+            >
+              <i data-lucide="rotate-ccw" aria-hidden="true"></i>
+            </button>
+          </div>
 
-                    <h2>Economize água</h2>
+          <!-- MENSAGENS DO CHAT -->
+          <div
+            class="ecobot-mensagens"
+            id="ecobot-mensagens"
+            role="log"
+            aria-label="Mensagens da conversa"
+            aria-live="polite"
+            aria-relevant="additions"
+          >
+            <!-- Mensagens inseridas pelo JavaScript -->
+          </div>
 
-                    <p>
-                        Descubra hábitos simples para reduzir
-                        o desperdício de água na sua residência
-                        e contribuir para a preservação dos
-                        recursos naturais.
-                    </p>
+          <!-- PARTE INFERIOR DO CHAT -->
+          <div class="ecobot-chat-base">
+            <p class="ecobot-sugestoes-titulo">Experimente perguntar:</p>
 
-                    <button
-                        type="button"
-                        class="ecobot-link"
-                        data-acao="agua">
+            <!-- PERGUNTAS RÁPIDAS -->
+            <div class="ecobot-sugestoes">
+              <button type="button" data-pergunta="Como economizar água?">
+                💧 Economizar água
+              </button>
 
-                        Ver recomendações
+              <button type="button" data-pergunta="Como economizar energia?">
+                ⚡ Economizar energia
+              </button>
 
-                        <i data-lucide="arrow-right"
-                           aria-hidden="true"></i>
+              <button
+                type="button"
+                data-pergunta="Como funcionam os EcoPoints?"
+              >
+                🏆 EcoPoints
+              </button>
 
-                    </button>
+              <button
+                type="button"
+                data-pergunta="Quais são os alertas de consumo?"
+              >
+                ⚠️ Alertas
+              </button>
+            </div>
 
-                </article>
+            <!-- FORMULÁRIO DE MENSAGEM -->
+            <form class="ecobot-formulario" id="ecobot-formulario">
+              <label for="ecobot-input" class="sr-only">
+                Digite sua mensagem
+              </label>
 
-                <!-- ECONOMIA DE ENERGIA -->
-                <article class="ecobot-painel">
+              <input
+                type="text"
+                id="ecobot-input"
+                name="mensagem"
+                placeholder="Digite sua mensagem..."
+                autocomplete="off"
+                maxlength="300"
+                required
+              />
 
-                    <div class="ecobot-painel-icone">
-                        <i data-lucide="zap"
-                           aria-hidden="true"></i>
-                    </div>
+              <button
+                type="submit"
+                aria-label="Enviar mensagem"
+                title="Enviar mensagem"
+              >
+                <i data-lucide="send" aria-hidden="true"></i>
+              </button>
+            </form>
 
-                    <h2>Economize energia</h2>
+            <p class="ecobot-aviso">
+              O EcoBot utiliza respostas demonstrativas. Nenhum dado real de
+              consumo é consultado.
+            </p>
+          </div>
+        </div>
 
-                    <p>
-                        Aprenda a utilizar a eletricidade
-                        de forma mais eficiente, reduzindo
-                        gastos e adotando atitudes mais
-                        sustentáveis no dia a dia.
-                    </p>
+        <!-- PAINÉIS LATERAIS -->
+        <aside class="ecobot-lateral" aria-label="Recomendações inteligentes">
+          <!-- ECONOMIA DE ÁGUA -->
+          <article class="ecobot-painel">
+            <div class="ecobot-painel-icone">
+              <i data-lucide="droplets" aria-hidden="true"></i>
+            </div>
 
-                    <button
-                        type="button"
-                        class="ecobot-link"
-                        data-acao="energia">
+            <h2>Economize água</h2>
 
-                        Ver recomendações
+            <p>
+              Descubra hábitos simples para reduzir o desperdício de água na sua
+              residência e contribuir para a preservação dos recursos naturais.
+            </p>
 
-                        <i data-lucide="arrow-right"
-                           aria-hidden="true"></i>
+            <button type="button" class="ecobot-link" data-acao="agua">
+              Ver recomendações
 
-                    </button>
+              <i data-lucide="arrow-right" aria-hidden="true"></i>
+            </button>
+          </article>
 
-                </article>
+          <!-- ECONOMIA DE ENERGIA -->
+          <article class="ecobot-painel">
+            <div class="ecobot-painel-icone">
+              <i data-lucide="zap" aria-hidden="true"></i>
+            </div>
 
-                <!-- ALERTAS DE CONSUMO -->
-                <article class="ecobot-painel ecobot-painel-alerta">
+            <h2>Economize energia</h2>
 
-                    <div class="ecobot-painel-icone">
-                        <i data-lucide="alert-triangle"
-                           aria-hidden="true"></i>
-                    </div>
+            <p>
+              Aprenda a utilizar a eletricidade de forma mais eficiente,
+              reduzindo gastos e adotando atitudes mais sustentáveis no dia a
+              dia.
+            </p>
 
-                    <h2>Alertas inteligentes</h2>
+            <button type="button" class="ecobot-link" data-acao="energia">
+              Ver recomendações
 
-                    <p>
-                        Saiba como identificar possíveis
-                        anomalias no consumo de água e energia,
-                        evitando desperdícios e gastos
-                        desnecessários.
-                    </p>
+              <i data-lucide="arrow-right" aria-hidden="true"></i>
+            </button>
+          </article>
 
-                    <button
-                        type="button"
-                        class="ecobot-link"
-                        data-acao="anomalias">
+          <!-- ALERTAS DE CONSUMO -->
+          <article class="ecobot-painel ecobot-painel-alerta">
+            <div class="ecobot-painel-icone">
+              <i data-lucide="alert-triangle" aria-hidden="true"></i>
+            </div>
 
-                        Simular alerta
+            <h2>Alertas inteligentes</h2>
 
-                        <i data-lucide="arrow-right"
-                           aria-hidden="true"></i>
+            <p>
+              Saiba como identificar possíveis anomalias no consumo de água e
+              energia, evitando desperdícios e gastos desnecessários.
+            </p>
 
-                    </button>
+            <button type="button" class="ecobot-link" data-acao="anomalias">
+              Simular alerta
 
-                </article>
-
-            </aside>
-
-        </section>
-
+              <i data-lucide="arrow-right" aria-hidden="true"></i>
+            </button>
+          </article>
+        </aside>
+      </section>
     </main>
 
     <!-- RODAPÉ -->
     <footer class="rodape">
+      <div class="rodape-conteudo">
+        <div class="rodape-marca">
+          <h2>EcoConta</h2>
 
-        <div class="rodape-conteudo">
-
-            <div class="rodape-marca">
-
-                <h2>EcoConta</h2>
-
-                <p>
-                    Consumo inteligente,
-                    um futuro mais sustentável.
-                </p>
-
-            </div>
-
-            <div class="rodape-links">
-
-                <h3>Navegação</h3>
-
-                <ul>
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href="ecobot.html">EcoBot</a></li>
-                    <li><a href="integrantes.html">Integrantes</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="contato.html">Contato</a></li>
-                </ul>
-
-            </div>
-
-            <div class="rodape-projeto">
-
-                <h3>Projeto acadêmico</h3>
-
-                <p>FIAP — Global Solution 2026/2</p>
-                <p>Equipe NextBythe</p>
-
-            </div>
-
+          <p>Consumo inteligente, um futuro mais sustentável.</p>
         </div>
 
-        <div class="rodape-inferior">
+        <div class="rodape-links">
+          <h3>Navegação</h3>
 
-            <p>
-                © 2026 EcoConta.
-                Todos os direitos reservados.
-            </p>
-
-            <p>
-                Desenvolvido pela equipe NextBythe.
-            </p>
-
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="ecobot.html">EcoBot</a></li>
+            <li><a href="integrantes.html">Integrantes</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contato.html">Contato</a></li>
+            <li><a href="dashboard.html">Painel</a></li>
+            <li><a href="consumo.html">Consumo</a></li>
+          </ul>
         </div>
 
+        <div class="rodape-projeto">
+          <h3>Projeto acadêmico</h3>
+
+          <p>FIAP — Global Solution 2026/2</p>
+          <p>Equipe NextBythe</p>
+        </div>
+      </div>
+
+      <div class="rodape-inferior">
+        <p>© 2026 EcoConta. Todos os direitos reservados.</p>
+
+        <p>Desenvolvido pela equipe NextBythe.</p>
+      </div>
     </footer>
 
-<script src="js/navegacao.js" defer></script>
-</body>
+    <script src="js/navegacao.js" defer></script>
+  </body>
 </html>

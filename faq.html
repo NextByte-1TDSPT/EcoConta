@@ -1,331 +1,329 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-        content="Perguntas frequentes sobre o EcoConta, plataforma de consumo consciente de água e energia.">
+    <meta
+      name="description"
+      content="Perguntas frequentes sobre o EcoConta, plataforma de consumo consciente de água e energia."
+    />
 
     <title>FAQ | EcoConta</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-
-    <link rel="stylesheet" href="css/faq.css">
-    <link rel="stylesheet" href="css/navegacao.css">
+    <link rel="stylesheet" href="css/faq.css" />
+    <link rel="stylesheet" href="css/navegacao.css" />
 
     <!-- ÍCONES -->
-    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
-</head>
+    <script
+      src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"
+      defer
+    ></script>
+  </head>
 
-<body>
-
+  <body>
     <!-- CABEÇALHO -->
     <header class="cabecalho">
-        <nav class="navegacao" aria-label="Menu principal"><a href="index.html" class="logo"><i data-lucide="leaf"
-                    class="logo-simbolo" aria-hidden="true"></i><span class="logo-nome">EcoConta</span></a><button
-                class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false"
-                aria-controls="menu-principal"><i data-lucide="menu" aria-hidden="true"></i></button>
-            <ul class="menu" id="menu-principal">
-                <li><a href="index.html">Início</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
-                <li><a href="ecobot.html">EcoBot</a></li>
-                <li><a href="integrantes.html">Integrantes</a></li>
-                <li><a href="faq.html" class="ativo" aria-current="page">FAQ</a></li>
-                <li><a href="contato.html">Contato</a></li>
-                <li><a href="acesso.html" data-link-conta>Minha conta</a></li>
-            </ul>
-        </nav>
+      <nav class="navegacao" aria-label="Menu principal">
+        <a href="index.html" class="logo"
+          ><i data-lucide="leaf" class="logo-simbolo" aria-hidden="true"></i
+          ><span class="logo-nome">EcoConta</span></a
+        ><button
+          class="menu-toggle"
+          type="button"
+          aria-label="Abrir menu"
+          aria-expanded="false"
+          aria-controls="menu-principal"
+        >
+          <i data-lucide="menu" aria-hidden="true"></i>
+        </button>
+        <ul class="menu" id="menu-principal">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="ecobot.html">EcoBot</a></li>
+          <li><a href="integrantes.html">Integrantes</a></li>
+          <li><a href="faq.html" class="ativo" aria-current="page">FAQ</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="acesso.html" data-link-conta>Minha conta</a></li>
+          <li><a href="dashboard.html">Painel</a></li>
+          <li><a href="consumo.html">Consumo</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main>
+      <!-- APRESENTAÇÃO -->
+      <section class="apresentacao-faq">
+        <span class="etiqueta">CENTRAL DE AJUDA</span>
 
-        <!-- APRESENTAÇÃO -->
-        <section class="apresentacao-faq">
+        <h1>Tudo o que você precisa saber.</h1>
 
-            <span class="etiqueta">CENTRAL DE AJUDA</span>
+        <p>
+          Encontre respostas para suas principais dúvidas sobre o EcoConta e
+          descubra como a tecnologia pode ajudar você a consumir de forma mais
+          consciente.
+        </p>
+      </section>
 
-            <h1>Tudo o que você precisa saber.</h1>
+      <!-- CATEGORIAS -->
+      <section class="categorias">
+        <span class="etiqueta">EXPLORE OS ASSUNTOS</span>
 
+        <h2>Como podemos ajudar?</h2>
+
+        <div class="grade-cards">
+          <button
+            class="card-categoria"
+            type="button"
+            data-categoria="sobre"
+            aria-pressed="false"
+          >
+            <i data-lucide="leaf" class="card-icone"></i>
+
+            <h3>Sobre o EcoConta</h3>
+
+            <p>Conheça o projeto e seus objetivos.</p>
+
+            <span class="card-link">
+              Explorar perguntas
+              <i data-lucide="arrow-up-right"></i>
+            </span>
+          </button>
+
+          <button
+            class="card-categoria"
+            type="button"
+            data-categoria="consumo"
+            aria-pressed="false"
+          >
+            <i data-lucide="droplets" class="card-icone"></i>
+
+            <h3>Água e energia</h3>
+
+            <p>Entenda como acompanhar seu consumo.</p>
+
+            <span class="card-link">
+              Explorar perguntas
+              <i data-lucide="arrow-up-right"></i>
+            </span>
+          </button>
+
+          <button
+            class="card-categoria"
+            type="button"
+            data-categoria="metas"
+            aria-pressed="false"
+          >
+            <i data-lucide="target" class="card-icone"></i>
+
+            <h3>Metas de economia</h3>
+
+            <p>Descubra como reduzir desperdícios.</p>
+
+            <span class="card-link">
+              Explorar perguntas
+              <i data-lucide="arrow-up-right"></i>
+            </span>
+          </button>
+
+          <button
+            class="card-categoria"
+            type="button"
+            data-categoria="ecobot"
+            aria-pressed="false"
+          >
+            <i data-lucide="bot" class="card-icone"></i>
+
+            <h3>EcoBot</h3>
+
+            <p>Conheça nosso assistente virtual.</p>
+
+            <span class="card-link">
+              Explorar perguntas
+              <i data-lucide="arrow-up-right"></i>
+            </span>
+          </button>
+        </div>
+      </section>
+
+      <!-- PERGUNTAS -->
+      <section class="perguntas" id="perguntas">
+        <span class="etiqueta">PERGUNTAS FREQUENTES</span>
+
+        <h2 id="titulo-perguntas">Sobre o EcoConta</h2>
+
+        <!-- SOBRE -->
+        <div class="grupo-perguntas" data-grupo="sobre">
+          <details>
+            <summary>O que é o EcoConta?</summary>
             <p>
-                Encontre respostas para suas principais dúvidas
-                sobre o EcoConta e descubra como a tecnologia
-                pode ajudar você a consumir de forma mais consciente.
+              O EcoConta é uma plataforma desenvolvida para ajudar famílias a
+              compreender e acompanhar o consumo residencial de água e energia
+              elétrica.
             </p>
+          </details>
 
-        </section>
-
-        <!-- CATEGORIAS -->
-        <section class="categorias">
-
-            <span class="etiqueta">EXPLORE OS ASSUNTOS</span>
-
-            <h2>Como podemos ajudar?</h2>
-
-            <div class="grade-cards">
-
-                <button class="card-categoria" type="button" data-categoria="sobre" aria-pressed="false">
-
-                    <i data-lucide="leaf" class="card-icone"></i>
-
-                    <h3>Sobre o EcoConta</h3>
-
-                    <p>Conheça o projeto e seus objetivos.</p>
-
-                    <span class="card-link">
-                        Explorar perguntas
-                        <i data-lucide="arrow-up-right"></i>
-                    </span>
-                </button>
-
-                <button class="card-categoria" type="button" data-categoria="consumo" aria-pressed="false">
-
-                    <i data-lucide="droplets" class="card-icone"></i>
-
-                    <h3>Água e energia</h3>
-
-                    <p>Entenda como acompanhar seu consumo.</p>
-
-                    <span class="card-link">
-                        Explorar perguntas
-                        <i data-lucide="arrow-up-right"></i>
-                    </span>
-                </button>
-
-                <button class="card-categoria" type="button" data-categoria="metas" aria-pressed="false">
-
-                    <i data-lucide="target" class="card-icone"></i>
-
-                    <h3>Metas de economia</h3>
-
-                    <p>Descubra como reduzir desperdícios.</p>
-
-                    <span class="card-link">
-                        Explorar perguntas
-                        <i data-lucide="arrow-up-right"></i>
-                    </span>
-                </button>
-
-                <button class="card-categoria" type="button" data-categoria="ecobot" aria-pressed="false">
-
-                    <i data-lucide="bot" class="card-icone"></i>
-
-                    <h3>EcoBot</h3>
-
-                    <p>Conheça nosso assistente virtual.</p>
-
-                    <span class="card-link">
-                        Explorar perguntas
-                        <i data-lucide="arrow-up-right"></i>
-                    </span>
-                </button>
-
-            </div>
-        </section>
-
-        <!-- PERGUNTAS -->
-        <section class="perguntas" id="perguntas">
-
-            <span class="etiqueta">PERGUNTAS FREQUENTES</span>
-
-            <h2 id="titulo-perguntas">Sobre o EcoConta</h2>
-
-            <!-- SOBRE -->
-            <div class="grupo-perguntas" data-grupo="sobre">
-
-                <details>
-                    <summary>O que é o EcoConta?</summary>
-                    <p>
-                        O EcoConta é uma plataforma desenvolvida para
-                        ajudar famílias a compreender e acompanhar
-                        o consumo residencial de água e energia elétrica.
-                    </p>
-                </details>
-
-                <details>
-                    <summary>Qual é o objetivo do projeto?</summary>
-                    <p>
-                        Incentivar hábitos mais conscientes,
-                        reduzir desperdícios e facilitar o acesso
-                        a informações sobre o consumo doméstico.
-                    </p>
-                </details>
-
-                <details>
-                    <summary>Quem desenvolveu o EcoConta?</summary>
-                    <p>
-                        O EcoConta é um projeto acadêmico desenvolvido
-                        pela equipe NextBythe para a Global Solution
-                        2026/2 da FIAP.
-                    </p>
-                </details>
-
-            </div>
-
-            <!-- CONSUMO -->
-            <div class="grupo-perguntas" data-grupo="consumo" hidden>
-
-                <details>
-                    <summary>Como posso acompanhar meu consumo?</summary>
-                    <p>
-                        A proposta do EcoConta é organizar informações
-                        sobre o consumo de água e energia para facilitar
-                        a visualização e o acompanhamento ao longo do tempo.
-                    </p>
-                </details>
-
-                <details>
-                    <summary>Por que acompanhar água e energia?</summary>
-                    <p>
-                        Acompanhar esses recursos ajuda a identificar
-                        desperdícios, compreender os hábitos da residência
-                        e encontrar oportunidades de economia.
-                    </p>
-                </details>
-
-                <details>
-                    <summary>O EcoConta pode ajudar a reduzir gastos?</summary>
-                    <p>
-                        Sim. Ao oferecer informações e recomendações,
-                        a plataforma busca ajudar os usuários a tomar
-                        decisões que favoreçam a economia de recursos.
-                    </p>
-                </details>
-
-            </div>
-
-            <!-- METAS -->
-            <div class="grupo-perguntas" data-grupo="metas" hidden>
-
-                <details>
-                    <summary>O que são metas de economia?</summary>
-                    <p>
-                        São objetivos definidos para incentivar
-                        a redução do consumo de água e energia
-                        durante determinado período.
-                    </p>
-                </details>
-
-                <details>
-                    <summary>Como as metas ajudam no dia a dia?</summary>
-                    <p>
-                        Elas permitem acompanhar o progresso
-                        e incentivam pequenas mudanças de hábitos
-                        que podem gerar resultados ao longo do tempo.
-                    </p>
-                </details>
-
-                <details>
-                    <summary>Preciso mudar toda a minha rotina?</summary>
-                    <p>
-                        Não. Pequenas atitudes, como evitar
-                        desperdício de água e desligar aparelhos
-                        desnecessários, já podem fazer diferença.
-                    </p>
-                </details>
-
-            </div>
-
-            <!-- ECOBOT -->
-            <div class="grupo-perguntas" data-grupo="ecobot" hidden>
-
-                <details>
-                    <summary>O que é o EcoBot?</summary>
-                    <p>
-                        O EcoBot é o assistente virtual proposto
-                        para oferecer recomendações e dicas
-                        relacionadas ao consumo consciente.
-                    </p>
-                </details>
-
-                <details>
-                    <summary>Como o EcoBot pode me ajudar?</summary>
-                    <p>
-                        Ele foi pensado para orientar usuários
-                        sobre hábitos sustentáveis e apresentar
-                        sugestões para economizar água e energia.
-                    </p>
-                </details>
-
-                <details>
-                    <summary>O EcoBot substitui o acompanhamento do consumo?</summary>
-                    <p>
-                        Não. O EcoBot complementa as informações
-                        da plataforma, oferecendo orientações
-                        para ajudar nas decisões do dia a dia.
-                    </p>
-                </details>
-
-            </div>
-
-        </section>
-
-        <!-- CONTATO -->
-        <section class="chamada-contato">
-
-            <span class="etiqueta">AINDA PRECISA DE AJUDA?</span>
-
-            <h2>Não encontrou sua resposta?</h2>
-
+          <details>
+            <summary>Qual é o objetivo do projeto?</summary>
             <p>
-                Nossa equipe está aqui para ajudar.
-                Entre em contato e envie sua dúvida.
+              Incentivar hábitos mais conscientes, reduzir desperdícios e
+              facilitar o acesso a informações sobre o consumo doméstico.
             </p>
+          </details>
 
-            <a href="contato.html" class="botao-contato">
-                Fale conosco
-                <i data-lucide="arrow-up-right"></i>
-            </a>
+          <details>
+            <summary>Quem desenvolveu o EcoConta?</summary>
+            <p>
+              O EcoConta é um projeto acadêmico desenvolvido pela equipe
+              NextBythe para a Global Solution 2026/2 da FIAP.
+            </p>
+          </details>
+        </div>
 
-        </section>
+        <!-- CONSUMO -->
+        <div class="grupo-perguntas" data-grupo="consumo" hidden>
+          <details>
+            <summary>Como posso acompanhar meu consumo?</summary>
+            <p>
+              A proposta do EcoConta é organizar informações sobre o consumo de
+              água e energia para facilitar a visualização e o acompanhamento ao
+              longo do tempo.
+            </p>
+          </details>
 
+          <details>
+            <summary>Por que acompanhar água e energia?</summary>
+            <p>
+              Acompanhar esses recursos ajuda a identificar desperdícios,
+              compreender os hábitos da residência e encontrar oportunidades de
+              economia.
+            </p>
+          </details>
+
+          <details>
+            <summary>O EcoConta pode ajudar a reduzir gastos?</summary>
+            <p>
+              Sim. Ao oferecer informações e recomendações, a plataforma busca
+              ajudar os usuários a tomar decisões que favoreçam a economia de
+              recursos.
+            </p>
+          </details>
+        </div>
+
+        <!-- METAS -->
+        <div class="grupo-perguntas" data-grupo="metas" hidden>
+          <details>
+            <summary>O que são metas de economia?</summary>
+            <p>
+              São objetivos definidos para incentivar a redução do consumo de
+              água e energia durante determinado período.
+            </p>
+          </details>
+
+          <details>
+            <summary>Como as metas ajudam no dia a dia?</summary>
+            <p>
+              Elas permitem acompanhar o progresso e incentivam pequenas
+              mudanças de hábitos que podem gerar resultados ao longo do tempo.
+            </p>
+          </details>
+
+          <details>
+            <summary>Preciso mudar toda a minha rotina?</summary>
+            <p>
+              Não. Pequenas atitudes, como evitar desperdício de água e desligar
+              aparelhos desnecessários, já podem fazer diferença.
+            </p>
+          </details>
+        </div>
+
+        <!-- ECOBOT -->
+        <div class="grupo-perguntas" data-grupo="ecobot" hidden>
+          <details>
+            <summary>O que é o EcoBot?</summary>
+            <p>
+              O EcoBot é o assistente virtual proposto para oferecer
+              recomendações e dicas relacionadas ao consumo consciente.
+            </p>
+          </details>
+
+          <details>
+            <summary>Como o EcoBot pode me ajudar?</summary>
+            <p>
+              Ele foi pensado para orientar usuários sobre hábitos sustentáveis
+              e apresentar sugestões para economizar água e energia.
+            </p>
+          </details>
+
+          <details>
+            <summary>O EcoBot substitui o acompanhamento do consumo?</summary>
+            <p>
+              Não. O EcoBot complementa as informações da plataforma, oferecendo
+              orientações para ajudar nas decisões do dia a dia.
+            </p>
+          </details>
+        </div>
+      </section>
+
+      <!-- CONTATO -->
+      <section class="chamada-contato">
+        <span class="etiqueta">AINDA PRECISA DE AJUDA?</span>
+
+        <h2>Não encontrou sua resposta?</h2>
+
+        <p>
+          Nossa equipe está aqui para ajudar. Entre em contato e envie sua
+          dúvida.
+        </p>
+
+        <a href="contato.html" class="botao-contato">
+          Fale conosco
+          <i data-lucide="arrow-up-right"></i>
+        </a>
+      </section>
     </main>
 
     <!-- RODAPÉ -->
     <footer class="rodape">
-
-        <div class="rodape-conteudo">
-
-            <div>
-                <h2>EcoConta</h2>
-                <p>
-                    Consumo inteligente,
-                    um futuro mais sustentável.
-                </p>
-            </div>
-
-            <div>
-                <h3>Navegação</h3>
-                <ul>
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href="integrantes.html">Integrantes</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="contato.html">Contato</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h3>Projeto acadêmico</h3>
-                <p>FIAP — Global Solution 2026/2</p>
-                <p>Equipe NextBythe</p>
-            </div>
-
+      <div class="rodape-conteudo">
+        <div>
+          <h2>EcoConta</h2>
+          <p>Consumo inteligente, um futuro mais sustentável.</p>
         </div>
 
-        <div class="rodape-inferior">
-            <p>© 2026 EcoConta. Todos os direitos reservados.</p>
-            <p>Desenvolvido pela equipe NextBythe.</p>
+        <div>
+          <h3>Navegação</h3>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="integrantes.html">Integrantes</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contato.html">Contato</a></li>
+            <li><a href="dashboard.html">Painel</a></li>
+            <li><a href="consumo.html">Consumo</a></li>
+          </ul>
         </div>
 
+        <div>
+          <h3>Projeto acadêmico</h3>
+          <p>FIAP — Global Solution 2026/2</p>
+          <p>Equipe NextBythe</p>
+        </div>
+      </div>
+
+      <div class="rodape-inferior">
+        <p>© 2026 EcoConta. Todos os direitos reservados.</p>
+        <p>Desenvolvido pela equipe NextBythe.</p>
+      </div>
     </footer>
 
     <script src="js/navegacao.js" defer></script>
-</body>
-
+  </body>
 </html>
