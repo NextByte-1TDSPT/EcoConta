@@ -107,25 +107,6 @@
 
 @media (max-width: 1100px) {
   .cabecalho {
-    padding: 17px 5%;
-  }
-  .navegacao {
-    gap: 15px;
-  }
-  .cabecalho .logo {
-    font-size: 25px;
-  }
-  .cabecalho .menu {
-    gap: 1px;
-  }
-  .cabecalho .menu a {
-    padding: 9px 9px;
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 820px) {
-  .cabecalho {
     padding: 15px 5%;
   }
   .navegacao {

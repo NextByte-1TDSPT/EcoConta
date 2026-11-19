@@ -958,3 +958,102 @@ body {
     font-size: 12px;
   }
 }
+
+/* Estilos do footer compartilhado */
+/* Footer compartilhado do EcoConta */
+footer.rodape {
+  box-sizing: border-box;
+  width: 100%;
+  background: #191813;
+  color: #c9c7bd;
+  border-top: 1px solid #45483a;
+  padding: 65px 6% 25px;
+  margin: 0;
+  font-family: inherit;
+}
+footer.rodape *,
+footer.rodape *::before,
+footer.rodape *::after {
+  box-sizing: border-box;
+}
+footer.rodape .rodape-conteudo {
+  width: min(100%, 1400px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 55px;
+  align-items: start;
+}
+footer.rodape .rodape-conteudo > div {
+  min-width: 0;
+}
+footer.rodape h2 {
+  margin: 0 0 15px;
+  color: #a4b86b;
+  font-size: 27px;
+  line-height: 1.3;
+  font-weight: 700;
+}
+footer.rodape h3 {
+  margin: 0 0 17px;
+  color: #f5f0e9;
+  font-size: 18px;
+  line-height: 1.4;
+  font-weight: 700;
+}
+footer.rodape p,
+footer.rodape li {
+  margin: 0;
+  color: #c9c7bd;
+  font-size: 14px;
+  line-height: 1.9;
+}
+footer.rodape ul {
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+footer.rodape li {
+  margin: 0;
+  padding: 0;
+}
+footer.rodape a {
+  display: inline-block;
+  color: #c9c7bd;
+  font-size: 14px;
+  line-height: 1.9;
+  text-decoration: none;
+  transition: color .2s ease;
+}
+footer.rodape a:hover {
+  color: #a4b86b;
+}
+footer.rodape .rodape-inferior {
+  width: min(100%, 1400px);
+  margin: 45px auto 0;
+  padding-top: 20px;
+  border-top: 1px solid #45483a;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+footer.rodape .rodape-inferior p {
+  font-size: 13px;
+  line-height: 1.7;
+}
+@media (max-width: 768px) {
+  footer.rodape {
+    padding: 45px 6% 22px;
+  }
+  footer.rodape .rodape-conteudo {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  footer.rodape .rodape-inferior {
+    margin-top: 32px;
+    flex-direction: column;
+    gap: 8px;
+  }
+}

@@ -20,21 +20,22 @@
     />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/metas.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/navegacao.css" />
+    <link rel="stylesheet" href="../css/metas.css" />
 
     <!-- ÍCONES LUCIDE -->
     <script
       src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"
       defer
     ></script>
-  </head>
+</head>
 
   <body>
     <!-- CABEÇALHO -->
     <header class="cabecalho">
       <nav class="navegacao" aria-label="Menu principal">
-        <a href="index.html" class="logo">
+        <a href="../index.html" class="logo">
           <i data-lucide="leaf" class="logo-simbolo" aria-hidden="true"></i>
           <span class="logo-nome">EcoConta</span>
         </a>
@@ -50,14 +51,16 @@
         </button>
 
         <ul class="menu" id="menu-principal">
-          <li><a href="index.html">Início</a></li>
-          <li><a href="sobre.html">Sobre</a></li>
-          <li><a href="ecobot.html">EcoBot</a></li>
-          <li><a href="integrantes.html">Integrantes</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="contato.html">Contato</a></li>
-          <li><a href="dashboard.html">Painel</a></li>
-          <li><a href="consumo.html">Consumo</a></li>
+          <li><a href="../index.html">Início</a></li>
+          <li><a href="./sobre.html">Sobre</a></li>
+          <li><a href="./ecobot.html">EcoBot</a></li>
+          <li><a href="./integrantes.html">Integrantes</a></li>
+          <li><a href="./faq.html">FAQ</a></li>
+          <li><a href="./contato.html">Contato</a></li>
+          <li><a href="./acesso.html" data-link-conta>Minha conta</a></li>
+          <li><a href="./dashboard.html">Painel</a></li>
+          <li><a href="./consumo.html">Consumo</a></li>
+          <li><a href="./metas.html" class="ativo" aria-current="page">Metas</a></li>
         </ul>
       </nav>
     </header>
@@ -326,17 +329,18 @@
     <!-- RODAPÉ -->
     <footer class="rodape">
       <div class="rodape-conteudo">
-        <div class="rodape-marca">
+        <div>
           <h2>EcoConta</h2>
-
-          <p>Consumo inteligente, um futuro mais sustentável.</p>
+          <p>
+            Tecnologia e sustentabilidade para um consumo residencial mais
+            consciente.
+          </p>
         </div>
 
-        <div class="rodape-links">
+        <div>
           <h3>Navegação</h3>
-
           <ul>
-            <li><a href="index.html">Início</a></li>
+            <li><a href="../index.html">Início</a></li>
             <li><a href="sobre.html">Sobre</a></li>
             <li><a href="integrantes.html">Integrantes</a></li>
             <li><a href="faq.html">FAQ</a></li>
@@ -346,22 +350,22 @@
           </ul>
         </div>
 
-        <div class="rodape-projeto">
+        <div>
           <h3>Projeto acadêmico</h3>
-
-          <p>FIAP — Global Solution 2026/2</p>
-          <p>Equipe NextBythe</p>
+          <p>Global Solution 2026/2</p>
+          <p>FIAP</p>
+          <p>Equipe NextByte</p>
         </div>
       </div>
 
       <div class="rodape-inferior">
-        <p>© 2026 EcoConta. Todos os direitos reservados.</p>
-
-        <p>Desenvolvido pela equipe NextBythe.</p>
+        <p>© 2026 EcoConta. Projeto acadêmico.</p>
+        <p>Desenvolvido pela equipe NextByte.</p>
       </div>
     </footer>
 
     <!-- JAVASCRIPT -->
-    <script src="js/metas.js"></script>
-  </body>
+    <script src="../js/metas.js"></script>
+    <script src="../js/navegacao.js" defer></script>
+</body>
 </html>
