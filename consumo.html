@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="EcoConta: registre o consumo de água e energia da sua residência e consulte o histórico."
+    />
+
+    <title>Registro de consumo | EcoConta</title>
+
+    <!-- FONTE POPPINS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS COMPARTILHADO DO SITE -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/navegacao.css" />
+
+    <!-- CSS DAS PÁGINAS DE CONSUMO -->
+    <link rel="stylesheet" href="css/painel.css" />
+    <link rel="stylesheet" href="css/consumo.css" />
+
+    <!-- ÍCONES LUCIDE -->
+    <script
+      src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"
+      defer
+    ></script>
+
+    <!-- JAVASCRIPT -->
+    <script src="js/painel.js" defer></script>
+    <script src="js/consumo-dados.js" defer></script>
+    <script src="js/consumo.js" defer></script>
+  </head>
+
+  <body>
+    <!-- CABEÇALHO -->
+    <header class="cabecalho">
+      <nav class="navegacao" aria-label="Menu principal">
+        <a href="index.html" class="logo">
+          <i data-lucide="leaf" class="logo-simbolo" aria-hidden="true"></i>
+          <span class="logo-nome">EcoConta</span>
+        </a>
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Abrir menu"
+          aria-expanded="false"
+          aria-controls="menu-principal"
+        >
+          <i data-lucide="menu" aria-hidden="true"></i>
+        </button>
+        <ul class="menu" id="menu-principal">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="ecobot.html">EcoBot</a></li>
+          <li><a href="integrantes.html">Integrantes</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="acesso.html" data-link-conta>Minha conta</a></li>
+          <li><a href="dashboard.html">Painel</a></li>
+          <li>
+            <a href="consumo.html" class="ativo" aria-current="page">Consumo</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="painel-pagina">
+      <!-- INTRODUÇÃO -->
+      <section class="painel-intro" aria-labelledby="titulo-painel">
+        <div class="painel-intro-texto">
+          <h1 id="titulo-painel">Registro de consumo</h1>
+          <p>
+            Anote o consumo que aparece nas contas de água e de luz. Cada
+            registro entra no histórico e atualiza o painel.
+          </p>
+        </div>
+
+        <a href="dashboard.html" class="botao botao-secundario">Ver painel</a>
+      </section>
+
+      <p class="painel-aviso">
+        <i data-lucide="info" aria-hidden="true"></i>
+        Ambiente demonstrativo: os valores são fictícios e ficam salvos apenas
+        neste navegador.
+      </p>
+
+      <!-- REGISTRO DE CONSUMO -->
+      <section class="painel-secao registro" aria-labelledby="titulo-registro">
+        <form class="painel-bloco registro-form" id="form-consumo" novalidate>
+          <h2 id="titulo-registro">Novo registro</h2>
+          <p class="painel-bloco-descricao">
+            Os campos marcados com * são obrigatórios.
+          </p>
+
+          <fieldset class="campo">
+            <legend>Recurso *</legend>
+            <div class="opcoes-recurso">
+              <label class="opcao-recurso" data-recurso="agua">
+                <input type="radio" name="tipo" value="agua" checked />
+                <span
+                  ><i data-lucide="droplets" aria-hidden="true"></i>Água</span
+                >
+              </label>
+              <label class="opcao-recurso" data-recurso="energia">
+                <input type="radio" name="tipo" value="energia" />
+                <span><i data-lucide="zap" aria-hidden="true"></i>Energia</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="campos-linha">
+            <div class="campo">
+              <label for="consumo-mes">Mês da conta *</label>
+              <input
+                type="month"
+                id="consumo-mes"
+                name="mes"
+                min="2020-01"
+                aria-describedby="erro-mes"
+                required
+              />
+              <span class="campo-erro" id="erro-mes"></span>
+            </div>
+
+            <div class="campo">
+              <label for="consumo-quantidade">Consumo do mês *</label>
+              <div class="campo-unidade">
+                <input
+                  type="number"
+                  id="consumo-quantidade"
+                  name="quantidade"
+                  min="0"
+                  step="0.1"
+                  inputmode="decimal"
+                  placeholder="Ex.: 12,5"
+                  aria-describedby="ajuda-quantidade erro-quantidade"
+                  required
+                />
+                <span id="unidade-quantidade">m³</span>
+              </div>
+              <span class="campo-ajuda" id="ajuda-quantidade"
+                >Na conta de água, procure por "consumo (m³)".</span
+              >
+              <span class="campo-erro" id="erro-quantidade"></span>
+            </div>
+          </div>
+
+          <button type="submit" class="botao botao-principal">
+            Registrar consumo
+          </button>
+
+          <p
+            class="registro-mensagem"
+            id="registro-mensagem"
+            role="status"
+            aria-live="polite"
+          ></p>
+        </form>
+
+        <!-- PRÉVIA: COMPARAÇÃO COM A REFERÊNCIA -->
+        <aside class="painel-bloco previa" aria-labelledby="titulo-previa">
+          <h2 id="titulo-previa">Comparação com a referência</h2>
+          <div id="previa-conteudo" aria-live="polite"></div>
+        </aside>
+      </section>
+
+      <!-- HISTÓRICO COM FILTROS -->
+      <section
+        class="painel-bloco historico"
+        aria-labelledby="titulo-historico"
+      >
+        <div class="painel-bloco-topo">
+          <div>
+            <h2 id="titulo-historico">Histórico</h2>
+            <p class="painel-bloco-descricao" id="historico-resumo"></p>
+          </div>
+        </div>
+
+        <div class="historico-filtros">
+          <div class="filtro">
+            <span class="filtro-rotulo" id="rotulo-periodo">Período</span>
+            <div class="pilulas" role="group" aria-labelledby="rotulo-periodo">
+              <button type="button" data-periodo="3" aria-pressed="false">
+                3 meses
+              </button>
+              <button type="button" data-periodo="6" aria-pressed="true">
+                6 meses
+              </button>
+              <button type="button" data-periodo="12" aria-pressed="false">
+                12 meses
+              </button>
+              <button type="button" data-periodo="todos" aria-pressed="false">
+                Tudo
+              </button>
+            </div>
+          </div>
+
+          <div class="filtro">
+            <span class="filtro-rotulo" id="rotulo-recurso">Recurso</span>
+            <div class="pilulas" role="group" aria-labelledby="rotulo-recurso">
+              <button
+                type="button"
+                data-filtro-recurso="todos"
+                aria-pressed="true"
+              >
+                Todos
+              </button>
+              <button
+                type="button"
+                data-filtro-recurso="agua"
+                aria-pressed="false"
+              >
+                Água
+              </button>
+              <button
+                type="button"
+                data-filtro-recurso="energia"
+                aria-pressed="false"
+              >
+                Energia
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="historico-medias" id="historico-medias"></div>
+
+        <div class="tabela-rolagem">
+          <table class="historico-tabela">
+            <caption class="sr-only">
+              Registros de consumo do período escolhido
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Mês</th>
+                <th scope="col">Recurso</th>
+                <th scope="col">Consumo</th>
+                <th scope="col">Em relação à referência</th>
+                <th scope="col">Economia estimada</th>
+                <th scope="col"><span class="sr-only">Ações</span></th>
+              </tr>
+            </thead>
+            <tbody id="historico-corpo"></tbody>
+          </table>
+        </div>
+
+        <p class="historico-vazio" id="historico-vazio" hidden></p>
+
+        <div class="historico-rodape">
+          <button
+            type="button"
+            class="historico-restaurar"
+            id="historico-restaurar"
+          >
+            Restaurar dados de demonstração
+          </button>
+          <p
+            class="historico-status"
+            id="historico-status"
+            role="status"
+            aria-live="polite"
+          ></p>
+        </div>
+      </section>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="rodape">
+      <div class="container">
+        <div class="rodape-conteudo">
+          <div class="rodape-marca">
+            <h2>EcoConta</h2>
+            <p>Consumo inteligente, um futuro mais sustentável.</p>
+          </div>
+
+          <div class="rodape-navegacao">
+            <h3>Navegação</h3>
+            <a href="index.html">Início</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="integrantes.html">Integrantes</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contato.html">Contato</a>
+            <a href="dashboard.html">Painel</a>
+            <a href="consumo.html">Consumo</a>
+          </div>
+
+          <div class="rodape-projeto">
+            <h3>Projeto acadêmico</h3>
+            <p>FIAP — Global Solution 2026/2</p>
+            <p>Equipe NextBythe</p>
+          </div>
+        </div>
+
+        <div class="rodape-inferior">
+          <p>© 2026 EcoConta. Todos os direitos reservados.</p>
+          <p>Desenvolvido pela equipe NextBythe.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

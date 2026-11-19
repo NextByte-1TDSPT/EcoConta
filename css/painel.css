@@ -1,0 +1,202 @@
+/* ==========================================
+   ECOCONTA - PAINEL E CONSUMO (base comum)
+   Usado por dashboard.html e consumo.html.
+   Cores e fonte vêm do css/style.css compartilhado.
+   ========================================== */
+
+
+/* 1. CORES DOS DADOS */
+
+:root {
+    --agua: #3B8BC9;
+    --energia: #B98522;
+    --alerta: #E07A6A;
+    --superficie: #2A2822;
+    --superficie-forte: #312F28;
+}
+
+
+/* 2. ESTRUTURA DA PÁGINA */
+
+.painel-pagina {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 56px 0 96px;
+}
+
+.painel-intro {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 32px;
+    margin-bottom: 20px;
+}
+
+.painel-intro-texto {
+    max-width: 640px;
+}
+
+.painel-saudacao {
+    color: var(--verde-claro);
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.painel-intro h1 {
+    color: var(--bege);
+    font-size: clamp(34px, 4.4vw, 52px);
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    margin-bottom: 14px;
+}
+
+.painel-intro p:not(.painel-saudacao) {
+    color: var(--texto-suave);
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.painel-intro .botao {
+    flex-shrink: 0;
+}
+
+.painel-aviso {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--texto-suave);
+    font-size: 13px;
+    margin-bottom: 48px;
+}
+
+.painel-aviso svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    color: var(--verde-claro);
+}
+
+
+/* 3. BLOCOS DE CONTEÚDO */
+
+.painel-bloco {
+    background-color: var(--superficie);
+    border: 1px solid var(--borda);
+    border-radius: 20px;
+    padding: 28px;
+}
+
+.painel-bloco-topo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.painel-bloco h2 {
+    color: var(--bege);
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.painel-bloco-descricao {
+    color: var(--texto-suave);
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.painel-secao {
+    margin-bottom: 28px;
+}
+
+
+/* 4. NÚMEROS ALINHADOS */
+
+.numero {
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* 5. CONTROLES EM PÍLULA (filtros e seletores) */
+
+.pilulas {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    padding: 4px;
+    border: 1px solid var(--borda);
+    border-radius: 30px;
+}
+
+.pilulas button {
+    border: 0;
+    border-radius: 30px;
+    background: transparent;
+    color: var(--texto-suave);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.pilulas button:hover {
+    color: var(--bege);
+}
+
+.pilulas button[aria-pressed="true"] {
+    background-color: #293d27;
+    color: var(--verde-claro);
+}
+
+
+/* 6. ACESSIBILIDADE */
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.painel-pagina input:focus-visible,
+.painel-pagina select:focus-visible,
+.painel-pagina button:focus-visible {
+    outline: 2px solid var(--verde-claro);
+    outline-offset: 3px;
+}
+
+
+/* 7. RESPONSIVIDADE */
+
+@media (max-width: 760px) {
+    .painel-pagina {
+        padding: 36px 0 64px;
+    }
+
+    .painel-intro {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .painel-aviso {
+        align-items: flex-start;
+        margin-bottom: 32px;
+    }
+
+    .painel-bloco {
+        padding: 22px 18px;
+        border-radius: 16px;
+    }
+}

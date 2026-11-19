@@ -1,202 +1,180 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sobre | EcoConta</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/sobre.css">
-    <link rel="stylesheet" href="css/navegacao.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/sobre.css" />
+    <link rel="stylesheet" href="css/navegacao.css" />
 
     <!-- MESMA BIBLIOTECA DE ÍCONES DA HOME -->
     <script
-        src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"
-        defer>
-    </script>
-</head>
+      src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"
+      defer
+    ></script>
+  </head>
 
-<body>
-
-<header class="cabecalho">
-    <nav class="navegacao" aria-label="Menu principal">
+  <body>
+    <header class="cabecalho">
+      <nav class="navegacao" aria-label="Menu principal">
         <a href="index.html" class="logo">
-            <i data-lucide="leaf" class="logo-simbolo" aria-hidden="true"></i>
-            <span class="logo-nome">EcoConta</span>
+          <i data-lucide="leaf" class="logo-simbolo" aria-hidden="true"></i>
+          <span class="logo-nome">EcoConta</span>
         </a>
-        <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal">
-            <i data-lucide="menu" aria-hidden="true"></i>
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Abrir menu"
+          aria-expanded="false"
+          aria-controls="menu-principal"
+        >
+          <i data-lucide="menu" aria-hidden="true"></i>
         </button>
         <ul class="menu" id="menu-principal">
-            <li><a href="index.html">Início</a></li>
-            <li><a href="sobre.html" class="ativo" aria-current="page">Sobre</a></li>
-            <li><a href="ecobot.html">EcoBot</a></li>
-            <li><a href="integrantes.html">Integrantes</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="contato.html">Contato</a></li>
-            <li><a href="acesso.html" data-link-conta>Minha conta</a></li>
+          <li><a href="index.html">Início</a></li>
+          <li>
+            <a href="sobre.html" class="ativo" aria-current="page">Sobre</a>
+          </li>
+          <li><a href="ecobot.html">EcoBot</a></li>
+          <li><a href="integrantes.html">Integrantes</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="acesso.html" data-link-conta>Minha conta</a></li>
+          <li><a href="dashboard.html">Painel</a></li>
+          <li><a href="consumo.html">Consumo</a></li>
         </ul>
-    </nav>
-</header>
+      </nav>
+    </header>
 
-<main class="container">
-
-    <!-- APRESENTAÇÃO -->
-    <section class="apresentacao">
-
+    <main class="container">
+      <!-- APRESENTAÇÃO -->
+      <section class="apresentacao">
         <div class="apresentacao-texto">
+          <span class="etiqueta">CONHEÇA O PROJETO</span>
 
-            <span class="etiqueta">CONHEÇA O PROJETO</span>
+          <h1>Consumo consciente<br />começa com informação.</h1>
 
-            <h1>Consumo consciente<br>começa com informação.</h1>
-
-            <p>
-                O EcoConta nasceu para ajudar pessoas a compreenderem
-                melhor o consumo de água e energia em suas residências,
-                transformando dados em decisões mais sustentáveis.
-            </p>
-
+          <p>
+            O EcoConta nasceu para ajudar pessoas a compreenderem melhor o
+            consumo de água e energia em suas residências, transformando dados
+            em decisões mais sustentáveis.
+          </p>
         </div>
+      </section>
 
-    </section>
-
-    <!-- NOSSA MISSÃO -->
-    <section class="missao">
-
+      <!-- NOSSA MISSÃO -->
+      <section class="missao">
         <div class="missao-texto">
+          <span class="etiqueta">NOSSA MISSÃO</span>
 
-            <span class="etiqueta">NOSSA MISSÃO</span>
+          <h2>Pequenas mudanças podem<br />gerar grandes impactos.</h2>
 
-            <h2>Pequenas mudanças podem<br>gerar grandes impactos.</h2>
-
-            <p>
-                Nossa missão é incentivar o uso responsável dos recursos
-                naturais, aproximando tecnologia, educação ambiental
-                e economia doméstica.
-            </p>
-
+          <p>
+            Nossa missão é incentivar o uso responsável dos recursos naturais,
+            aproximando tecnologia, educação ambiental e economia doméstica.
+          </p>
         </div>
 
         <div class="beneficios">
+          <!-- ECONOMIA DE ÁGUA -->
+          <div class="beneficio">
+            <svg viewBox="0 0 40 40" aria-hidden="true">
+              <path
+                d="M20 4C17 11 8 19 8 26a12 12 0 0 0 24 0C32 19 23 11 20 4Z"
+              />
+            </svg>
 
-            <!-- ECONOMIA DE ÁGUA -->
-            <div class="beneficio">
+            <p>Economia<br />de água</p>
+          </div>
 
-                <svg viewBox="0 0 40 40" aria-hidden="true">
-                    <path d="M20 4C17 11 8 19 8 26a12 12 0 0 0 24 0C32 19 23 11 20 4Z"/>
-                </svg>
+          <!-- ECONOMIA DE ENERGIA -->
+          <div class="beneficio">
+            <svg viewBox="0 0 40 40" aria-hidden="true">
+              <path d="M23 3 9 22h11l-3 15 15-21H21Z" />
+            </svg>
 
-                <p>Economia<br>de água</p>
+            <p>Economia<br />de energia</p>
+          </div>
 
-            </div>
+          <!-- SUSTENTABILIDADE -->
+          <div class="beneficio">
+            <svg viewBox="0 0 40 40" aria-hidden="true">
+              <path d="M7 33C5 13 18 6 34 5c0 18-9 29-27 28Z" />
+              <path d="M7 33 27 13" />
+            </svg>
 
-            <!-- ECONOMIA DE ENERGIA -->
-            <div class="beneficio">
-
-                <svg viewBox="0 0 40 40" aria-hidden="true">
-                    <path d="M23 3 9 22h11l-3 15 15-21H21Z"/>
-                </svg>
-
-                <p>Economia<br>de energia</p>
-
-            </div>
-
-            <!-- SUSTENTABILIDADE -->
-            <div class="beneficio">
-
-                <svg viewBox="0 0 40 40" aria-hidden="true">
-                    <path d="M7 33C5 13 18 6 34 5c0 18-9 29-27 28Z"/>
-                    <path d="M7 33 27 13"/>
-                </svg>
-
-                <p>Mais<br>sustentabilidade</p>
-
-            </div>
-
+            <p>Mais<br />sustentabilidade</p>
+          </div>
         </div>
+      </section>
 
-    </section>
-
-    <!-- PLATAFORMA -->
-    <section class="plataforma">
-
+      <!-- PLATAFORMA -->
+      <section class="plataforma">
         <span class="etiqueta">CONHEÇA A PLATAFORMA</span>
 
         <h2>Conheça a plataforma.</h2>
 
         <p>
-            Veja na prática como o EcoConta pode te ajudar
-            a consumir com mais consciência e eficiência.
+          Veja na prática como o EcoConta pode te ajudar a consumir com mais
+          consciência e eficiência.
         </p>
 
-        <a href="index.html" class="botao">
-            Acessar o EcoConta ↗
-        </a>
+        <a href="index.html" class="botao"> Acessar o EcoConta ↗ </a>
+      </section>
+    </main>
 
-    </section>
-
-</main>
-
-<!-- RODAPÉ -->
-<footer class="rodape">
-
-    <div class="container">
-
+    <!-- RODAPÉ -->
+    <footer class="rodape">
+      <div class="container">
         <div class="rodape-conteudo">
+          <div class="rodape-marca">
+            <h2>EcoConta</h2>
 
-            <div class="rodape-marca">
+            <p>Consumo inteligente, um futuro mais sustentável.</p>
+          </div>
 
-                <h2>EcoConta</h2>
+          <div class="rodape-navegacao">
+            <h3>Navegação</h3>
 
-                <p>Consumo inteligente, um futuro mais sustentável.</p>
+            <a href="index.html">Início</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="integrantes.html">Integrantes</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contato.html">Contato</a>
+            <a href="dashboard.html">Painel</a>
+            <a href="consumo.html">Consumo</a>
+          </div>
 
-            </div>
+          <div class="rodape-projeto">
+            <h3>Projeto acadêmico</h3>
 
-            <div class="rodape-navegacao">
-
-                <h3>Navegação</h3>
-
-                <a href="index.html">Início</a>
-                <a href="sobre.html">Sobre</a>
-                <a href="integrantes.html">Integrantes</a>
-                <a href="faq.html">FAQ</a>
-                <a href="contato.html">Contato</a>
-
-            </div>
-
-            <div class="rodape-projeto">
-
-                <h3>Projeto acadêmico</h3>
-
-                <p>FIAP — Global Solution 2026/2</p>
-                <p>Equipe NextBythe</p>
-
-            </div>
-
+            <p>FIAP — Global Solution 2026/2</p>
+            <p>Equipe NextBythe</p>
+          </div>
         </div>
 
         <div class="rodape-inferior">
+          <p>© 2026 EcoConta. Todos os direitos reservados.</p>
 
-            <p>© 2026 EcoConta. Todos os direitos reservados.</p>
-
-            <p>Desenvolvido pela equipe NextBythe.</p>
-
+          <p>Desenvolvido pela equipe NextBythe.</p>
         </div>
+      </div>
+    </footer>
 
-    </div>
-
-</footer>
-
-<!-- ATIVA A FOLHINHA LUCIDE -->
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
+    <!-- ATIVA A FOLHINHA LUCIDE -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
         if (window.lucide) {
-            lucide.createIcons();
+          lucide.createIcons();
         }
-    });
-</script>
+      });
+    </script>
 
     <script src="js/navegacao.js" defer></script>
-</body>
+  </body>
 </html>

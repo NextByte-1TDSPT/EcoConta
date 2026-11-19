@@ -1,0 +1,547 @@
+/* ==========================================
+   ECOCONTA - REGISTRO DE CONSUMO (consumo.html)
+   ========================================== */
+
+
+/* 1. LAYOUT: FORMULÁRIO + PRÉVIA */
+
+.registro {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(280px, 1fr);
+    gap: 24px;
+    align-items: start;
+}
+
+.registro-form h2,
+.previa h2 {
+    margin-bottom: 0;
+}
+
+.registro-form .painel-bloco-descricao {
+    margin-bottom: 26px;
+}
+
+
+/* 2. CAMPOS */
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 22px;
+    border: 0;
+    min-width: 0;
+}
+
+.campo label,
+.campo legend {
+    color: var(--bege);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.campo legend {
+    margin-bottom: 8px;
+    padding: 0;
+}
+
+.campos-linha {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 20px;
+}
+
+.registro-form input[type="month"],
+.registro-form input[type="number"] {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 14px;
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    background-color: var(--fundo);
+    color: var(--bege);
+    font-size: 15px;
+    color-scheme: dark;
+}
+
+.registro-form input:hover {
+    border-color: #5d5b4f;
+}
+
+.registro-form input[aria-invalid="true"] {
+    border-color: var(--alerta);
+}
+
+.campo-unidade {
+    position: relative;
+}
+
+.campo-unidade input {
+    padding-right: 60px !important;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+/* Esconde as setas do campo numérico para não cobrir a unidade */
+.campo-unidade input::-webkit-outer-spin-button,
+.campo-unidade input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.campo-unidade span {
+    position: absolute;
+    top: 50%;
+    right: 14px;
+    transform: translateY(-50%);
+    color: var(--texto-suave);
+    font-size: 14px;
+    pointer-events: none;
+}
+
+.campo-ajuda {
+    color: var(--texto-suave);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.campo-erro {
+    color: #F0A397;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.campo-erro:empty {
+    display: none;
+}
+
+
+/* 3. ESCOLHA DO RECURSO */
+
+.opcoes-recurso {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.opcao-recurso {
+    --cor-recurso: var(--agua);
+    position: relative;
+    cursor: pointer;
+}
+
+.opcao-recurso[data-recurso="energia"] {
+    --cor-recurso: var(--energia);
+}
+
+.opcao-recurso input {
+    position: absolute;
+    opacity: 0;
+}
+
+.opcao-recurso span {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 52px;
+    padding: 12px 16px;
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+    color: var(--texto-suave);
+    font-size: 15px;
+    font-weight: 500;
+    transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+}
+
+.opcao-recurso svg {
+    width: 20px;
+    height: 20px;
+    color: var(--cor-recurso);
+}
+
+.opcao-recurso:hover span {
+    color: var(--bege);
+}
+
+.opcao-recurso input:checked + span {
+    border-color: var(--cor-recurso);
+    background-color: var(--superficie-forte);
+    color: var(--bege);
+    box-shadow: inset 0 0 0 1px var(--cor-recurso);
+}
+
+.opcao-recurso input:focus-visible + span {
+    outline: 2px solid var(--verde-claro);
+    outline-offset: 3px;
+}
+
+
+/* 4. ENVIO */
+
+.registro-form .botao {
+    border: 0;
+    cursor: pointer;
+}
+
+.registro-mensagem {
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.registro-mensagem:empty {
+    display: none;
+}
+
+.registro-mensagem.sucesso {
+    color: var(--verde-claro);
+}
+
+.registro-mensagem.erro {
+    color: #F0A397;
+}
+
+
+/* 5. PRÉVIA */
+
+.previa {
+    position: sticky;
+    top: 24px;
+}
+
+.previa-vazia {
+    color: var(--texto-suave);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-top: 18px;
+}
+
+.previa-situacao {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 20px 0 18px;
+    color: var(--bege);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.previa-situacao svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.previa-situacao.abaixo svg {
+    color: var(--verde-claro);
+}
+
+.previa-situacao.acima svg {
+    color: var(--alerta);
+}
+
+.previa-detalhes div {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 10px 0;
+    border-top: 1px solid var(--borda);
+}
+
+.previa-detalhes dt {
+    color: var(--texto-suave);
+    font-size: 14px;
+}
+
+.previa-detalhes dd {
+    color: var(--bege);
+    font-size: 15px;
+    font-weight: 600;
+    text-align: right;
+}
+
+.previa-alerta {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+    padding: 12px 14px;
+    border: 1px solid #6B3F37;
+    border-radius: 12px;
+    background-color: #33241F;
+    color: var(--bege);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.previa-alerta svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: var(--alerta);
+}
+
+.previa-nota {
+    color: var(--texto-suave);
+    font-size: 12px;
+    margin-top: 14px;
+}
+
+
+/* 6. HISTÓRICO */
+
+.historico-filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 32px;
+    margin-bottom: 22px;
+}
+
+.filtro {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.filtro-rotulo {
+    color: var(--texto-suave);
+    font-size: 13px;
+}
+
+.historico-medias {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin-bottom: 22px;
+}
+
+.historico-medias:empty {
+    display: none;
+}
+
+.media-recurso {
+    --cor-recurso: var(--agua);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 14px 16px;
+    border-left: 3px solid var(--cor-recurso);
+    border-radius: 0 12px 12px 0;
+    background-color: var(--superficie-forte);
+}
+
+.media-recurso[data-recurso="energia"] {
+    --cor-recurso: var(--energia);
+}
+
+.media-rotulo,
+.media-apoio {
+    color: var(--texto-suave);
+    font-size: 13px;
+}
+
+.media-recurso strong {
+    color: var(--bege);
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.tabela-rolagem {
+    overflow-x: auto;
+}
+
+.historico-tabela {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.historico-tabela th {
+    color: var(--texto-suave);
+    font-weight: 500;
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--borda);
+    white-space: nowrap;
+}
+
+.historico-tabela td {
+    color: var(--bege);
+    padding: 12px;
+    border-bottom: 1px solid var(--borda);
+    white-space: nowrap;
+}
+
+.historico-tabela tbody tr:hover td {
+    background-color: rgba(245, 240, 233, 0.03);
+}
+
+.recurso-marca {
+    --cor-recurso: var(--agua);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.recurso-marca[data-recurso="energia"] {
+    --cor-recurso: var(--energia);
+}
+
+.recurso-marca::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+    background-color: var(--cor-recurso);
+}
+
+.situacao {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.situacao svg {
+    width: 16px;
+    height: 16px;
+}
+
+.situacao.abaixo svg {
+    color: var(--verde-claro);
+}
+
+.situacao.acima svg {
+    color: var(--alerta);
+}
+
+.coluna-acao {
+    text-align: right;
+}
+
+.botao-excluir {
+    border: 1px solid var(--borda);
+    border-radius: 30px;
+    background: transparent;
+    color: var(--texto-suave);
+    font-size: 13px;
+    padding: 6px 14px;
+    cursor: pointer;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.botao-excluir:hover {
+    border-color: var(--alerta);
+    color: var(--bege);
+}
+
+.botao-excluir[data-confirmar="sim"] {
+    border-color: var(--alerta);
+    background-color: #33241F;
+    color: #F0A397;
+}
+
+.historico-vazio {
+    color: var(--texto-suave);
+    font-size: 15px;
+    padding: 28px 0 8px;
+}
+
+.historico-rodape {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+    margin-top: 22px;
+}
+
+.historico-restaurar {
+    border: 0;
+    background: transparent;
+    color: var(--verde-claro);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.historico-status {
+    color: var(--texto-suave);
+    font-size: 13px;
+}
+
+
+/* 7. RESPONSIVIDADE */
+
+@media (max-width: 900px) {
+    .registro {
+        grid-template-columns: 1fr;
+    }
+
+    .previa {
+        position: static;
+    }
+}
+
+@media (max-width: 640px) {
+    /* No celular, cada registro vira um bloco com rótulos */
+    .historico-tabela thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+    }
+
+    .historico-tabela,
+    .historico-tabela tbody,
+    .historico-tabela tr,
+    .historico-tabela td {
+        display: block;
+        width: 100%;
+    }
+
+    .historico-tabela tr {
+        padding: 14px 0;
+        border-bottom: 1px solid var(--borda);
+    }
+
+    .historico-tabela td {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 5px 0;
+        border-bottom: 0;
+    }
+
+    .historico-tabela td::before {
+        content: attr(data-rotulo);
+        color: var(--texto-suave);
+        font-size: 13px;
+    }
+
+    .historico-tabela td.coluna-acao {
+        justify-content: flex-end;
+        padding-top: 10px;
+    }
+}
+
+@media (max-width: 520px) {
+    .historico-filtros .pilulas {
+        gap: 2px;
+    }
+
+    .historico-filtros .pilulas button {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+    .campos-linha {
+        grid-template-columns: 1fr;
+    }
+
+    .registro-form .botao {
+        width: 100%;
+    }
+}

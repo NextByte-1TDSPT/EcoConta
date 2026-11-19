@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="EcoConta: painel com o consumo de água e energia da sua residência comparado com a referência."
+    />
+
+    <title>Painel de consumo | EcoConta</title>
+
+    <!-- FONTE POPPINS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS COMPARTILHADO DO SITE -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/navegacao.css" />
+
+    <!-- CSS DAS PÁGINAS DE CONSUMO -->
+    <link rel="stylesheet" href="css/painel.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+
+    <!-- ÍCONES LUCIDE -->
+    <script
+      src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"
+      defer
+    ></script>
+
+    <!-- JAVASCRIPT -->
+    <script src="js/painel.js" defer></script>
+    <script src="js/consumo-dados.js" defer></script>
+    <script src="js/dashboard.js" defer></script>
+  </head>
+
+  <body>
+    <!-- CABEÇALHO -->
+    <header class="cabecalho">
+      <nav class="navegacao" aria-label="Menu principal">
+        <a href="index.html" class="logo">
+          <i data-lucide="leaf" class="logo-simbolo" aria-hidden="true"></i>
+          <span class="logo-nome">EcoConta</span>
+        </a>
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Abrir menu"
+          aria-expanded="false"
+          aria-controls="menu-principal"
+        >
+          <i data-lucide="menu" aria-hidden="true"></i>
+        </button>
+        <ul class="menu" id="menu-principal">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="ecobot.html">EcoBot</a></li>
+          <li><a href="integrantes.html">Integrantes</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="acesso.html" data-link-conta>Minha conta</a></li>
+          <li>
+            <a href="dashboard.html" class="ativo" aria-current="page"
+              >Painel</a
+            >
+          </li>
+          <li><a href="consumo.html">Consumo</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="painel-pagina">
+      <!-- INTRODUÇÃO -->
+      <section class="painel-intro" aria-labelledby="titulo-painel">
+        <div class="painel-intro-texto">
+          <p class="painel-saudacao" id="painel-saudacao">Olá!</p>
+          <h1 id="titulo-painel">Painel de consumo</h1>
+          <p>
+            Veja como a água e a energia da sua casa estão em relação à
+            referência e acompanhe a evolução mês a mês.
+          </p>
+        </div>
+
+        <a href="consumo.html" class="botao botao-principal"
+          >Registrar consumo</a
+        >
+      </section>
+
+      <p class="painel-aviso">
+        <i data-lucide="info" aria-hidden="true"></i>
+        Ambiente demonstrativo: os valores são fictícios e ficam salvos apenas
+        neste navegador.
+      </p>
+
+      <!-- CONSUMO DO ÚLTIMO MÊS: ÁGUA E ENERGIA -->
+      <section class="painel-secao" aria-labelledby="titulo-cartoes">
+        <h2 class="sr-only" id="titulo-cartoes">
+          Consumo do último mês registrado
+        </h2>
+
+        <div class="cartoes-consumo">
+          <article
+            class="cartao-consumo"
+            id="cartao-agua"
+            data-recurso="agua"
+            aria-label="Consumo de água"
+          ></article>
+          <article
+            class="cartao-consumo"
+            id="cartao-energia"
+            data-recurso="energia"
+            aria-label="Consumo de energia"
+          ></article>
+        </div>
+
+        <p class="painel-nota">
+          Referências fictícias de demonstração: 15 m³ de água e 200 kWh de
+          energia por mês. A economia em reais é uma estimativa com tarifas
+          fictícias (R$ 6,50/m³ e R$ 0,85/kWh).
+        </p>
+      </section>
+
+      <!-- EVOLUÇÃO MENSAL E INDICADORES -->
+      <section class="painel-secao painel-evolucao">
+        <!-- GRÁFICO DE CONSUMO MENSAL -->
+        <div class="painel-bloco grafico-bloco">
+          <div class="painel-bloco-topo">
+            <div>
+              <h2 id="titulo-grafico">Consumo mensal de água</h2>
+              <p class="painel-bloco-descricao">
+                Cada barra é um mês registrado. A linha tracejada é a
+                referência.
+              </p>
+            </div>
+
+            <div
+              class="pilulas"
+              role="group"
+              aria-label="Recurso exibido no gráfico"
+            >
+              <button type="button" data-grafico="agua" aria-pressed="true">
+                Água
+              </button>
+              <button type="button" data-grafico="energia" aria-pressed="false">
+                Energia
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="grafico"
+            id="grafico"
+            role="img"
+            aria-labelledby="titulo-grafico"
+          ></div>
+          <div
+            class="grafico-dica"
+            id="grafico-dica"
+            role="status"
+            aria-live="polite"
+            hidden
+          ></div>
+
+          <ul class="grafico-legenda">
+            <li>
+              <span
+                class="legenda-amostra legenda-recurso"
+                id="legenda-recurso"
+              ></span
+              ><span id="legenda-recurso-texto">Consumo de água</span>
+            </li>
+            <li>
+              <span class="legenda-amostra legenda-excesso"></span>Acima da
+              referência
+            </li>
+            <li>
+              <span class="legenda-amostra legenda-referencia"></span>Referência
+            </li>
+          </ul>
+
+          <details class="grafico-tabela">
+            <summary>Ver os dados em tabela</summary>
+            <div class="tabela-rolagem">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col">Mês</th>
+                    <th scope="col">Consumo</th>
+                    <th scope="col">Em relação à referência</th>
+                  </tr>
+                </thead>
+                <tbody id="grafico-tabela-corpo"></tbody>
+              </table>
+            </div>
+          </details>
+        </div>
+
+        <!-- INDICADORES DE ECONOMIA -->
+        <aside
+          class="painel-bloco indicadores"
+          aria-labelledby="titulo-indicadores"
+        >
+          <h2 id="titulo-indicadores">Indicadores de economia</h2>
+          <p class="painel-bloco-descricao" id="indicadores-periodo">
+            Desde o primeiro registro
+          </p>
+
+          <dl class="indicadores-lista" id="indicadores-lista"></dl>
+        </aside>
+      </section>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="rodape">
+      <div class="container">
+        <div class="rodape-conteudo">
+          <div class="rodape-marca">
+            <h2>EcoConta</h2>
+            <p>Consumo inteligente, um futuro mais sustentável.</p>
+          </div>
+
+          <div class="rodape-navegacao">
+            <h3>Navegação</h3>
+            <a href="index.html">Início</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="integrantes.html">Integrantes</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contato.html">Contato</a>
+            <a href="dashboard.html">Painel</a>
+            <a href="consumo.html">Consumo</a>
+          </div>
+
+          <div class="rodape-projeto">
+            <h3>Projeto acadêmico</h3>
+            <p>FIAP — Global Solution 2026/2</p>
+            <p>Equipe NextBythe</p>
+          </div>
+        </div>
+
+        <div class="rodape-inferior">
+          <p>© 2026 EcoConta. Todos os direitos reservados.</p>
+          <p>Desenvolvido pela equipe NextBythe.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
