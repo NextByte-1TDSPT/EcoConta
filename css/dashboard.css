@@ -214,20 +214,245 @@
   max-width: 760px;
 }
 
-/* 4. RESPONSIVIDADE */
+/* 4. EVOLUÇÃO MENSAL: GRÁFICO + INDICADORES */
+
+.painel-evolucao {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr);
+    gap: 24px;
+    align-items: start;
+}
+
+.grafico-bloco {
+    position: relative;
+}
+
+.grafico {
+    width: 100%;
+    min-height: 240px;
+}
+
+.grafico svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.grafico-grade {
+    stroke: var(--borda);
+    stroke-width: 1;
+}
+
+.grafico-eixo {
+    fill: var(--texto-suave);
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
+}
+
+.grafico-barra-agua {
+    fill: var(--agua);
+}
+
+.grafico-barra-energia {
+    fill: var(--energia);
+}
+
+.grafico-barra-excesso {
+    fill: var(--alerta);
+}
+
+.grafico-referencia {
+    stroke: var(--bege);
+    stroke-width: 1.5;
+    stroke-dasharray: 6 5;
+}
+
+.grafico-alvo {
+    fill: transparent;
+    cursor: default;
+}
+
+.grafico-alvo.ativo {
+    fill: rgba(245, 240, 233, 0.06);
+}
+
+.grafico-vazio {
+    color: var(--texto-suave);
+    font-size: 15px;
+    padding: 40px 0;
+}
+
+.grafico-vazio a {
+    color: var(--verde-claro);
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+/* Dica ao passar o mouse */
+.grafico-dica {
+    position: absolute;
+    transform: translate(-50%, -8px);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 10px 14px;
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    background-color: var(--fundo);
+    color: var(--bege);
+    font-size: 13px;
+    white-space: nowrap;
+    pointer-events: none;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.grafico-dica[hidden] {
+    display: none;
+}
+
+.grafico-dica span {
+    color: var(--texto-suave);
+}
+
+/* Legenda */
+.grafico-legenda {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 22px;
+    list-style: none;
+    margin-top: 14px;
+    color: var(--texto-suave);
+    font-size: 13px;
+}
+
+.grafico-legenda li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.legenda-amostra {
+    display: inline-block;
+    width: 14px;
+    height: 10px;
+    border-radius: 3px;
+}
+
+.legenda-recurso {
+    background-color: var(--agua);
+}
+
+.legenda-excesso {
+    background-color: var(--alerta);
+}
+
+.legenda-referencia {
+    width: 22px;
+    height: 0;
+    border-radius: 0;
+    border-top: 2px dashed var(--bege);
+}
+
+/* Tabela com os mesmos dados */
+.grafico-tabela {
+    margin-top: 18px;
+    border-top: 1px solid var(--borda);
+    padding-top: 14px;
+}
+
+.grafico-tabela summary {
+    color: var(--verde-claro);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.tabela-rolagem {
+    overflow-x: auto;
+    margin-top: 12px;
+}
+
+.grafico-tabela table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.grafico-tabela th,
+.grafico-tabela td {
+    text-align: left;
+    padding: 9px 10px;
+    border-bottom: 1px solid var(--borda);
+}
+
+.grafico-tabela th {
+    color: var(--texto-suave);
+    font-weight: 500;
+}
+
+.grafico-tabela td {
+    color: var(--bege);
+    font-variant-numeric: tabular-nums;
+}
+
+/* Indicadores de economia */
+.indicadores h2 {
+    margin-bottom: 0;
+}
+
+.indicadores-lista {
+    margin-top: 22px;
+}
+
+.indicador {
+    padding: 18px 0;
+    border-top: 1px solid var(--borda);
+}
+
+.indicador:last-child {
+    padding-bottom: 0;
+}
+
+.indicador dt {
+    color: var(--texto-suave);
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+.indicador .numero {
+    color: var(--bege);
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.indicador-apoio {
+    color: var(--texto-suave);
+    font-size: 13px;
+    line-height: 1.5;
+    margin-top: 4px;
+}
+
+
+/* 5. RESPONSIVIDADE */
 
 @media (max-width: 900px) {
-  .cartoes-consumo {
-    grid-template-columns: 1fr;
-  }
+    .cartoes-consumo {
+        grid-template-columns: 1fr;
+    }
+
+    .painel-evolucao {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 460px) {
-  .cartao-consumo {
-    padding: 22px 18px 20px;
-  }
+    .cartao-consumo {
+        padding: 22px 18px 20px;
+    }
 
-  .cartao-detalhes {
-    grid-template-columns: 1fr 1fr;
-  }
+    .cartao-detalhes {
+        grid-template-columns: 1fr 1fr;
+    }
 }

@@ -125,7 +125,95 @@
           fictícias (R$ 6,50/m³ e R$ 0,85/kWh).
         </p>
       </section>
-      
+
+      <!-- EVOLUÇÃO MENSAL E INDICADORES -->
+      <section class="painel-secao painel-evolucao">
+        <!-- GRÁFICO DE CONSUMO MENSAL -->
+        <div class="painel-bloco grafico-bloco">
+          <div class="painel-bloco-topo">
+            <div>
+              <h2 id="titulo-grafico">Consumo mensal de água</h2>
+              <p class="painel-bloco-descricao">
+                Cada barra é um mês registrado. A linha tracejada é a
+                referência.
+              </p>
+            </div>
+
+            <div
+              class="pilulas"
+              role="group"
+              aria-label="Recurso exibido no gráfico"
+            >
+              <button type="button" data-grafico="agua" aria-pressed="true">
+                Água
+              </button>
+              <button type="button" data-grafico="energia" aria-pressed="false">
+                Energia
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="grafico"
+            id="grafico"
+            role="img"
+            aria-labelledby="titulo-grafico"
+          ></div>
+          <div
+            class="grafico-dica"
+            id="grafico-dica"
+            role="status"
+            aria-live="polite"
+            hidden
+          ></div>
+
+          <ul class="grafico-legenda">
+            <li>
+              <span
+                class="legenda-amostra legenda-recurso"
+                id="legenda-recurso"
+              ></span
+              ><span id="legenda-recurso-texto">Consumo de água</span>
+            </li>
+            <li>
+              <span class="legenda-amostra legenda-excesso"></span>Acima da
+              referência
+            </li>
+            <li>
+              <span class="legenda-amostra legenda-referencia"></span>Referência
+            </li>
+          </ul>
+
+          <details class="grafico-tabela">
+            <summary>Ver os dados em tabela</summary>
+            <div class="tabela-rolagem">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col">Mês</th>
+                    <th scope="col">Consumo</th>
+                    <th scope="col">Em relação à referência</th>
+                  </tr>
+                </thead>
+                <tbody id="grafico-tabela-corpo"></tbody>
+              </table>
+            </div>
+          </details>
+        </div>
+
+        <!-- INDICADORES DE ECONOMIA -->
+        <aside
+          class="painel-bloco indicadores"
+          aria-labelledby="titulo-indicadores"
+        >
+          <h2 id="titulo-indicadores">Indicadores de economia</h2>
+          <p class="painel-bloco-descricao" id="indicadores-periodo">
+            Desde o primeiro registro
+          </p>
+
+          <dl class="indicadores-lista" id="indicadores-lista"></dl>
+        </aside>
+      </section>
     </main>
 
     <!-- RODAPÉ -->
