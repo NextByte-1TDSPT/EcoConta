@@ -4,12 +4,12 @@ Projeto desenvolvido para a **Global Solution 2026/2 da FIAP**, pela equipe **Ne
 
 O EcoConta é uma plataforma demonstrativa voltada ao acompanhamento do consumo residencial de água e energia. A solução reúne indicadores de consumo, ferramentas para organização de metas e orientações para incentivar hábitos mais conscientes e sustentáveis.
 
-## Acesse o projeto
+## 🔗 Acesse o projeto
 
 - **Aplicação publicada:** [EcoConta — GitHub Pages](https://nextbyte-1tdspt.github.io/EcoConta/)
 - **Repositório público:** [NextByte-1TDSPT/EcoConta](https://github.com/NextByte-1TDSPT/EcoConta)
 
-## Funcionalidades
+## ✨ Funcionalidades
 
 - **Página inicial:** apresentação da proposta e dos recursos da plataforma.
 - **Acesso e perfil:** cadastro, login demonstrativo e gerenciamento das informações do perfil.
@@ -19,7 +19,7 @@ O EcoConta é uma plataforma demonstrativa voltada ao acompanhamento do consumo 
 - **EcoBot:** orientações relacionadas ao consumo consciente.
 - **Páginas institucionais:** Sobre, Integrantes, FAQ e Contato.
 
-## Tecnologias utilizadas
+## 🛠️ Tecnologias utilizadas
 
 - **HTML5:** estruturação das páginas.
 - **CSS3:** estilos, identidade visual e adaptação para diferentes tamanhos de tela.
@@ -28,9 +28,9 @@ O EcoConta é uma plataforma demonstrativa voltada ao acompanhamento do consumo 
 - **Font Awesome:** ícones complementares.
 - **Web Storage (`localStorage` e `sessionStorage`):** para armazenarmos localmente os dados para sem demonstrados no navegador.
 
-## Estrutura de pastas
+## 📁 Estrutura de pastas
 
-A aplicação está organizada por responsabilidade: `pages/` reúne as páginas internas; `css/` concentra os estilos; `js/` contém os scripts; e `img/` armazena os recursos visuais.
+A aplicação está organizada por responsabilidade: `pages/` reúne as páginas internas; `css/` concentra os estilos; `js/` contém os scripts; e `assets/` armazena os recursos visuais.
 
 ```text
 EcoConta/
@@ -76,17 +76,17 @@ EcoConta/
 │   ├── navegacao.js
 │   ├── painel.js
 │   └── perfil.js
-├── img/
-│   ├── david.png
-│   ├── let.png
-│   ├── matheus.png
-│   ├── sarah.png
-│   └── vini.png
-├── index.html
-├── README.md
+├── assets/
+│   ├── images/
+│   │   ├── david.png
+│   │   ├── let.png
+│   │   ├── matheus.png
+│   │   ├── sarah.png
+│   └── └── vini.png
+└── README.md
 ```
 
-## Como executar
+## 📹 Como executar
 
 ### Executar localmente 
 
@@ -103,7 +103,7 @@ Também é possível acessar diretamente a versão publicada no GitHub Pages:
 
 [https://nextbyte-1tdspt.github.io/EcoConta/](https://nextbyte-1tdspt.github.io/EcoConta/)
 
-## Integrantes — Equipe NextByte
+## 👥 Integrantes — Equipe NextByte
 
 **Turma:** 1TDSPT
 
@@ -119,7 +119,7 @@ Também é possível acessar diretamente a versão publicada no GitHub Pages:
 
 Para dúvidas ou informações sobre o projeto, entre em contato com a equipe por meio do [repositório público no GitHub](https://github.com/NextByte-1TDSPT/EcoConta), utilizando a área de *Issues* ou pela aba de contato no Site EcoConta.
 
-## Observações
+## ℹ️ Observações
 
 - Os dados armazenados em `localStorage` e `sessionStorage` permanecem no navegador utilizado e não são sincronizados automaticamente entre dispositivos.
 - Os valores apresentados têm finalidade demonstrativa e não representam medições oficiais.
@@ -130,3 +130,4 @@ Para dúvidas ou informações sobre o projeto, entre em contato com a equipe po
 
 **FIAP — Global Solution 2026/2**  
 **Equipe NextByte — Turma 1TDSPT**
+
