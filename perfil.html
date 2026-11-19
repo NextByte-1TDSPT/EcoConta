@@ -2,10 +2,13 @@
 <html lang="pt-BR">
 
 <head>
+    <!-- Configurações e título da página -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Consulte e edite seu perfil e os dados da sua residência no EcoConta." />
     <title>Perfil residencial | EcoConta</title>
+
+    <!-- Fonte, ícones e arquivos de estilo -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
@@ -16,11 +19,13 @@
     <link rel="stylesheet" href="css/rodape.css" />
     <link rel="stylesheet" href="css/perfil.css" />
 
+    <!-- Scripts responsáveis pelos dados e pelo perfil -->
     <script src="js/dados.js" defer></script>
     <script src="js/perfil.js" defer></script>
 </head>
 
 <body>
+    <!-- Cabeçalho e menu de navegação -->
     <header class="cabecalho">
         <nav class="navegacao" aria-label="Menu principal">
             <a href="index.html" class="logo"><i class="fas fa-leaf logo-simbolo" aria-hidden="true"></i><span
@@ -39,7 +44,11 @@
             </ul>
         </nav>
     </header>
+
+    <!-- Conteúdo principal do perfil do usuário -->
     <main class="pagina-perfil">
+
+        <!-- Título e apresentação da página -->
         <section class="titulo-pagina">
             <span class="etiqueta">ÁREA DO USUÁRIO</span>
             <h1>Meu perfil <span>residencial</span></h1>
@@ -48,11 +57,15 @@
                 precisar.
             </p>
         </section>
+
+        <!-- Aviso sobre o armazenamento dos dados -->
         <div class="aviso-demo">
             <i class="fas fa-circle-info" aria-hidden="true"></i><span>Ambiente demonstrativo: seus dados ficam salvos
                 neste
                 navegador.</span>
         </div>
+
+        <!-- Cartão com os dados pessoais do usuário -->
         <section class="cartao-perfil">
             <div class="cabecalho-cartao">
                 <div class="icone-cartao">
@@ -74,6 +87,8 @@
                 </div>
             </div>
         </section>
+
+        <!-- Cartão com o resumo das informações da residência -->
         <section class="cartao-perfil">
             <div class="cabecalho-cartao">
                 <div class="icone-cartao">
@@ -84,16 +99,24 @@
                     <p>Resumo das informações fornecidas na configuração inicial.</p>
                 </div>
             </div>
+
+            <!-- Local onde os dados da residência são exibidos -->
             <div class="resumo-perfil" id="resumo-residencia"></div>
+
+            <!-- Link para editar as informações residenciais -->
             <a class="botao-editar-perfil" href="onboarding.html?editar=1"><i class="fas fa-pen"></i> Editar perfil
                 residencial</a>
         </section>
+
+        <!-- Botão para sair da conta -->
         <div class="acoes-perfil">
             <button type="button" class="botao-sair" id="botao-sair">
                 <i class="fas fa-right-from-bracket"></i> Sair da conta
             </button>
         </div>
     </main>
+
+    <!-- Rodapé com informações do projeto -->
     <footer class="rodape">
         <div class="container">
             <div class="rodape-conteudo">
@@ -129,6 +152,7 @@
         </div>
     </footer>
 
+    <!-- Script responsável pelo menu de navegação -->
     <script src="js/navegacao.js" defer></script>
 </body>
 

@@ -1,29 +1,36 @@
 /* Perfil residencial — consulta do EcoPerfil */
+
+/* Define a largura e o posicionamento da página */
 .pagina-perfil {
     width: min(1000px, calc(100% - 48px));
-    margin: 58px auto 80px
+    margin: 58px auto 80px;
 }
 
+/* Espaçamento do título da página */
 .titulo-pagina {
-    margin: 0 0 30px
+    margin: 0 0 30px;
 }
 
+/* Estilo do título principal */
 .titulo-pagina h1 {
     font-size: clamp(34px, 5vw, 49px);
     line-height: 1.2;
     letter-spacing: -1px;
-    margin: 0 0 10px
+    margin: 0 0 10px;
 }
 
+/* Destaca uma parte do título com a cor verde */
 .titulo-pagina h1 span {
-    color: var(--verde-claro)
+    color: var(--verde-claro);
 }
 
+/* Estilo do texto abaixo do título */
 .titulo-pagina p {
     color: var(--texto-suave);
-    font-size: 14px
+    font-size: 14px;
 }
 
+/* Caixa de aviso sobre o modo de demonstração */
 .aviso-demo {
     display: flex;
     align-items: center;
@@ -34,29 +41,33 @@
     background: #303526;
     border-radius: 12px;
     color: #DDE5C8;
-    font-size: 11px
+    font-size: 11px;
 }
 
+/* Cor do ícone do aviso */
 .aviso-demo i {
-    color: var(--verde-claro)
+    color: var(--verde-claro);
 }
 
+/* Aparência dos cartões de informações */
 .cartao-perfil {
     padding: 27px 30px;
     margin-bottom: 18px;
     border: 1px solid #464638;
     border-radius: 20px;
     background: #2B2A23;
-    box-shadow: 0 12px 35px #0002
+    box-shadow: 0 12px 35px #0002;
 }
 
+/* Organiza o título e o ícone dos cartões */
 .cabecalho-cartao {
     display: flex;
     align-items: center;
     gap: 14px;
-    margin-bottom: 22px
+    margin-bottom: 22px;
 }
 
+/* Estilo do fundo do ícone */
 .icone-cartao {
     width: 43px;
     height: 43px;
@@ -64,28 +75,33 @@
     place-items: center;
     border-radius: 13px;
     background: #3B472F;
-    color: var(--verde-claro)
+    color: var(--verde-claro);
 }
 
+/* Tamanho do ícone */
 .icone-cartao i {
-    font-size: 18px
+    font-size: 18px;
 }
 
+/* Estilo do título dos cartões */
 .cabecalho-cartao h2 {
-    font-size: 17px
+    font-size: 17px;
 }
 
+/* Estilo da descrição dos cartões */
 .cabecalho-cartao p {
     color: var(--texto-suave);
-    font-size: 11px
+    font-size: 11px;
 }
 
+/* Organiza os campos em duas colunas */
 .grade-campos {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px
+    gap: 18px;
 }
 
+/* Aparência dos valores exibidos no perfil */
 .valor-perfil {
     padding: 11px 13px;
     border: 1px solid #565548;
@@ -93,34 +109,39 @@
     background: #22221D;
     color: var(--bege);
     font-size: 12px;
-    overflow-wrap: anywhere
+    overflow-wrap: anywhere;
 }
 
+/* Organiza o resumo em duas colunas */
 .resumo-perfil {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: 28px
+    column-gap: 28px;
 }
 
+/* Espaçamento e separação de cada informação do resumo */
 .item-resumo {
     display: grid;
     gap: 4px;
     padding: 12px 2px;
-    border-bottom: 1px solid #45443A
+    border-bottom: 1px solid #45443A;
 }
 
+/* Estilo dos nomes dos campos */
 .item-resumo span {
     color: var(--texto-suave);
-    font-size: 10px
+    font-size: 10px;
 }
 
+/* Estilo dos valores do resumo */
 .item-resumo strong {
     font-size: 12px;
     font-weight: 500;
     line-height: 1.5;
-    overflow-wrap: anywhere
+    overflow-wrap: anywhere;
 }
 
+/* Aparência do botão de editar perfil */
 .botao-editar-perfil {
     display: inline-flex;
     align-items: center;
@@ -131,19 +152,22 @@
     border-radius: 24px;
     color: var(--verde-claro);
     font-size: 11px;
-    font-weight: 600
+    font-weight: 600;
 }
 
+/* Muda o fundo do botão ao passar o mouse */
 .botao-editar-perfil:hover {
-    background: #35402B
+    background: #35402B;
 }
 
+/* Posiciona os botões de ação à direita */
 .acoes-perfil {
     display: flex;
     justify-content: flex-end;
-    margin-top: 22px
+    margin-top: 22px;
 }
 
+/* Aparência do botão de sair */
 .botao-sair {
     display: inline-flex;
     align-items: center;
@@ -154,36 +178,44 @@
     background: transparent;
     color: #E7A394;
     font-size: 11px;
-    font-weight: 600
+    font-weight: 600;
 }
 
+/* Muda o fundo do botão ao passar o mouse */
 .botao-sair:hover {
-    background: #382A25
+    background: #382A25;
 }
 
-@media(max-width:700px) {
+/* Ajusta o perfil para telas menores */
+@media (max-width: 700px) {
+
+    /* Reduz a largura e as margens da página */
     .pagina-perfil {
         width: calc(100% - 36px);
-        margin: 34px auto 55px
+        margin: 34px auto 55px;
     }
 
+    /* Reduz o espaçamento interno dos cartões */
     .cartao-perfil {
-        padding: 22px 18px
+        padding: 22px 18px;
     }
 
+    /* Exibe os campos em uma única coluna */
     .grade-campos,
     .resumo-perfil {
-        grid-template-columns: 1fr
+        grid-template-columns: 1fr;
     }
 }
 
+/* Ajusta o tamanho do símbolo da logo no cabeçalho */
 .cabecalho .logo-simbolo {
     font-size: 27px;
     width: 32px;
     height: auto;
-    stroke: none
+    stroke: none;
 }
 
+/* Ajusta o tamanho do ícone do menu */
 .cabecalho .menu-toggle i {
-    font-size: 19px
+    font-size: 19px;
 }

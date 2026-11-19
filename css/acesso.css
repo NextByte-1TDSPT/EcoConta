@@ -1,276 +1,382 @@
-/* Estilos específicos da página de acesso */
+/* Estilos da página de acesso */
+
+/* Define o tamanho e a organização principal da página */
 .pagina-acesso {
-  width: min(1250px, 90%);
-  min-height: calc(100vh - 150px);
-  margin: 0 auto;
-  padding: 65px 0;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(380px, 470px);
-  align-items: center;
-  gap: 8%;
+    width: min(1250px, 90%);
+    min-height: calc(100vh - 150px);
+    margin: 0 auto;
+    padding: 65px 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(380px, 470px);
+    align-items: center;
+    gap: 8%;
 }
+
+/* Define a largura máxima do painel de apresentação */
 .painel-apresentacao {
-  max-width: 600px;
+    max-width: 600px;
 }
+
+/* Espaçamento da etiqueta de apresentação */
 .painel-apresentacao .etiqueta {
-  margin-bottom: 18px;
+    margin-bottom: 18px;
 }
+
+/* Estilo do título principal */
 .painel-apresentacao h1 {
-  font-size: clamp(38px, 5vw, 62px);
-  line-height: 1.13;
-  letter-spacing: -1.8px;
-  margin-bottom: 22px;
+    font-size: clamp(38px, 5vw, 62px);
+    line-height: 1.13;
+    letter-spacing: -1.8px;
+    margin-bottom: 22px;
 }
+
+/* Destaca uma parte do título em verde */
 .painel-apresentacao h1 span {
-  color: var(--verde-claro);
+    color: var(--verde-claro);
 }
+
+/* Estilo do texto de apresentação */
 .painel-apresentacao > p {
-  max-width: 510px;
-  color: var(--texto-suave);
-  font-size: 16px;
-  line-height: 1.85;
+    max-width: 510px;
+    color: var(--texto-suave);
+    font-size: 16px;
+    line-height: 1.85;
 }
+
+/* Organiza os destaques da apresentação */
 .destaques {
-  display: grid;
-  gap: 17px;
-  margin-top: 38px;
+    display: grid;
+    gap: 17px;
+    margin-top: 38px;
 }
+
+/* Alinha os ícones e textos dos destaques */
 .destaques div {
-  display: flex;
-  align-items: center;
-  gap: 13px;
-  color: var(--bege);
-  font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    color: var(--bege);
+    font-size: 14px;
 }
+
+/* Define o tamanho e a cor dos ícones */
 .destaques svg {
-  width: 21px;
-  color: var(--verde-claro);
+    width: 21px;
+    color: var(--verde-claro);
 }
+
+/* Estilo do selo de demonstração */
 .selo-demo {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  margin-top: 42px;
-  padding: 10px 14px;
-  border: 1px solid var(--borda);
-  border-radius: 30px;
-  color: var(--texto-suave);
-  font-size: 11px;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 42px;
+    padding: 10px 14px;
+    border: 1px solid var(--borda);
+    border-radius: 30px;
+    color: var(--texto-suave);
+    font-size: 11px;
 }
+
+/* Estilo do ícone do selo */
 .selo-demo svg {
-  width: 15px;
-  color: var(--verde-claro);
+    width: 15px;
+    color: var(--verde-claro);
 }
+
+/* Aparência do cartão de acesso */
 .cartao-acesso {
-  background: #2b2a23;
-  border: 1px solid #4a4a3c;
-  border-radius: 25px;
-  padding: 30px 34px;
-  box-shadow: 0 22px 60px #0003;
+    background: #2b2a23;
+    border: 1px solid #4a4a3c;
+    border-radius: 25px;
+    padding: 30px 34px;
+    box-shadow: 0 22px 60px #0003;
 }
+
+/* Organiza as abas de login e cadastro */
 .alternador {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5px;
-  background: #1f201a;
-  padding: 5px;
-  border-radius: 14px;
-  margin-bottom: 27px;
-}
-.aba {
-  border: 0;
-  background: transparent;
-  color: var(--texto-suave);
-  padding: 11px;
-  border-radius: 10px;
-  font-weight: 600;
-  font-size: 13px;
-}
-.aba.ativa {
-  background: var(--verde-oliva);
-  color: white;
-}
-.introducao-formulario h2 {
-  font-size: 25px;
-  margin-bottom: 5px;
-}
-.introducao-formulario p {
-  font-size: 12px;
-  color: var(--texto-suave);
-  margin-bottom: 22px;
-}
-.introducao-formulario .etiqueta {
-  font-size: 9px;
-  margin-bottom: 7px;
-}
-.formulario {
-  display: grid;
-  gap: 15px;
-}
-.oculto {
-  display: none !important;
-}
-.entrada-com-icone {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  border: 1px solid #555447;
-  background: #22221d;
-  border-radius: 11px;
-  padding: 0 13px;
-  transition: 0.2s;
-}
-.entrada-com-icone:focus-within {
-  border-color: var(--verde-claro);
-  box-shadow: 0 0 0 3px #a4b86b22;
-}
-.entrada-com-icone > svg {
-  width: 17px;
-  color: var(--verde-claro);
-  flex-shrink: 0;
-}
-.entrada-com-icone input {
-  width: 100%;
-  min-width: 0;
-  border: 0;
-  outline: 0;
-  background: transparent;
-  color: var(--bege);
-  padding: 13px 0;
-  font-size: 12px;
-}
-.entrada-com-icone input::placeholder {
-  color: #8f8d80;
-}
-.mostrar-senha {
-  border: 0;
-  background: transparent;
-  color: var(--texto-suave);
-  display: grid;
-  place-items: center;
-}
-.mostrar-senha svg {
-  width: 17px;
-}
-.formulario .botao-principal {
-  width: 100%;
-  margin-top: 5px;
-}
-.mensagem-formulario {
-  font-size: 11px;
-  text-align: center;
-  color: var(--sucesso);
-  min-height: 16px;
-}
-.mensagem-formulario.erro-msg {
-  color: var(--erro);
-}
-.troca-formulario {
-  text-align: center;
-  color: var(--texto-suave);
-  font-size: 11px;
-}
-.link-texto {
-  border: 0;
-  background: none;
-  color: var(--verde-claro);
-  font-weight: 700;
-}
-.aviso-seguranca {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
-  border-top: 1px solid var(--borda);
-  padding-top: 17px;
-  margin-top: 22px;
-  color: #a7a395;
-  font-size: 9px;
-}
-.aviso-seguranca svg {
-  width: 14px;
-}
-@media (max-width: 900px) {
-  .pagina-acesso {
-    width: min(600px, 90%);
-    grid-template-columns: 1fr;
-    gap: 35px;
-    padding: 45px 0;
-  }
-  .painel-apresentacao h1 {
-    font-size: 44px;
-  }
-  .destaques {
+    display: grid;
     grid-template-columns: 1fr 1fr;
-  }
+    gap: 5px;
+    background: #1f201a;
+    padding: 5px;
+    border-radius: 14px;
+    margin-bottom: 27px;
 }
+
+/* Estilo dos botões das abas */
+.aba {
+    border: 0;
+    background: transparent;
+    color: var(--texto-suave);
+    padding: 11px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+/* Destaca a aba selecionada */
+.aba.ativa {
+    background: var(--verde-oliva);
+    color: white;
+}
+
+/* Estilo do título do formulário */
+.introducao-formulario h2 {
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+/* Estilo da descrição do formulário */
+.introducao-formulario p {
+    font-size: 12px;
+    color: var(--texto-suave);
+    margin-bottom: 22px;
+}
+
+/* Ajusta a etiqueta do formulário */
+.introducao-formulario .etiqueta {
+    font-size: 9px;
+    margin-bottom: 7px;
+}
+
+/* Organiza os campos do formulário */
+.formulario {
+    display: grid;
+    gap: 15px;
+}
+
+/* Esconde os elementos que não devem aparecer */
+.oculto {
+    display: none !important;
+}
+
+/* Organiza os campos que possuem ícones */
+.entrada-com-icone {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #555447;
+    background: #22221d;
+    border-radius: 11px;
+    padding: 0 13px;
+    transition: 0.2s;
+}
+
+/* Destaca o campo quando ele está selecionado */
+.entrada-com-icone:focus-within {
+    border-color: var(--verde-claro);
+    box-shadow: 0 0 0 3px #a4b86b22;
+}
+
+/* Estilo dos ícones dentro dos campos */
+.entrada-com-icone > svg {
+    width: 17px;
+    color: var(--verde-claro);
+    flex-shrink: 0;
+}
+
+/* Estilo dos campos de entrada */
+.entrada-com-icone input {
+    width: 100%;
+    min-width: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: var(--bege);
+    padding: 13px 0;
+    font-size: 12px;
+}
+
+/* Cor do texto de orientação dos campos */
+.entrada-com-icone input::placeholder {
+    color: #8f8d80;
+}
+
+/* Estilo do botão para mostrar ou ocultar a senha */
+.mostrar-senha {
+    border: 0;
+    background: transparent;
+    color: var(--texto-suave);
+    display: grid;
+    place-items: center;
+}
+
+/* Tamanho do ícone de mostrar senha */
+.mostrar-senha svg {
+    width: 17px;
+}
+
+/* Faz o botão principal ocupar toda a largura */
+.formulario .botao-principal {
+    width: 100%;
+    margin-top: 5px;
+}
+
+/* Estilo das mensagens do formulário */
+.mensagem-formulario {
+    font-size: 11px;
+    text-align: center;
+    color: var(--sucesso);
+    min-height: 16px;
+}
+
+/* Cor das mensagens de erro */
+.mensagem-formulario.erro-msg {
+    color: var(--erro);
+}
+
+/* Centraliza o texto de troca entre login e cadastro */
+.troca-formulario {
+    text-align: center;
+    color: var(--texto-suave);
+    font-size: 11px;
+}
+
+/* Estilo dos botões de troca de formulário */
+.link-texto {
+    border: 0;
+    background: none;
+    color: var(--verde-claro);
+    font-weight: 700;
+}
+
+/* Organiza o aviso de segurança */
+.aviso-seguranca {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    border-top: 1px solid var(--borda);
+    padding-top: 17px;
+    margin-top: 22px;
+    color: #a7a395;
+    font-size: 9px;
+}
+
+/* Define o tamanho do ícone de segurança */
+.aviso-seguranca svg {
+    width: 14px;
+}
+
+/* Ajustes para telas com até 900px */
+@media (max-width: 900px) {
+
+    /* Coloca o painel e o formulário um abaixo do outro */
+    .pagina-acesso {
+        width: min(600px, 90%);
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 45px 0;
+    }
+
+    /* Reduz o tamanho do título */
+    .painel-apresentacao h1 {
+        font-size: 44px;
+    }
+
+    /* Organiza os destaques em duas colunas */
+    .destaques {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Ajustes para telas com até 560px */
 @media (max-width: 560px) {
-  .pagina-acesso {
-    width: 90%;
-    padding: 32px 0;
-  }
-  .painel-apresentacao h1 {
-    font-size: 37px;
-  }
-  .destaques {
-    grid-template-columns: 1fr;
-  }
-  .cartao-acesso {
-    padding: 23px 19px;
-  }
+
+    .pagina-acesso {
+        width: 90%;
+        padding: 32px 0;
+    }
+
+    /* Reduz o título para telas pequenas */
+    .painel-apresentacao h1 {
+        font-size: 37px;
+    }
+
+    /* Organiza os destaques em uma coluna */
+    .destaques {
+        grid-template-columns: 1fr;
+    }
+
+    /* Reduz o espaço interno do cartão */
+    .cartao-acesso {
+        padding: 23px 19px;
+    }
 }
 
+/* Ajustes dos ícones do Font Awesome */
+
+/* Ícones dos destaques */
 .destaques i {
-  width: 21px;
-  color: var(--verde-claro);
-  font-size: 18px;
-  flex-shrink: 0;
-}
-.selo-demo i {
-  width: 15px;
-  color: var(--verde-claro);
-  font-size: 14px;
-}
-.entrada-com-icone > i {
-  width: 17px;
-  color: var(--verde-claro);
-  font-size: 15px;
-  flex-shrink: 0;
-  text-align: center;
-}
-.mostrar-senha i {
-  font-size: 16px;
-  color: var(--texto-suave);
-}
-.botao-principal i {
-  font-size: 14px;
-}
-.aviso-seguranca i {
-  width: 14px;
-  color: var(--verde-claro);
-  font-size: 12px;
-}
-.cabecalho .logo-simbolo {
-  font-size: 27px;
-  width: 32px;
-  height: auto;
-}
-.cabecalho .menu-toggle i {
-  font-size: 19px;
+    width: 21px;
+    color: var(--verde-claro);
+    font-size: 18px;
+    flex-shrink: 0;
 }
 
+/* Ícone do selo de demonstração */
+.selo-demo i {
+    width: 15px;
+    color: var(--verde-claro);
+    font-size: 14px;
+}
+
+/* Ícones dos campos de entrada */
+.entrada-com-icone > i {
+    width: 17px;
+    color: var(--verde-claro);
+    font-size: 15px;
+    flex-shrink: 0;
+    text-align: center;
+}
+
+/* Ícone do botão de mostrar senha */
+.mostrar-senha i {
+    font-size: 16px;
+    color: var(--texto-suave);
+}
+
+/* Ícone do botão principal */
+.botao-principal i {
+    font-size: 14px;
+}
+
+/* Ícone do aviso de segurança */
+.aviso-seguranca i {
+    width: 14px;
+    color: var(--verde-claro);
+    font-size: 12px;
+}
+
+/* Ajusta a logo e o menu do cabeçalho */
+.cabecalho .logo-simbolo {
+    font-size: 27px;
+    width: 32px;
+    height: auto;
+}
+
+.cabecalho .menu-toggle i {
+    font-size: 19px;
+}
+
+/* Mantém a aparência dos campos preenchidos automaticamente pelo navegador */
 .entrada-com-icone input:-webkit-autofill,
 .entrada-com-icone input:-webkit-autofill:hover,
 .entrada-com-icone input:-webkit-autofill:focus {
-  -webkit-text-fill-color: var(--bege);
-  caret-color: var(--bege);
-  -webkit-box-shadow: 0 0 0 1000px #22221d inset;
-  box-shadow: 0 0 0 1000px #22221d inset;
-  transition: background-color 9999s ease-out 0s;
+    -webkit-text-fill-color: var(--bege);
+    caret-color: var(--bege);
+    -webkit-box-shadow: 0 0 0 1000px #22221d inset;
+    box-shadow: 0 0 0 1000px #22221d inset;
+    transition: background-color 9999s ease-out 0s;
 }
+
+/* Remove a aparência padrão dos campos de entrada */
 .entrada-com-icone input {
-  appearance: none;
+    appearance: none;
 }
+
+/* Mantém o fundo escuro quando o navegador preenche os campos */
 .entrada-com-icone:has(input:-webkit-autofill) {
-  background: #22221d;
+    background: #22221d;
 }

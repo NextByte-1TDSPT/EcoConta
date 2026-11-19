@@ -1,627 +1,848 @@
 /* Ajustes do perfil residencial */
+
+/* Define a largura e o posicionamento da página */
 body {
-  background: #f1f6f3;
-  color: #24313d;
+    background: #f1f6f3;
+    color: #24313d;
 }
+
 .ajustesperfil-pagina {
-  width: min(960px, calc(100% - 36px));
-  margin: 42px auto 76px;
+    width: min(960px, calc(100% - 36px));
+    margin: 42px auto 76px;
 }
+
+/* Organiza o cabeçalho da página */
 .ajustesperfil-topo {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 24px;
-  margin-bottom: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+    margin-bottom: 28px;
 }
+
+/* Estilo da pequena etiqueta acima do título */
 .ajustesperfil-topo .etiqueta {
-  color: #0d5738;
-  font-size: 10px;
-  margin-bottom: 8px;
+    color: #0d5738;
+    font-size: 10px;
+    margin-bottom: 8px;
 }
+
+/* Estilo do título principal */
 .ajustesperfil-topo h1 {
-  font-size: clamp(25px, 4vw, 34px);
-  line-height: 1.2;
-  color: #24313d;
-  margin-bottom: 8px;
+    font-size: clamp(25px, 4vw, 34px);
+    line-height: 1.2;
+    color: #24313d;
+    margin-bottom: 8px;
 }
+
+/* Estilo da descrição do cabeçalho */
 .ajustesperfil-topo p {
-  font-size: 13px;
-  color: #687b8e;
+    font-size: 13px;
+    color: #687b8e;
 }
+
+/* Estilo do botão de salvar e sair */
 .salvar-sair {
-  border: 0;
-  background: transparent;
-  color: #0d5738;
-  font-size: 12px;
-  font-weight: 700;
-  padding: 10px 0;
+    border: 0;
+    background: transparent;
+    color: #0d5738;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 10px 0;
 }
+
+/* Organiza os indicadores das etapas */
 .passos {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0;
-  list-style: none;
-  margin: 0 0 26px;
-  padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    list-style: none;
+    margin: 0 0 26px;
+    padding: 0;
 }
+
+/* Organiza cada indicador de etapa */
 .passo {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: #718198;
-  font-size: 11px;
-  white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #718198;
+    font-size: 11px;
+    white-space: nowrap;
 }
+
+/* Cria a linha entre as etapas */
 .passo:not(:last-child)::after {
-  content: "";
-  display: block;
-  width: clamp(14px, 3.2vw, 48px);
-  height: 1px;
-  background: #d8e2e8;
-  margin: 0 10px;
+    content: "";
+    display: block;
+    width: clamp(14px, 3.2vw, 48px);
+    height: 1px;
+    background: #d8e2e8;
+    margin: 0 10px;
 }
+
+/* Estilo do círculo com o número da etapa */
 .passo span {
-  width: 23px;
-  height: 23px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  background: #f8fafb;
-  border: 1px solid #dce5ea;
-  font-size: 10px;
+    width: 23px;
+    height: 23px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #f8fafb;
+    border: 1px solid #dce5ea;
+    font-size: 10px;
 }
+
+/* Destaca a etapa atual */
 .passo.atual {
-  color: #263443;
-  font-weight: 600;
+    color: #263443;
+    font-weight: 600;
 }
+
 .passo.atual span {
-  background: #b5f3d5;
-  border-color: #0d5738;
-  color: #0d5738;
+    background: #b5f3d5;
+    border-color: #0d5738;
+    color: #0d5738;
 }
+
+/* Destaca as etapas concluídas */
 .passo.concluido span {
-  background: #0d5738;
-  border-color: #0d5738;
-  color: white;
+    background: #0d5738;
+    border-color: #0d5738;
+    color: white;
 }
+
+/* Aparência geral dos cartões das etapas */
 .etapa {
-  display: none;
-  background: #fff;
-  border: 1px solid #dce6e9;
-  border-radius: 16px;
-  padding: 30px;
-  box-shadow: 0 3px 10px #183a3010;
+    display: none;
+    background: #fff;
+    border: 1px solid #dce6e9;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 3px 10px #183a3010;
 }
+
+/* Exibe somente a etapa ativa */
 .etapa.ativa {
-  display: block;
+    display: block;
 }
+
+/* Estilo do número da etapa */
 .numero-etapa {
-  display: block;
-  color: #0d5738;
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 1.2px;
-  margin-bottom: 7px;
+    display: block;
+    color: #0d5738;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    margin-bottom: 7px;
 }
+
+/* Estilo do título de cada etapa */
 .etapa h2 {
-  font-size: 21px;
-  color: #263443;
-  line-height: 1.3;
-  margin-bottom: 5px;
+    font-size: 21px;
+    color: #263443;
+    line-height: 1.3;
+    margin-bottom: 5px;
 }
+
+/* Estilo do texto abaixo do título */
 .subtitulo-etapa {
-  font-size: 12px;
-  color: #718198;
-  margin-bottom: 22px;
+    font-size: 12px;
+    color: #718198;
+    margin-bottom: 22px;
 }
+
+/* Organiza os campos em duas colunas */
 .grade-campos {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
 }
+
+/* Estilo dos nomes dos campos */
 .campo label {
-  font-size: 11px;
-  color: #263443;
+    font-size: 11px;
+    color: #263443;
 }
+
+/* Estilo dos campos de texto e seletores */
 .campo input,
 .campo select,
 .adicionar-equipamento input {
-  background: #fff;
-  color: #263443;
-  border: 1px solid #dce5ea;
-  border-radius: 8px;
-  padding: 9px 11px;
-  font-size: 12px;
+    background: #fff;
+    color: #263443;
+    border: 1px solid #dce5ea;
+    border-radius: 8px;
+    padding: 9px 11px;
+    font-size: 12px;
 }
+
+/* Destaca os campos quando estão selecionados */
 .campo input:focus,
 .campo select:focus,
 .adicionar-equipamento input:focus {
-  border-color: #0d6845;
-  box-shadow: 0 0 0 3px #0d684512;
+    border-color: #0d6845;
+    box-shadow: 0 0 0 3px #0d684512;
 }
+
+/* Faz o campo ocupar toda a largura */
 .campo-largo {
-  grid-column: 1/-1;
+    grid-column: 1/-1;
 }
+
+/* Permite posicionar um texto dentro do campo */
 .campo-sufixo {
-  position: relative;
+    position: relative;
 }
+
 .campo-sufixo input {
-  padding-right: 42px;
+    padding-right: 42px;
 }
+
+/* Posiciona o sufixo dentro do campo */
 .campo-sufixo span {
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 11px;
-  color: #718198;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 11px;
+    color: #718198;
 }
+
+/* Organiza as opções em cartões */
 .opcoes-cartao {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
 }
+
+/* Aparência de cada cartão de opção */
 .opcao-cartao {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  min-height: 58px;
-  padding: 10px 12px;
-  border: 1px solid #dce5ea;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 0.18s;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 58px;
+    padding: 10px 12px;
+    border: 1px solid #dce5ea;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.18s;
 }
+
+/* Oculta o botão de seleção original */
 .opcao-cartao input {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
 }
+
+/* Destaca o cartão quando a opção está selecionada */
 .opcao-cartao:has(input:checked) {
-  border: 1.5px solid #0d6845;
-  background: #eff6f2;
+    border: 1.5px solid #0d6845;
+    background: #eff6f2;
 }
+
+/* Estilo do espaço do ícone */
 .opcao-icone {
-  width: 32px;
-  height: 32px;
-  display: grid;
-  place-items: center;
-  border-radius: 8px;
-  background: #eff3f6;
-  color: #637b92;
-  flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    display: grid;
+    place-items: center;
+    border-radius: 8px;
+    background: #eff3f6;
+    color: #637b92;
+    flex-shrink: 0;
 }
+
+/* Muda a cor do ícone quando a opção é selecionada */
 .opcao-cartao:has(input:checked) .opcao-icone {
-  background: #dcebe3;
-  color: #0d6845;
+    background: #dcebe3;
+    color: #0d6845;
 }
+
+/* Estilo do nome da opção */
 .opcao-cartao b {
-  display: block;
-  font-size: 11px;
-  color: #263443;
+    display: block;
+    font-size: 11px;
+    color: #263443;
 }
+
+/* Estilo da descrição da opção */
 .opcao-descricao {
-  display: block;
-  display: block;
-  font-size: 9px;
-  color: #718198;
+    display: block;
+    font-size: 9px;
+    color: #718198;
 }
+
+/* Posiciona o símbolo de seleção */
 .opcao-check {
-  margin-left: auto;
-  color: #0d6845;
-  opacity: 0;
+    margin-left: auto;
+    color: #0d6845;
+    opacity: 0;
 }
+
+/* Exibe o símbolo quando a opção é selecionada */
 .opcao-cartao:has(input:checked) .opcao-check {
-  opacity: 1;
+    opacity: 1;
 }
+
+/* Ajusta a altura das opções de sim ou não */
 .opcoes-sim-nao .opcao-cartao {
-  min-height: 50px;
+    min-height: 50px;
 }
+
+/* Organiza o contador de quantidade */
 .contador {
-  display: grid;
-  grid-template-columns: 42px 1fr 42px;
-  align-items: center;
-  height: 42px;
-  border: 1px solid #dce5ea;
-  border-radius: 8px;
-  overflow: hidden;
+    display: grid;
+    grid-template-columns: 42px 1fr 42px;
+    align-items: center;
+    height: 42px;
+    border: 1px solid #dce5ea;
+    border-radius: 8px;
+    overflow: hidden;
 }
+
+/* Estilo dos botões do contador */
 .contador button {
-  height: 100%;
-  border: 0;
-  background: #fff;
-  color: #263443;
+    height: 100%;
+    border: 0;
+    background: #fff;
+    color: #263443;
 }
+
+/* Muda a aparência dos botões ao passar o mouse */
 .contador button:hover {
-  background: #eff6f2;
-  color: #0d6845;
+    background: #eff6f2;
+    color: #0d6845;
 }
+
+/* Estilo do número exibido no contador */
 .contador output {
-  text-align: center;
-  font-size: 15px;
-  font-weight: 600;
-  color: #263443;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    color: #263443;
 }
+
+/* Organiza as opções em formato de pílula */
 .opcoes-pilula {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
 }
+
+/* Oculta os campos de seleção originais */
 .opcoes-pilula label input {
-  position: absolute;
-  opacity: 0;
+    position: absolute;
+    opacity: 0;
 }
+
+/* Aparência das opções em formato de pílula */
 .opcoes-pilula label span {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  padding: 6px 10px;
-  border: 1px solid #dce5ea;
-  border-radius: 20px;
-  font-size: 10px;
-  color: #52647a;
-  cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 10px;
+    border: 1px solid #dce5ea;
+    border-radius: 20px;
+    font-size: 10px;
+    color: #52647a;
+    cursor: pointer;
 }
+
+/* Destaca a opção selecionada */
 .opcoes-pilula input:checked + span {
-  background: #0d5738;
-  border-color: #0d5738;
-  color: #fff;
+    background: #0d5738;
+    border-color: #0d5738;
+    color: #fff;
 }
+
+/* Ajusta o tamanho dos ícones das opções */
 .opcoes-pilula i {
-  font-size: 9px;
+    font-size: 9px;
 }
+
+/* Define o espaçamento da área de estrutura */
 .grade-estrutura {
-  row-gap: 22px;
+    row-gap: 22px;
 }
+
+/* Organiza a lista de equipamentos */
 .lista-equipamentos {
-  display: grid;
-  gap: 9px;
+    display: grid;
+    gap: 9px;
 }
+
+/* Organiza cada equipamento e seu seletor */
 .equipamento {
-  display: grid;
-  grid-template-columns: 18px minmax(0, 1fr) minmax(180px, 220px);
-  align-items: center;
-  gap: 12px;
-  padding: 10px 14px;
-  border: 1px solid #dce5ea;
-  border-radius: 9px;
-  cursor: pointer;
-  min-height: 58px;
+    display: grid;
+    grid-template-columns: 18px minmax(0, 1fr) minmax(180px, 220px);
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    border: 1px solid #dce5ea;
+    border-radius: 9px;
+    cursor: pointer;
+    min-height: 58px;
 }
+
+/* Destaca o equipamento selecionado */
 .equipamento:has(input:checked) {
-  border-color: #0d6845;
+    border-color: #0d6845;
 }
+
+/* Define a cor dos campos de seleção */
 .equipamento input {
-  accent-color: #0d5738;
+    accent-color: #0d5738;
 }
+
+/* Organiza o ícone e o nome do equipamento */
 .equipamento-identidade {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  min-width: 0;
-  cursor: pointer;
-  white-space: normal;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+    cursor: pointer;
+    white-space: normal;
 }
+
+/* Aparência do ícone do equipamento */
 .equipamento-icone {
-  width: 30px;
-  height: 30px;
-  flex: 0 0 30px;
-  display: grid;
-  place-items: center;
-  background: #eaf1ec;
-  border-radius: 8px;
-  color: #0d6845;
+    width: 30px;
+    height: 30px;
+    flex: 0 0 30px;
+    display: grid;
+    place-items: center;
+    background: #eaf1ec;
+    border-radius: 8px;
+    color: #0d6845;
 }
+
+/* Estilo do nome do equipamento */
 .equipamento b {
-  display: block;
-  font-size: 11px;
-  line-height: 1.4;
-  color: #263443;
-  overflow-wrap: anywhere;
+    display: block;
+    font-size: 11px;
+    line-height: 1.4;
+    color: #263443;
+    overflow-wrap: anywhere;
 }
+
+/* Estilo do seletor de frequência */
 .equipamento select {
-  display: block;
-  width: 100%;
-  min-width: 0;
-  min-height: 34px;
-  padding: 7px 30px 7px 10px;
-  border: 1px solid #dce5ea;
-  border-radius: 7px;
-  background: #fff;
-  color: #263443;
-  font-size: 10px;
-  line-height: 1.35;
+    display: block;
+    width: 100%;
+    min-width: 0;
+    min-height: 34px;
+    padding: 7px 30px 7px 10px;
+    border: 1px solid #dce5ea;
+    border-radius: 7px;
+    background: #fff;
+    color: #263443;
+    font-size: 10px;
+    line-height: 1.35;
 }
+
+/* Deixa o seletor mais discreto quando desativado */
 .equipamento select:disabled {
-  opacity: 0.38;
+    opacity: 0.38;
 }
+
+/* Organiza o campo para adicionar equipamentos */
 .adicionar-equipamento {
-  margin-top: 17px;
-  display: grid;
-  gap: 7px;
+    margin-top: 17px;
+    display: grid;
+    gap: 7px;
 }
+
+/* Estilo do texto do campo de adicionar */
 .adicionar-equipamento > label {
-  font-size: 11px;
-  font-weight: 600;
+    font-size: 11px;
+    font-weight: 600;
 }
+
+/* Organiza o campo de texto e o botão */
 .adicionar-equipamento > div {
-  display: flex;
-  gap: 8px;
+    display: flex;
+    gap: 8px;
 }
+
 .adicionar-equipamento input {
-  flex: 1;
-  min-width: 0;
+    flex: 1;
+    min-width: 0;
 }
+
+/* Estilo do botão para adicionar equipamento */
 .adicionar-equipamento button {
-  border: 0;
-  background: transparent;
-  color: #0d5738;
-  font-size: 11px;
-  font-weight: 600;
-  padding: 0 8px;
+    border: 0;
+    background: transparent;
+    color: #0d5738;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 0 8px;
 }
+
+/* Organiza os equipamentos adicionados pelo usuário */
 .equipamento-extra {
-  display: grid;
-  grid-template-columns: 18px 30px minmax(0, 1fr) 34px;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 12px;
-  border: 1px solid #dce5ea;
-  border-radius: 9px;
+    display: grid;
+    grid-template-columns: 18px 30px minmax(0, 1fr) 34px;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border: 1px solid #dce5ea;
+    border-radius: 9px;
 }
+
+/* Estilo do botão de remover equipamento */
 .equipamento-extra button {
-  border: 0;
-  background: transparent;
-  color: #b65c52;
+    border: 0;
+    background: transparent;
+    color: #b65c52;
 }
+
+/* Organiza o resumo das informações */
 .resumo-ajustesperfil {
-  display: grid;
-  gap: 0;
+    display: grid;
+    gap: 0;
 }
+
+/* Organiza cada linha do resumo */
 .linha-resumo {
-  display: grid;
-  grid-template-columns: 150px minmax(0, 1fr) auto;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 4px;
-  border-bottom: 1px solid #e5ebef;
-  font-size: 11px;
+    display: grid;
+    grid-template-columns: 150px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 4px;
+    border-bottom: 1px solid #e5ebef;
+    font-size: 11px;
 }
+
+/* Estilo do nome de cada informação */
 .linha-resumo span {
-  color: #718198;
+    color: #718198;
 }
+
+/* Estilo do valor de cada informação */
 .linha-resumo strong {
-  font-weight: 600;
-  color: #263443;
+    font-weight: 600;
+    color: #263443;
 }
+
+/* Estilo do botão de editar no resumo */
 .linha-resumo button {
-  border: 0;
-  background: transparent;
-  color: #0d6845;
-  font-size: 10px;
-  font-weight: 700;
+    border: 0;
+    background: transparent;
+    color: #0d6845;
+    font-size: 10px;
+    font-weight: 700;
 }
+
+/* Aparência da caixa de observação do resumo */
 .nota-resumo {
-  display: flex;
-  align-items: flex-start;
-  gap: 11px;
-  margin-top: 17px;
-  padding: 14px 15px;
-  border: 1px solid #d5e2c8;
-  border-left: 4px solid #687d41;
-  border-radius: 10px;
-  background: #eef3e8;
-  color: #263443;
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    margin-top: 17px;
+    padding: 14px 15px;
+    border: 1px solid #d5e2c8;
+    border-left: 4px solid #687d41;
+    border-radius: 10px;
+    background: #eef3e8;
+    color: #263443;
 }
+
+/* Cor e posicionamento do ícone da observação */
 .nota-resumo > i {
-  color: #58723a;
-  margin-top: 2px;
+    color: #58723a;
+    margin-top: 2px;
 }
+
+/* Estilo do título da observação */
 .nota-resumo b {
-  font-size: 10px;
+    font-size: 10px;
 }
+
+/* Estilo do texto da observação */
 .nota-resumo p {
-  font-size: 10px;
-  color: #61705a;
-  line-height: 1.55;
-  margin-top: 3px;
+    font-size: 10px;
+    color: #61705a;
+    line-height: 1.55;
+    margin-top: 3px;
 }
+
+/* Organiza a confirmação dos dados */
 .confirmacao {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 17px;
-  font-size: 11px;
-  color: #263443;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 17px;
+    font-size: 11px;
+    color: #263443;
 }
+
+/* Define a cor da caixa de confirmação */
 .confirmacao input {
-  accent-color: #0d5738;
+    accent-color: #0d5738;
 }
+
+/* Organiza os botões de navegação das etapas */
 .rodape-etapas {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-top: 22px;
-  padding-top: 18px;
-  border-top: 1px solid #e5ebef;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid #e5ebef;
 }
+
+/* Posiciona e estiliza o texto de ajuda */
 .texto-ajuda-etapa {
-  margin-left: auto;
-  color: #8091a4;
-  font-size: 9px;
+    margin-left: auto;
+    color: #8091a4;
+    font-size: 9px;
 }
+
+/* Estilo geral dos botões de voltar e continuar */
 .botao-voltar,
 .botao-continuar {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  min-width: 112px;
-  padding: 9px 14px;
-  border-radius: 8px;
-  font-size: 11px;
-  font-weight: 600;
-}
-.botao-voltar {
-  border: 1px solid #0d6845;
-  background: #fff;
-  color: #0d6845;
-}
-.botao-continuar {
-  border: 1px solid #0d5738;
-  background: #0d5738;
-  color: #fff;
-}
-.botao-continuar:hover {
-  background: #08452c;
-}
-.botao-voltar:disabled {
-  visibility: hidden;
-}
-.oculto {
-  display: none !important;
-}
-@media (max-width: 700px) {
-  .ajustesperfil-pagina {
-    margin: 28px auto 50px;
-  }
-  .ajustesperfil-topo {
-    align-items: flex-start;
-  }
-  .passos {
-    justify-content: flex-start;
-    overflow-x: auto;
-    padding-bottom: 8px;
-  }
-  .passo {
-    font-size: 0;
-    gap: 0;
-  }
-  .passo b {
-    display: none;
-  }
-  .passo:not(:last-child)::after {
-    width: clamp(28px, 8vw, 58px);
-    margin: 0 8px;
-  }
-  .passo span {
-    width: 27px;
-    height: 27px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 112px;
+    padding: 9px 14px;
+    border-radius: 8px;
     font-size: 11px;
-  }
-  .etapa {
-    padding: 22px 18px;
-  }
-  .grade-campos {
-    grid-template-columns: 1fr;
-  }
-  .campo-largo {
-    grid-column: auto;
-  }
-  .opcoes-cartao {
-    grid-template-columns: 1fr;
-  }
-  .equipamento {
-    grid-template-columns: 18px minmax(0, 1fr);
-    gap: 9px 11px;
-    padding: 11px 12px;
-  }
-  .equipamento-identidade {
-    gap: 9px;
-  }
-  .equipamento select {
-    grid-column: 2;
-    width: 100%;
-    max-width: none;
-    margin-top: 1px;
-  }
-  .linha-resumo {
-    grid-template-columns: 90px minmax(0, 1fr) auto;
-    gap: 7px;
-    font-size: 10px;
-  }
-  .rodape-etapas {
-    flex-wrap: wrap;
-  }
-  .texto-ajuda-etapa {
-    order: 3;
-    flex-basis: 100%;
-    margin: 0;
-    text-align: center;
-  }
+    font-weight: 600;
 }
+
+/* Aparência do botão voltar */
+.botao-voltar {
+    border: 1px solid #0d6845;
+    background: #fff;
+    color: #0d6845;
+}
+
+/* Aparência do botão continuar */
+.botao-continuar {
+    border: 1px solid #0d5738;
+    background: #0d5738;
+    color: #fff;
+}
+
+/* Escurece o botão continuar ao passar o mouse */
+.botao-continuar:hover {
+    background: #08452c;
+}
+
+/* Oculta o botão voltar quando estiver desativado */
+.botao-voltar:disabled {
+    visibility: hidden;
+}
+
+/* Classe utilizada para esconder elementos */
+.oculto {
+    display: none !important;
+}
+
+/* Ajustes para telas com até 700px */
+@media (max-width: 700px) {
+
+    /* Ajusta as margens da página */
+    .ajustesperfil-pagina {
+        margin: 28px auto 50px;
+    }
+
+    .ajustesperfil-topo {
+        align-items: flex-start;
+    }
+
+    /* Permite rolar os indicadores horizontalmente */
+    .passos {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 8px;
+    }
+
+    /* Oculta os nomes das etapas em telas menores */
+    .passo {
+        font-size: 0;
+        gap: 0;
+    }
+
+    .passo b {
+        display: none;
+    }
+
+    /* Aumenta o espaço entre os indicadores */
+    .passo:not(:last-child)::after {
+        width: clamp(28px, 8vw, 58px);
+        margin: 0 8px;
+    }
+
+    .passo span {
+        width: 27px;
+        height: 27px;
+        font-size: 11px;
+    }
+
+    /* Reduz o espaço interno dos cartões */
+    .etapa {
+        padding: 22px 18px;
+    }
+
+    /* Exibe os campos em uma coluna */
+    .grade-campos {
+        grid-template-columns: 1fr;
+    }
+
+    .campo-largo {
+        grid-column: auto;
+    }
+
+    /* Exibe as opções uma abaixo da outra */
+    .opcoes-cartao {
+        grid-template-columns: 1fr;
+    }
+
+    /* Ajusta a organização dos equipamentos */
+    .equipamento {
+        grid-template-columns: 18px minmax(0, 1fr);
+        gap: 9px 11px;
+        padding: 11px 12px;
+    }
+
+    .equipamento-identidade {
+        gap: 9px;
+    }
+
+    /* Posiciona o seletor abaixo do nome */
+    .equipamento select {
+        grid-column: 2;
+        width: 100%;
+        max-width: none;
+        margin-top: 1px;
+    }
+
+    /* Ajusta as colunas do resumo */
+    .linha-resumo {
+        grid-template-columns: 90px minmax(0, 1fr) auto;
+        gap: 7px;
+        font-size: 10px;
+    }
+
+    /* Permite quebrar os elementos do rodapé */
+    .rodape-etapas {
+        flex-wrap: wrap;
+    }
+
+    .texto-ajuda-etapa {
+        order: 3;
+        flex-basis: 100%;
+        margin: 0;
+        text-align: center;
+    }
+}
+
+/* Ajustes para telas com até 430px */
 @media (max-width: 430px) {
-  .ajustesperfil-topo h1 {
-    font-size: 25px;
-  }
-  .salvar-sair {
-    font-size: 10px;
-    white-space: nowrap;
-  }
-  .etapa h2 {
-    font-size: 19px;
-  }
-  .opcoes-pilula {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-  .adicionar-equipamento > div {
-    align-items: stretch;
-  }
-  .adicionar-equipamento button {
-    font-size: 10px;
-  }
-  .botao-voltar,
-  .botao-continuar {
-    flex: 1;
-  }
+
+    .ajustesperfil-topo h1 {
+        font-size: 25px;
+    }
+
+    /* Evita que o texto do botão quebre */
+    .salvar-sair {
+        font-size: 10px;
+        white-space: nowrap;
+    }
+
+    .etapa h2 {
+        font-size: 19px;
+    }
+
+    /* Organiza as opções em duas colunas */
+    .opcoes-pilula {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .adicionar-equipamento > div {
+        align-items: stretch;
+    }
+
+    .adicionar-equipamento button {
+        font-size: 10px;
+    }
+
+    /* Divide o espaço entre os botões */
+    .botao-voltar,
+    .botao-continuar {
+        flex: 1;
+    }
 }
+
+/* Ajusta o símbolo da logo no cabeçalho */
 .cabecalho .logo-simbolo {
-  font-size: 27px;
-  width: 32px;
-  height: auto;
-  stroke: none;
+    font-size: 27px;
+    width: 32px;
+    height: auto;
+    stroke: none;
 }
+
+/* Ajusta o tamanho do ícone do menu */
 .cabecalho .menu-toggle i {
-  font-size: 19px;
+    font-size: 19px;
 }
 
+/* Destaca o equipamento quando recebe foco */
 .equipamento:focus-within {
-  outline: 2px solid #a4b86b;
-  outline-offset: 2px;
-}
-.equipamento input {
-  width: 14px;
-  height: 14px;
-  margin: 0;
-}
-.equipamento:has(input:checked) {
-  background: #fbfdfb;
-}
-.nota-resumo b {
-  color: #34402a;
-}
-@media (min-width: 701px) {
-  .equipamento-identidade {
-    padding: 2px 0;
-  }
+    outline: 2px solid #a4b86b;
+    outline-offset: 2px;
 }
 
-/* Contraste dos menus nativos (UF, tipo de imóvel e frequências) */
+/* Define o tamanho da caixa de seleção */
+.equipamento input {
+    width: 14px;
+    height: 14px;
+    margin: 0;
+}
+
+/* Muda o fundo do equipamento selecionado */
+.equipamento:has(input:checked) {
+    background: #fbfdfb;
+}
+
+/* Ajusta a cor do título da observação */
+.nota-resumo b {
+    color: #34402a;
+}
+
+/* Ajustes dos equipamentos em telas maiores */
+@media (min-width: 701px) {
+
+    .equipamento-identidade {
+        padding: 2px 0;
+    }
+}
+
+/* Melhora o contraste dos menus de seleção */
 .etapa select {
-  color-scheme: light;
-  background-color: #fff !important;
-  color: #263443 !important;
+    color-scheme: light;
+    background-color: #fff !important;
+    color: #263443 !important;
 }
+
+/* Define as cores das opções dos menus */
 .etapa select option {
-  background: #fff !important;
-  color: #263443 !important;
+    background: #fff !important;
+    color: #263443 !important;
 }
+
+/* Ajusta a aparência dos menus desativados */
 .etapa select:disabled {
-  background-color: #f4f7f5 !important;
-  color: #718198 !important;
-  opacity: 1;
+    background-color: #f4f7f5 !important;
+    color: #718198 !important;
+    opacity: 1;
 }

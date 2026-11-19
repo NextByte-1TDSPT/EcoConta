@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <!-- Configurações e título da página -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Acesse sua conta EcoConta ou cadastre-se para acompanhar sua residência.">
     <title>Acesso | EcoConta</title>
+
+    <!-- Fonte e arquivos de estilo -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
@@ -15,12 +18,13 @@
     <link rel="stylesheet" href="css/rodape.css">
     <link rel="stylesheet" href="css/acesso.css">
 
-
+    <!-- Scripts da página -->
     <script src="js/dados.js" defer></script>
     <script src="js/acesso.js" defer></script>
 </head>
 
 <body>
+    <!-- Cabeçalho e menu de navegação -->
     <header class="cabecalho">
         <nav class="navegacao" aria-label="Menu principal"><a href="index.html" class="logo"><i
                     class="fas fa-leaf logo-simbolo" aria-hidden="true"></i><span
@@ -39,6 +43,7 @@
         </nav>
     </header>
 
+    <!-- Conteúdo principal da página de acesso -->
     <main class="pagina-acesso">
         <section class="painel-apresentacao">
             <span class="etiqueta">SUA CASA, SEUS DADOS, SUAS ESCOLHAS</span>
@@ -53,6 +58,7 @@
                 acadêmico</div>
         </section>
 
+        <!-- Área dos formulários de login e cadastro -->
         <section class="cartao-acesso" aria-labelledby="titulo-formulario">
             <div class="alternador" role="tablist" aria-label="Tipo de acesso">
                 <button type="button" class="aba ativa" id="aba-login" role="tab" aria-selected="true"
@@ -67,6 +73,7 @@
                 <p id="descricao-formulario">Entre para continuar acompanhando sua residência.</p>
             </div>
 
+            <!-- Formulário para entrar na conta -->
             <form id="form-login" class="formulario" novalidate>
                 <div class="campo">
                     <label for="login-email">E-mail</label>
@@ -90,6 +97,7 @@
                         id="ir-cadastro">Cadastre-se</button></p>
             </form>
 
+            <!-- Formulário para criar uma nova conta -->
             <form id="form-cadastro" class="formulario oculto" novalidate>
                 <div class="campo">
                     <label for="cadastro-nome">Nome completo</label>
@@ -127,59 +135,46 @@
                 <p class="troca-formulario">Já tem uma conta? <button type="button" class="link-texto"
                         id="ir-login">Fazer login</button></p>
             </form>
+
+            <!-- Aviso sobre o uso de senhas na demonstração -->
             <p class="aviso-seguranca"><i class="fas fa-shield-alt" aria-hidden="true"></i> Demonstração acadêmica: não
                 utilize uma senha real.</p>
         </section>
     </main>
+
+    <!-- Rodapé com informações do projeto -->
     <footer class="rodape">
-
         <div class="container">
-
             <div class="rodape-conteudo">
-
                 <div class="rodape-marca">
-
                     <h2>EcoConta</h2>
-
                     <p>Consumo inteligente, um futuro mais sustentável.</p>
-
                 </div>
 
                 <div class="rodape-navegacao">
-
                     <h3>Navegação</h3>
-
                     <a href="index.html">Início</a>
                     <a href="sobre.html">Sobre</a>
                     <a href="integrantes.html">Integrantes</a>
                     <a href="faq.html">FAQ</a>
                     <a href="contato.html">Contato</a>
-
                 </div>
 
                 <div class="rodape-projeto">
-
                     <h3>Projeto acadêmico</h3>
-
                     <p>FIAP — Global Solution 2026/2</p>
                     <p>Equipe NextBythe</p>
-
                 </div>
-
             </div>
 
             <div class="rodape-inferior">
-
                 <p>© 2026 EcoConta. Todos os direitos reservados.</p>
-
                 <p>Desenvolvido pela equipe NextBythe.</p>
-
             </div>
-
         </div>
-
     </footer>
+
+    <!-- Script do menu de navegação -->
     <script src="js/navegacao.js" defer></script>
 </body>
-
 </html>

@@ -2,10 +2,13 @@
 <html lang="pt-BR">
 
 <head>
+    <!-- Configurações e título da página -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Configure seu perfil residencial no EcoConta.">
     <title>Configuração residencial | EcoConta</title>
+
+    <!-- Fonte, ícones e arquivos de estilo -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
@@ -15,12 +18,15 @@
     <link rel="stylesheet" href="css/base-acesso-perfil.css">
     <link rel="stylesheet" href="css/rodape.css">
     <link rel="stylesheet" href="css/ajustes-perfil.css">
+
+    <!-- Scripts responsáveis pelos dados, navegação e perfil -->
     <script src="js/dados.js" defer></script>
     <script src="js/navegacao.js" defer></script>
     <script src="js/ajustes-perfil.js" defer></script>
 </head>
 
 <body>
+    <!-- Cabeçalho e menu de navegação -->
     <header class="cabecalho">
         <nav class="navegacao" aria-label="Menu principal">
             <a href="index.html" class="logo"><i class="fas fa-leaf logo-simbolo" aria-hidden="true"></i><span
@@ -39,6 +45,7 @@
         </nav>
     </header>
 
+    <!-- Conteúdo principal da configuração do perfil -->
     <main class="ajustesperfil-pagina">
         <div class="ajustesperfil-topo">
             <div><span class="etiqueta">SEU ECO PERFIL</span>
@@ -48,6 +55,7 @@
             <button type="button" class="salvar-sair" id="salvar-sair">Salvar e sair</button>
         </div>
 
+        <!-- Indicador das cinco etapas do formulário -->
         <ol class="passos" aria-label="Etapas da configuração">
             <li class="passo atual" data-step-indicator="1"><span>1</span><b>Residência</b></li>
             <li class="passo" data-step-indicator="2"><span>2</span><b>Moradores</b></li>
@@ -56,7 +64,10 @@
             <li class="passo" data-step-indicator="5"><span>5</span><b>Conclusão</b></li>
         </ol>
 
+        <!-- Formulário dividido em cinco etapas -->
         <form id="form-ajustesperfil" novalidate>
+
+            <!-- Etapa 1: informações gerais da residência -->
             <section class="etapa ativa" data-step="1">
                 <span class="numero-etapa">ETAPA 1 DE 5</span>
                 <h2>Conte sobre sua residência</h2>
@@ -123,6 +134,7 @@
                 </div>
             </section>
 
+            <!-- Etapa 2: quantidade e rotina dos moradores -->
             <section class="etapa" data-step="2">
                 <span class="numero-etapa">ETAPA 2 DE 5</span>
                 <h2>Quem mora na residência?</h2>
@@ -158,6 +170,7 @@
                 </div>
             </section>
 
+            <!-- Etapa 3: características da estrutura da residência -->
             <section class="etapa" data-step="3">
                 <span class="numero-etapa">ETAPA 3 DE 5</span>
                 <h2>Estrutura da residência</h2>
@@ -193,6 +206,7 @@
                 </div>
             </section>
 
+            <!-- Etapa 4: equipamentos e frequência de uso -->
             <section class="etapa" data-step="4">
                 <span class="numero-etapa">ETAPA 4 DE 5</span>
                 <h2>Equipamentos e frequência de uso</h2>
@@ -267,6 +281,7 @@
                 </div>
             </section>
 
+            <!-- Etapa 5: revisão e confirmação das informações -->
             <section class="etapa" data-step="5">
                 <span class="numero-etapa">ETAPA 5 DE 5</span>
                 <h2>Confira seu EcoPerfil</h2>
@@ -283,6 +298,7 @@
                 <span class="erro" data-error="confirmar-dados"></span>
             </section>
 
+            <!-- Botões para navegar entre as etapas e concluir o perfil -->
             <div class="rodape-etapas">
                 <button type="button" class="botao-voltar" id="voltar-etapa"><i class="fas fa-arrow-left"></i>
                     Voltar</button>
@@ -295,6 +311,7 @@
         </form>
     </main>
 
+    <!-- Rodapé com informações do projeto -->
     <footer class="rodape">
         <div class="container">
             <div class="rodape-conteudo">
