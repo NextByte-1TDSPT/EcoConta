@@ -8,6 +8,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/sobre.css">
+    <link rel="stylesheet" href="css/navegacao.css">
 
     <!-- MESMA BIBLIOTECA DE ÍCONES DA HOME -->
     <script
@@ -19,26 +20,24 @@
 <body>
 
 <header class="cabecalho">
-    <div class="container cabecalho-conteudo">
-
-        <!-- LOGO COM A MESMA FOLHA DA HOME -->
+    <nav class="navegacao" aria-label="Menu principal">
         <a href="index.html" class="logo">
-            <i data-lucide="leaf"
-               class="logo-simbolo"
-               aria-hidden="true"></i>
+            <i data-lucide="leaf" class="logo-simbolo" aria-hidden="true"></i>
             <span class="logo-nome">EcoConta</span>
         </a>
-
-        <nav class="menu">
-            <a href="index.html">Início</a>
-            <a href="sobre.html" class="ativo">Sobre</a>
-            <a href="ecobot.html">EcoBot</a>
-            <a href="integrantes.html">Integrantes</a>
-            <a href="faq.html">FAQ</a>
-            <a href="contato.html">Contato</a>
-        </nav>
-
-    </div>
+        <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal">
+            <i data-lucide="menu" aria-hidden="true"></i>
+        </button>
+        <ul class="menu" id="menu-principal">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="sobre.html" class="ativo" aria-current="page">Sobre</a></li>
+            <li><a href="ecobot.html">EcoBot</a></li>
+            <li><a href="integrantes.html">Integrantes</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contato.html">Contato</a></li>
+            <li><a href="acesso.html" data-link-conta>Minha conta</a></li>
+        </ul>
+    </nav>
 </header>
 
 <main class="container">
@@ -198,5 +197,6 @@
     });
 </script>
 
+    <script src="js/navegacao.js" defer></script>
 </body>
 </html>

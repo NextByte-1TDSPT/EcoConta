@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -24,6 +23,7 @@
 
     <!-- CSS DO ECOBOT -->
     <link rel="stylesheet" href="css/ecobot.css">
+<link rel="stylesheet" href="css/navegacao.css">
 
     <!-- ÍCONES LUCIDE -->
     <script
@@ -39,42 +39,7 @@
 <body>
 
     <!-- CABEÇALHO -->
-    <header class="cabecalho">
-
-        <nav class="navegacao" aria-label="Menu principal">
-
-            <a href="index.html" class="logo">
-                <i data-lucide="leaf"
-                   class="logo-simbolo"
-                   aria-hidden="true"></i>
-
-                <span class="logo-nome">EcoConta</span>
-            </a>
-
-            <!-- MENU MOBILE -->
-            <button
-                class="menu-toggle"
-                type="button"
-                aria-label="Abrir menu"
-                aria-expanded="false"
-                aria-controls="menu-principal">
-
-                <i data-lucide="menu" aria-hidden="true"></i>
-            </button>
-
-            <!-- NAVEGAÇÃO -->
-            <ul class="menu" id="menu-principal">
-                <li><a href="index.html">Início</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
-                <li><a href="ecobot.html" aria-current="page">EcoBot</a></li>
-                <li><a href="integrantes.html">Integrantes</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-                <li><a href="contato.html">Contato</a></li>
-            </ul>
-
-        </nav>
-
-    </header>
+    <header class="cabecalho"><nav class="navegacao" aria-label="Menu principal"><a href="index.html" class="logo"><i data-lucide="leaf" class="logo-simbolo" aria-hidden="true"></i><span class="logo-nome">EcoConta</span></a><button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal"><i data-lucide="menu" aria-hidden="true"></i></button><ul class="menu" id="menu-principal"><li><a href="index.html">Início</a></li><li><a href="sobre.html">Sobre</a></li><li><a href="ecobot.html" class="ativo" aria-current="page">EcoBot</a></li><li><a href="integrantes.html">Integrantes</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contato.html">Contato</a></li><li><a href="acesso.html" data-link-conta>Minha conta</a></li></ul></nav></header>
 
     <!-- CONTEÚDO PRINCIPAL -->
     <main class="ecobot-pagina">
@@ -388,41 +353,6 @@
 
     </footer>
 
-    <!-- INICIALIZAÇÃO DOS ÍCONES E MENU MOBILE -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-
-            // Inicializa os ícones Lucide
-            if (window.lucide) {
-                lucide.createIcons();
-            }
-
-            // Menu responsivo
-            const botaoMenu = document.querySelector(".menu-toggle");
-            const menu = document.querySelector(".menu");
-
-            if (botaoMenu && menu) {
-
-                botaoMenu.addEventListener("click", function () {
-
-                    const aberto = menu.classList.toggle("ativo");
-
-                    botaoMenu.setAttribute(
-                        "aria-expanded",
-                        String(aberto)
-                    );
-
-                    botaoMenu.setAttribute(
-                        "aria-label",
-                        aberto ? "Fechar menu" : "Abrir menu"
-                    );
-
-                });
-
-            }
-
-        });
-    </script>
-
+<script src="js/navegacao.js" defer></script>
 </body>
 </html>
