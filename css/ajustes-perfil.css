@@ -1,3 +1,185 @@
+/* Estilos compartilhados de cores e elementos base */
+/* Base compartilhada entre acesso.html e perfil.html */
+
+/* Define as cores principais utilizadas no projeto */
+:root {
+    --fundo: #211f1a;
+    --verde-oliva: #687d41;
+    --verde-claro: #a4b86b;
+    --verde-escuro: #34402a;
+    --bege: #f5f0e9;
+    --texto-suave: #c9c4b9;
+    --borda: #45443a;
+    --erro: #f19a8d;
+    --sucesso: #a4b86b;
+}
+
+/* Remove margens e espaçamentos padrão dos elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Ativa a rolagem suave da página */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Define a aparência geral da página */
+body {
+    min-height: 100vh;
+    background: var(--fundo);
+    color: var(--bege);
+    font-family: "Poppins", sans-serif;
+    line-height: 1.6;
+}
+
+/* Remove o sublinhado dos links */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Define a mesma fonte para botões e campos */
+button,
+input,
+select {
+    font: inherit;
+}
+
+/* Mostra a mão ao passar o mouse sobre os botões */
+button {
+    cursor: pointer;
+}
+
+/* Destaca os elementos quando são selecionados pelo teclado */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 2px solid var(--verde-claro);
+    outline-offset: 3px;
+}
+
+/* Estilo das pequenas etiquetas de identificação */
+.etiqueta {
+    display: block;
+    color: var(--verde-claro);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.4px;
+    margin-bottom: 10px;
+}
+
+/* Organiza os campos dos formulários */
+.campo {
+    display: grid;
+    gap: 7px;
+    min-width: 0;
+}
+
+/* Estilo dos nomes dos campos */
+.campo label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--bege);
+}
+
+/* Aparência dos campos de entrada e seleção */
+.campo input,
+.campo select {
+    width: 100%;
+    min-width: 0;
+    padding: 12px 13px;
+    border: 1px solid #565548;
+    border-radius: 10px;
+    background: #22221d;
+    color: var(--bege);
+    outline: 0;
+    font-size: 12px;
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+}
+
+/* Destaca os campos quando estão selecionados */
+.campo input:focus,
+.campo select:focus {
+    border-color: var(--verde-claro);
+    box-shadow: 0 0 0 3px #a4b86b20;
+}
+
+/* Define a cor do texto de orientação dos campos */
+.campo input::placeholder {
+    color: #8f8d80;
+}
+
+/* Define a cor de fundo das opções dos menus */
+.campo select option {
+    background: #22221d;
+}
+
+/* Estilo das mensagens de erro */
+.erro {
+    color: var(--erro);
+    font-size: 10px;
+    min-height: 0;
+}
+
+/* Destaca os campos que apresentam erros */
+.campo.invalido input,
+.campo.invalido select,
+.campo.invalido .entrada-com-icone {
+    border-color: var(--erro);
+}
+
+/* Aparência do botão principal */
+.botao-principal {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 13px 24px;
+    border: 0;
+    border-radius: 28px;
+    background: var(--verde-claro);
+    color: #202319;
+    font-size: 12px;
+    font-weight: 700;
+    transition:
+        background 0.2s,
+        transform 0.2s;
+}
+
+/* Muda a aparência do botão ao passar o mouse */
+.botao-principal:hover {
+    background: #b7c987;
+    transform: translateY(-1px);
+}
+
+/* Define o tamanho dos ícones do botão */
+.botao-principal svg {
+    width: 17px;
+}
+
+/* Ajusta o espaçamento do rodapé */
+.rodape {
+    margin-top: 0;
+}
+
+/* Textos auxiliares compartilhados entre formulários */
+
+/* Estilo dos textos de ajuda */
+.ajuda {
+    display: block;
+    font-size: 10px;
+    line-height: 1.5;
+    color: #8091a4;
+    margin-top: 5px;
+}
+
+/* Estilos específicos desta página */
 /* Ajustes do perfil residencial */
 
 /* Define a largura e o posicionamento da página */
@@ -845,4 +1027,97 @@ body {
     background-color: #f4f7f5 !important;
     color: #718198 !important;
     opacity: 1;
+}
+
+/* Rodapé da página */
+/* Rodapé compartilhado */
+.rodape {
+  width: 100%;
+  background: #211f1a;
+  border-top: 1px solid #48463d;
+  padding: 70px 0 25px;
+  color: #f5f0e9;
+}
+
+.rodape .container {
+  width: 90%;
+  max-width: 1450px;
+  margin: 0 auto;
+}
+
+.rodape-conteudo {
+  display: grid;
+  grid-template-columns: 1.6fr 0.8fr 0.8fr;
+  gap: 60px;
+  padding-bottom: 85px;
+}
+
+.rodape-marca h2 {
+  color: #a4b86b;
+  font-size: 32px;
+  margin-bottom: 25px;
+}
+
+.rodape-marca p,
+.rodape-projeto p,
+.rodape-navegacao a {
+  font-size: 17px;
+  line-height: 1.9;
+  color: #f5f0e9;
+}
+
+.rodape-navegacao h3,
+.rodape-projeto h3 {
+  font-size: 21px;
+  margin-bottom: 28px;
+}
+
+.rodape-navegacao a {
+  display: block;
+  text-decoration: none;
+  margin-bottom: 12px;
+  transition: color 0.2s;
+}
+
+.rodape-navegacao a:hover {
+  color: #a4b86b;
+}
+
+.rodape-inferior {
+  border-top: 1px solid #48463d;
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 14px;
+}
+
+@media (max-width: 760px) {
+  .rodape {
+    padding: 48px 0 22px;
+  }
+  .rodape-conteudo {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding-bottom: 40px;
+  }
+  .rodape-marca h2 {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+  .rodape-navegacao h3,
+  .rodape-projeto h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+  .rodape-marca p,
+  .rodape-projeto p,
+  .rodape-navegacao a {
+    font-size: 14px;
+  }
+  .rodape-inferior {
+    flex-direction: column;
+    padding-top: 20px;
+    font-size: 12px;
+  }
 }

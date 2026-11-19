@@ -182,7 +182,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("mensagem-cadastro").textContent =
             "Conta criada! Vamos configurar sua residência...";
 
-        window.location.href = "onboarding.html";
+        window.location.href = "ajustes-perfil.html";
     });
 
     // Realiza a validação e o login do usuário
@@ -245,13 +245,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (perfil.residencia.onboardingConcluido) {
                     window.location.href = "perfil.html";
                 } else {
-                    window.location.href = "onboarding.html";
+                    window.location.href = "ajustes-perfil.html";
                 }
             } else {
-                window.location.href = "onboarding.html";
+                window.location.href = "ajustes-perfil.html";
             }
         } else {
-            window.location.href = "onboarding.html";
+            window.location.href = "ajustes-perfil.html";
         }
     });
 });

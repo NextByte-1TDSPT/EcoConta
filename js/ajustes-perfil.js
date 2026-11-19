@@ -9,13 +9,13 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Identifica os elementos principais da página
-  var form = document.getElementById("form-onboarding");
+  var form = document.getElementById("form-ajustesperfil");
 
   var voltar = document.getElementById("voltar-etapa");
 
   var continuar = document.getElementById("continuar-etapa");
 
-  var concluir = document.getElementById("concluir-onboarding");
+  var concluir = document.getElementById("concluir-ajustesperfil");
 
   var textoAjuda = document.getElementById("texto-ajuda-etapa");
 
