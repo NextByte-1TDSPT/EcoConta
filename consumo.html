@@ -25,6 +25,7 @@
 
     <!-- CSS DAS PÁGINAS DE CONSUMO -->
     <link rel="stylesheet" href="css/painel.css" />
+    <link rel="stylesheet" href="css/consumo.css" />
 
     <!-- ÍCONES LUCIDE -->
     <script
@@ -34,6 +35,8 @@
 
     <!-- JAVASCRIPT -->
     <script src="js/painel.js" defer></script>
+    <script src="js/consumo-dados.js" defer></script>
+    <script src="js/consumo.js" defer></script>
   </head>
 
   <body>
@@ -89,6 +92,86 @@
         Ambiente demonstrativo: os valores são fictícios e ficam salvos apenas
         neste navegador.
       </p>
+
+      <!-- REGISTRO DE CONSUMO -->
+      <section class="painel-secao registro" aria-labelledby="titulo-registro">
+        <form class="painel-bloco registro-form" id="form-consumo" novalidate>
+          <h2 id="titulo-registro">Novo registro</h2>
+          <p class="painel-bloco-descricao">
+            Os campos marcados com * são obrigatórios.
+          </p>
+
+          <fieldset class="campo">
+            <legend>Recurso *</legend>
+            <div class="opcoes-recurso">
+              <label class="opcao-recurso" data-recurso="agua">
+                <input type="radio" name="tipo" value="agua" checked />
+                <span
+                  ><i data-lucide="droplets" aria-hidden="true"></i>Água</span
+                >
+              </label>
+              <label class="opcao-recurso" data-recurso="energia">
+                <input type="radio" name="tipo" value="energia" />
+                <span><i data-lucide="zap" aria-hidden="true"></i>Energia</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="campos-linha">
+            <div class="campo">
+              <label for="consumo-mes">Mês da conta *</label>
+              <input
+                type="month"
+                id="consumo-mes"
+                name="mes"
+                min="2020-01"
+                aria-describedby="erro-mes"
+                required
+              />
+              <span class="campo-erro" id="erro-mes"></span>
+            </div>
+
+            <div class="campo">
+              <label for="consumo-quantidade">Consumo do mês *</label>
+              <div class="campo-unidade">
+                <input
+                  type="number"
+                  id="consumo-quantidade"
+                  name="quantidade"
+                  min="0"
+                  step="0.1"
+                  inputmode="decimal"
+                  placeholder="Ex.: 12,5"
+                  aria-describedby="ajuda-quantidade erro-quantidade"
+                  required
+                />
+                <span id="unidade-quantidade">m³</span>
+              </div>
+              <span class="campo-ajuda" id="ajuda-quantidade"
+                >Na conta de água, procure por "consumo (m³)".</span
+              >
+              <span class="campo-erro" id="erro-quantidade"></span>
+            </div>
+          </div>
+
+          <button type="submit" class="botao botao-principal">
+            Registrar consumo
+          </button>
+
+          <p
+            class="registro-mensagem"
+            id="registro-mensagem"
+            role="status"
+            aria-live="polite"
+          ></p>
+        </form>
+
+        <!-- PRÉVIA: COMPARAÇÃO COM A REFERÊNCIA -->
+        <aside class="painel-bloco previa" aria-labelledby="titulo-previa">
+          <h2 id="titulo-previa">Comparação com a referência</h2>
+          <div id="previa-conteudo" aria-live="polite"></div>
+        </aside>
+      </section>
     </main>
 
     <!-- RODAPÉ -->

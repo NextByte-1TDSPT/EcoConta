@@ -1,0 +1,311 @@
+/* ==========================================
+   ECOCONTA - REGISTRO DE CONSUMO (consumo.html)
+   ========================================== */
+
+
+/* 1. LAYOUT: FORMULÁRIO + PRÉVIA */
+
+.registro {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(280px, 1fr);
+    gap: 24px;
+    align-items: start;
+}
+
+.registro-form h2,
+.previa h2 {
+    margin-bottom: 0;
+}
+
+.registro-form .painel-bloco-descricao {
+    margin-bottom: 26px;
+}
+
+
+/* 2. CAMPOS */
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 22px;
+    border: 0;
+    min-width: 0;
+}
+
+.campo label,
+.campo legend {
+    color: var(--bege);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.campo legend {
+    margin-bottom: 8px;
+    padding: 0;
+}
+
+.campos-linha {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 20px;
+}
+
+.registro-form input[type="month"],
+.registro-form input[type="number"] {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 14px;
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    background-color: var(--fundo);
+    color: var(--bege);
+    font-size: 15px;
+    color-scheme: dark;
+}
+
+.registro-form input:hover {
+    border-color: #5d5b4f;
+}
+
+.registro-form input[aria-invalid="true"] {
+    border-color: var(--alerta);
+}
+
+.campo-unidade {
+    position: relative;
+}
+
+.campo-unidade input {
+    padding-right: 60px !important;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+/* Esconde as setas do campo numérico para não cobrir a unidade */
+.campo-unidade input::-webkit-outer-spin-button,
+.campo-unidade input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.campo-unidade span {
+    position: absolute;
+    top: 50%;
+    right: 14px;
+    transform: translateY(-50%);
+    color: var(--texto-suave);
+    font-size: 14px;
+    pointer-events: none;
+}
+
+.campo-ajuda {
+    color: var(--texto-suave);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.campo-erro {
+    color: #F0A397;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.campo-erro:empty {
+    display: none;
+}
+
+
+/* 3. ESCOLHA DO RECURSO */
+
+.opcoes-recurso {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.opcao-recurso {
+    --cor-recurso: var(--agua);
+    position: relative;
+    cursor: pointer;
+}
+
+.opcao-recurso[data-recurso="energia"] {
+    --cor-recurso: var(--energia);
+}
+
+.opcao-recurso input {
+    position: absolute;
+    opacity: 0;
+}
+
+.opcao-recurso span {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 52px;
+    padding: 12px 16px;
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+    color: var(--texto-suave);
+    font-size: 15px;
+    font-weight: 500;
+    transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+}
+
+.opcao-recurso svg {
+    width: 20px;
+    height: 20px;
+    color: var(--cor-recurso);
+}
+
+.opcao-recurso:hover span {
+    color: var(--bege);
+}
+
+.opcao-recurso input:checked + span {
+    border-color: var(--cor-recurso);
+    background-color: var(--superficie-forte);
+    color: var(--bege);
+    box-shadow: inset 0 0 0 1px var(--cor-recurso);
+}
+
+.opcao-recurso input:focus-visible + span {
+    outline: 2px solid var(--verde-claro);
+    outline-offset: 3px;
+}
+
+
+/* 4. ENVIO */
+
+.registro-form .botao {
+    border: 0;
+    cursor: pointer;
+}
+
+.registro-mensagem {
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.registro-mensagem:empty {
+    display: none;
+}
+
+.registro-mensagem.sucesso {
+    color: var(--verde-claro);
+}
+
+.registro-mensagem.erro {
+    color: #F0A397;
+}
+
+
+/* 5. PRÉVIA */
+
+.previa {
+    position: sticky;
+    top: 24px;
+}
+
+.previa-vazia {
+    color: var(--texto-suave);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-top: 18px;
+}
+
+.previa-situacao {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 20px 0 18px;
+    color: var(--bege);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.previa-situacao svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.previa-situacao.abaixo svg {
+    color: var(--verde-claro);
+}
+
+.previa-situacao.acima svg {
+    color: var(--alerta);
+}
+
+.previa-detalhes div {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 10px 0;
+    border-top: 1px solid var(--borda);
+}
+
+.previa-detalhes dt {
+    color: var(--texto-suave);
+    font-size: 14px;
+}
+
+.previa-detalhes dd {
+    color: var(--bege);
+    font-size: 15px;
+    font-weight: 600;
+    text-align: right;
+}
+
+.previa-alerta {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+    padding: 12px 14px;
+    border: 1px solid #6B3F37;
+    border-radius: 12px;
+    background-color: #33241F;
+    color: var(--bege);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.previa-alerta svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: var(--alerta);
+}
+
+.previa-nota {
+    color: var(--texto-suave);
+    font-size: 12px;
+    margin-top: 14px;
+}
+
+
+/* 6. RESPONSIVIDADE */
+
+@media (max-width: 900px) {
+    .registro {
+        grid-template-columns: 1fr;
+    }
+
+    .previa {
+        position: static;
+    }
+}
+
+@media (max-width: 520px) {
+    .campos-linha {
+        grid-template-columns: 1fr;
+    }
+
+    .registro-form .botao {
+        width: 100%;
+    }
+}
