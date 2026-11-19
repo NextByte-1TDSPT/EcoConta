@@ -258,8 +258,206 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  /* ---------- INICIALIZAÇÃO ---------- */
+    /* ---------- HISTÓRICO COM FILTROS ---------- */
 
-  configurarFormulario();
-  atualizarRecurso();
+    var filtroPeriodo = "6";
+    var filtroRecurso = "todos";
+
+    var corpo = document.getElementById("historico-corpo");
+    var vazio = document.getElementById("historico-vazio");
+    var resumo = document.getElementById("historico-resumo");
+    var medias = document.getElementById("historico-medias");
+    var statusHistorico = document.getElementById("historico-status");
+
+    // Primeiro mês incluído no período (ex.: 6 meses até nov/2026 -> "2026-06")
+    function inicioDoPeriodo(quantidadeMeses) {
+        var partes = mesAtual().split("-");
+        var data = new Date(Number(partes[0]), Number(partes[1]) - 1 - (quantidadeMeses - 1), 1);
+        var mes = String(data.getMonth() + 1);
+        return data.getFullYear() + "-" + (mes.length === 1 ? "0" + mes : mes);
+    }
+
+    function registrosFiltrados() {
+        var inicio = filtroPeriodo === "todos" ? "0000-00" : inicioDoPeriodo(Number(filtroPeriodo));
+
+        return dados.listar().filter(function (item) {
+            var noPeriodo = item.mes >= inicio;
+            var noRecurso = filtroRecurso === "todos" || item.tipo === filtroRecurso;
+            return noPeriodo && noRecurso;
+        });
+    }
+
+    function textoPeriodo() {
+        if (filtroPeriodo === "todos") {
+            return "todo o histórico";
+        }
+        return "de " + dados.nomeMes(inicioDoPeriodo(Number(filtroPeriodo))) +
+            " a " + dados.nomeMes(mesAtual());
+    }
+
+    // Média mensal de cada recurso dentro do período filtrado
+    function mostrarMedias(lista) {
+        medias.innerHTML = "";
+
+        ["agua", "energia"].forEach(function (tipo) {
+            if (filtroRecurso !== "todos" && filtroRecurso !== tipo) {
+                return;
+            }
+
+            var itens = lista.filter(function (item) {
+                return item.tipo === tipo;
+            });
+
+            if (itens.length === 0) {
+                return;
+            }
+
+            var soma = 0;
+            for (var i = 0; i < itens.length; i++) {
+                soma += itens[i].quantidade;
+            }
+            var media = soma / itens.length;
+            var reducao = dados.reducaoPercentual(tipo, media);
+
+            var bloco = document.createElement("div");
+            bloco.className = "media-recurso";
+            bloco.setAttribute("data-recurso", tipo);
+            bloco.innerHTML = '<span class="media-rotulo"></span><strong class="numero"></strong><span class="media-apoio"></span>';
+            bloco.querySelector(".media-rotulo").textContent = "Média de " + dados.RECURSOS[tipo].rotulo.toLowerCase();
+            bloco.querySelector("strong").textContent = dados.formatarConsumo(tipo, Math.round(media * 10) / 10) + " por mês";
+            bloco.querySelector(".media-apoio").textContent =
+                (reducao >= 0 ? dados.formatar(reducao, 1) + "% abaixo" : dados.formatar(-reducao, 1) + "% acima") +
+                " da referência, em " + itens.length + (itens.length === 1 ? " mês" : " meses");
+            medias.appendChild(bloco);
+        });
+    }
+
+    function criarLinha(item) {
+        var recurso = dados.RECURSOS[item.tipo];
+        var reducao = dados.reducaoPercentual(item.tipo, item.quantidade);
+        var economia = dados.economiaReais(item.tipo, item.quantidade);
+        var linha = document.createElement("tr");
+
+        var situacao;
+        if (reducao > 0) {
+            situacao = '<span class="situacao abaixo"><i data-lucide="circle-check" aria-hidden="true"></i>' +
+                dados.formatar(reducao, 1) + '% abaixo</span>';
+        } else if (reducao < 0) {
+            situacao = '<span class="situacao acima"><i data-lucide="circle-alert" aria-hidden="true"></i>' +
+                dados.formatar(-reducao, 1) + '% acima</span>';
+        } else {
+            situacao = '<span class="situacao">Igual</span>';
+        }
+
+        linha.innerHTML =
+            '<td data-rotulo="Mês">' + dados.nomeMes(item.mes) + '</td>' +
+            '<td data-rotulo="Recurso"><span class="recurso-marca" data-recurso="' + item.tipo + '">' +
+            recurso.rotulo + '</span></td>' +
+            '<td data-rotulo="Consumo" class="numero">' + dados.formatarConsumo(item.tipo, item.quantidade) + '</td>' +
+            '<td data-rotulo="Referência">' + situacao + '</td>' +
+            '<td data-rotulo="Economia" class="numero">' + (economia > 0 ? dados.formatarReais(economia) : "—") + '</td>' +
+            '<td class="coluna-acao"><button type="button" class="botao-excluir" data-id="' + item.id + '">Excluir</button></td>';
+
+        linha.querySelector(".botao-excluir").setAttribute("aria-label",
+            "Excluir o registro de " + recurso.rotulo.toLowerCase() + " de " + dados.nomeMes(item.mes));
+
+        return linha;
+    }
+
+    function mostrarHistorico() {
+        var lista = registrosFiltrados();
+        corpo.innerHTML = "";
+
+        // Mais recente primeiro
+        for (var i = lista.length - 1; i >= 0; i--) {
+            corpo.appendChild(criarLinha(lista[i]));
+        }
+
+        resumo.textContent = lista.length + (lista.length === 1 ? " registro" : " registros") +
+            ", " + textoPeriodo() + ".";
+
+        mostrarMedias(lista);
+
+        if (lista.length === 0) {
+            vazio.hidden = false;
+            vazio.textContent = dados.listar().length === 0
+                ? "Nenhum consumo registrado ainda. Use o formulário acima para começar."
+                : "Nenhum registro nesse período. Escolha um período maior ou registre um novo consumo.";
+        } else {
+            vazio.hidden = true;
+        }
+
+        if (window.lucide) {
+            lucide.createIcons();
+        }
+    }
+
+    function configurarHistorico() {
+        // Filtros de período e de recurso
+        function ligarFiltros(seletor, atributo, aoEscolher) {
+            var botoes = document.querySelectorAll(seletor);
+            for (var i = 0; i < botoes.length; i++) {
+                botoes[i].addEventListener("click", function () {
+                    for (var j = 0; j < botoes.length; j++) {
+                        botoes[j].setAttribute("aria-pressed", String(botoes[j] === this));
+                    }
+                    aoEscolher(this.getAttribute(atributo));
+                    statusHistorico.textContent = "";
+                    mostrarHistorico();
+                });
+            }
+        }
+
+        ligarFiltros("[data-periodo]", "data-periodo", function (valor) {
+            filtroPeriodo = valor;
+        });
+
+        ligarFiltros("[data-filtro-recurso]", "data-filtro-recurso", function (valor) {
+            filtroRecurso = valor;
+        });
+
+        // Excluir: o primeiro clique pede confirmação, o segundo exclui
+        corpo.addEventListener("click", function (evento) {
+            var botao = evento.target.closest(".botao-excluir");
+            if (!botao) {
+                return;
+            }
+
+            if (botao.getAttribute("data-confirmar") !== "sim") {
+                botao.setAttribute("data-confirmar", "sim");
+                botao.textContent = "Confirmar";
+                setTimeout(function () {
+                    if (document.body.contains(botao)) {
+                        botao.removeAttribute("data-confirmar");
+                        botao.textContent = "Excluir";
+                    }
+                }, 4000);
+                return;
+            }
+
+            dados.remover(Number(botao.getAttribute("data-id")));
+            statusHistorico.textContent = "Registro excluído.";
+            mostrarHistorico();
+            atualizarPrevia();
+        });
+
+        // Volta aos seis meses fictícios do início
+        document.getElementById("historico-restaurar").addEventListener("click", function () {
+            dados.restaurarDemonstracao();
+            statusHistorico.textContent = "Dados de demonstração restaurados.";
+            mostrarHistorico();
+            atualizarPrevia();
+        });
+
+        // Novo registro feito no formulário
+        document.addEventListener("consumo-atualizado", mostrarHistorico);
+    }
+
+
+    /* ---------- INICIALIZAÇÃO ---------- */
+
+    configurarFormulario();
+    atualizarRecurso();
+    configurarHistorico();
+    mostrarHistorico();
 });

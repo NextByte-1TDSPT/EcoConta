@@ -288,7 +288,191 @@
 }
 
 
-/* 6. RESPONSIVIDADE */
+/* 6. HISTÓRICO */
+
+.historico-filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 32px;
+    margin-bottom: 22px;
+}
+
+.filtro {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.filtro-rotulo {
+    color: var(--texto-suave);
+    font-size: 13px;
+}
+
+.historico-medias {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin-bottom: 22px;
+}
+
+.historico-medias:empty {
+    display: none;
+}
+
+.media-recurso {
+    --cor-recurso: var(--agua);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 14px 16px;
+    border-left: 3px solid var(--cor-recurso);
+    border-radius: 0 12px 12px 0;
+    background-color: var(--superficie-forte);
+}
+
+.media-recurso[data-recurso="energia"] {
+    --cor-recurso: var(--energia);
+}
+
+.media-rotulo,
+.media-apoio {
+    color: var(--texto-suave);
+    font-size: 13px;
+}
+
+.media-recurso strong {
+    color: var(--bege);
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.tabela-rolagem {
+    overflow-x: auto;
+}
+
+.historico-tabela {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.historico-tabela th {
+    color: var(--texto-suave);
+    font-weight: 500;
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--borda);
+    white-space: nowrap;
+}
+
+.historico-tabela td {
+    color: var(--bege);
+    padding: 12px;
+    border-bottom: 1px solid var(--borda);
+    white-space: nowrap;
+}
+
+.historico-tabela tbody tr:hover td {
+    background-color: rgba(245, 240, 233, 0.03);
+}
+
+.recurso-marca {
+    --cor-recurso: var(--agua);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.recurso-marca[data-recurso="energia"] {
+    --cor-recurso: var(--energia);
+}
+
+.recurso-marca::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+    background-color: var(--cor-recurso);
+}
+
+.situacao {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.situacao svg {
+    width: 16px;
+    height: 16px;
+}
+
+.situacao.abaixo svg {
+    color: var(--verde-claro);
+}
+
+.situacao.acima svg {
+    color: var(--alerta);
+}
+
+.coluna-acao {
+    text-align: right;
+}
+
+.botao-excluir {
+    border: 1px solid var(--borda);
+    border-radius: 30px;
+    background: transparent;
+    color: var(--texto-suave);
+    font-size: 13px;
+    padding: 6px 14px;
+    cursor: pointer;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.botao-excluir:hover {
+    border-color: var(--alerta);
+    color: var(--bege);
+}
+
+.botao-excluir[data-confirmar="sim"] {
+    border-color: var(--alerta);
+    background-color: #33241F;
+    color: #F0A397;
+}
+
+.historico-vazio {
+    color: var(--texto-suave);
+    font-size: 15px;
+    padding: 28px 0 8px;
+}
+
+.historico-rodape {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+    margin-top: 22px;
+}
+
+.historico-restaurar {
+    border: 0;
+    background: transparent;
+    color: var(--verde-claro);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.historico-status {
+    color: var(--texto-suave);
+    font-size: 13px;
+}
+
+
+/* 7. RESPONSIVIDADE */
 
 @media (max-width: 900px) {
     .registro {
@@ -300,7 +484,59 @@
     }
 }
 
+@media (max-width: 640px) {
+    /* No celular, cada registro vira um bloco com rótulos */
+    .historico-tabela thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+    }
+
+    .historico-tabela,
+    .historico-tabela tbody,
+    .historico-tabela tr,
+    .historico-tabela td {
+        display: block;
+        width: 100%;
+    }
+
+    .historico-tabela tr {
+        padding: 14px 0;
+        border-bottom: 1px solid var(--borda);
+    }
+
+    .historico-tabela td {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 5px 0;
+        border-bottom: 0;
+    }
+
+    .historico-tabela td::before {
+        content: attr(data-rotulo);
+        color: var(--texto-suave);
+        font-size: 13px;
+    }
+
+    .historico-tabela td.coluna-acao {
+        justify-content: flex-end;
+        padding-top: 10px;
+    }
+}
+
 @media (max-width: 520px) {
+    .historico-filtros .pilulas {
+        gap: 2px;
+    }
+
+    .historico-filtros .pilulas button {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
     .campos-linha {
         grid-template-columns: 1fr;
     }

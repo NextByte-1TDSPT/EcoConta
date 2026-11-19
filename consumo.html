@@ -172,6 +172,105 @@
           <div id="previa-conteudo" aria-live="polite"></div>
         </aside>
       </section>
+
+      <!-- HISTÓRICO COM FILTROS -->
+      <section
+        class="painel-bloco historico"
+        aria-labelledby="titulo-historico"
+      >
+        <div class="painel-bloco-topo">
+          <div>
+            <h2 id="titulo-historico">Histórico</h2>
+            <p class="painel-bloco-descricao" id="historico-resumo"></p>
+          </div>
+        </div>
+
+        <div class="historico-filtros">
+          <div class="filtro">
+            <span class="filtro-rotulo" id="rotulo-periodo">Período</span>
+            <div class="pilulas" role="group" aria-labelledby="rotulo-periodo">
+              <button type="button" data-periodo="3" aria-pressed="false">
+                3 meses
+              </button>
+              <button type="button" data-periodo="6" aria-pressed="true">
+                6 meses
+              </button>
+              <button type="button" data-periodo="12" aria-pressed="false">
+                12 meses
+              </button>
+              <button type="button" data-periodo="todos" aria-pressed="false">
+                Tudo
+              </button>
+            </div>
+          </div>
+
+          <div class="filtro">
+            <span class="filtro-rotulo" id="rotulo-recurso">Recurso</span>
+            <div class="pilulas" role="group" aria-labelledby="rotulo-recurso">
+              <button
+                type="button"
+                data-filtro-recurso="todos"
+                aria-pressed="true"
+              >
+                Todos
+              </button>
+              <button
+                type="button"
+                data-filtro-recurso="agua"
+                aria-pressed="false"
+              >
+                Água
+              </button>
+              <button
+                type="button"
+                data-filtro-recurso="energia"
+                aria-pressed="false"
+              >
+                Energia
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="historico-medias" id="historico-medias"></div>
+
+        <div class="tabela-rolagem">
+          <table class="historico-tabela">
+            <caption class="sr-only">
+              Registros de consumo do período escolhido
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Mês</th>
+                <th scope="col">Recurso</th>
+                <th scope="col">Consumo</th>
+                <th scope="col">Em relação à referência</th>
+                <th scope="col">Economia estimada</th>
+                <th scope="col"><span class="sr-only">Ações</span></th>
+              </tr>
+            </thead>
+            <tbody id="historico-corpo"></tbody>
+          </table>
+        </div>
+
+        <p class="historico-vazio" id="historico-vazio" hidden></p>
+
+        <div class="historico-rodape">
+          <button
+            type="button"
+            class="historico-restaurar"
+            id="historico-restaurar"
+          >
+            Restaurar dados de demonstração
+          </button>
+          <p
+            class="historico-status"
+            id="historico-status"
+            role="status"
+            aria-live="polite"
+          ></p>
+        </div>
+      </section>
     </main>
 
     <!-- RODAPÉ -->
