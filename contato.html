@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -16,6 +15,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/contato.css">
+<link rel="stylesheet" href="css/navegacao.css">
 
     <!-- ÍCONES LUCIDE -->
     <script
@@ -27,38 +27,7 @@
 <body>
 
     <!-- CABEÇALHO -->
-    <header class="cabecalho">
-
-        <div class="container cabecalho-conteudo">
-
-            <!-- MESMA LOGO DAS OUTRAS PÁGINAS -->
-            <a href="index.html" class="logo">
-
-                <i data-lucide="leaf"
-                   class="logo-simbolo"
-                   aria-hidden="true"></i>
-
-                <span class="logo-nome">EcoConta</span>
-
-            </a>
-
-            <!-- MENU -->
-            <nav class="menu" aria-label="Menu principal">
-
-                <a href="index.html">Início</a>
-                <a href="sobre.html">Sobre</a>
-                <a href="ecobot.html">EcoBot</a>
-                <a href="integrantes.html">Integrantes</a>
-                <a href="faq.html">FAQ</a>
-                <a href="contato.html"
-                   class="ativo"
-                   aria-current="page">Contato</a>
-
-            </nav>
-
-        </div>
-
-    </header>
+    <header class="cabecalho"><nav class="navegacao" aria-label="Menu principal"><a href="index.html" class="logo"><i data-lucide="leaf" class="logo-simbolo" aria-hidden="true"></i><span class="logo-nome">EcoConta</span></a><button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal"><i data-lucide="menu" aria-hidden="true"></i></button><ul class="menu" id="menu-principal"><li><a href="index.html">Início</a></li><li><a href="sobre.html">Sobre</a></li><li><a href="ecobot.html">EcoBot</a></li><li><a href="integrantes.html">Integrantes</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contato.html" class="ativo" aria-current="page">Contato</a></li><li><a href="acesso.html" data-link-conta>Minha conta</a></li></ul></nav></header>
 
     <!-- CONTEÚDO PRINCIPAL -->
     <main class="pagina-contato">
@@ -329,32 +298,6 @@
 
     </footer>
 
-    <!-- JAVASCRIPT -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-
-            // ATIVA OS ÍCONES LUCIDE
-            if (window.lucide) {
-                lucide.createIcons();
-            }
-
-            // FORMULÁRIO DEMONSTRATIVO
-            const formulario = document.getElementById("formulario-contato");
-            const status = document.getElementById("status-formulario");
-
-            formulario.addEventListener("submit", function (evento) {
-
-                evento.preventDefault();
-
-                if (formulario.checkValidity()) {
-                    status.textContent =
-                        "Formulário demonstrativo. Nenhuma mensagem foi enviada.";
-                }
-
-            });
-
-        });
-    </script>
-
+<script src="js/navegacao.js" defer></script>
 </body>
 </html>

@@ -1,6 +1,28 @@
+document.addEventListener("DOMContentLoaded", function () {
+  // Inicializa os ícones Lucide
+  if (window.lucide) {
+    lucide.createIcons();
+  }
+
+  // Menu responsivo
+  const botaoMenu = document.querySelector(".menu-toggle");
+  const menu = document.querySelector(".menu");
+
+  if (botaoMenu && menu) {
+    botaoMenu.addEventListener("click", function () {
+      const aberto = menu.classList.toggle("ativo");
+
+      botaoMenu.setAttribute("aria-expanded", String(aberto));
+
+      botaoMenu.setAttribute(
+        "aria-label",
+        aberto ? "Fechar menu" : "Abrir menu",
+      );
+    });
+  }
+});
 
 document.addEventListener("DOMContentLoaded", () => {
-
   // Elementos da interface
   const formulario = document.querySelector("#ecobot-formulario");
   const campoMensagem = document.querySelector("#ecobot-input");
@@ -24,7 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Respostas demonstrativas do EcoBot
   const respostas = {
-
     agua:
       "💧 Dicas para economizar água:\n\n" +
       "• Reduza o tempo no banho.\n" +
@@ -101,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "Por enquanto, consigo responder perguntas sobre " +
       "economia de água, energia, consumo, metas, " +
       "EcoPoints e sustentabilidade.\n\n" +
-      "Experimente perguntar sobre um desses assuntos!"
+      "Experimente perguntar sobre um desses assuntos!",
   };
 
   // Remove acentos e padroniza o texto
@@ -136,10 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return "pontos";
     }
 
-    if (
-      texto.includes("meta") ||
-      texto.includes("objetivo")
-    ) {
+    if (texto.includes("meta") || texto.includes("objetivo")) {
       return "metas";
     }
 
@@ -178,10 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return "sustentabilidade";
     }
 
-    if (
-      texto.includes("ecoconta") ||
-      texto.includes("plataforma")
-    ) {
+    if (texto.includes("ecoconta") || texto.includes("plataforma")) {
       return "ecoconta";
     }
 
@@ -266,7 +281,7 @@ document.addEventListener("DOMContentLoaded", () => {
         energia: "Como economizar energia?",
         anomalias: "Quais são os alertas de consumo?",
         metas: "Como funcionam as metas?",
-        pontos: "Como funcionam os EcoPoints?"
+        pontos: "Como funcionam os EcoPoints?",
       };
 
       if (perguntas[acao]) {
@@ -286,5 +301,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Inicia o chat com a mensagem de boas-vindas
   adicionarMensagem(mensagemInicial, "bot");
-
 });

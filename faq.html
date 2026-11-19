@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -11,14 +10,14 @@
 
     <title>FAQ | EcoConta</title>
 
-    <!-- FONTE POPPINS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
-    <!-- CSS -->
+
     <link rel="stylesheet" href="css/faq.css">
+    <link rel="stylesheet" href="css/navegacao.css">
 
     <!-- ÍCONES -->
     <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
@@ -28,20 +27,10 @@
 
     <!-- CABEÇALHO -->
     <header class="cabecalho">
-        <nav class="navegacao" aria-label="Menu principal">
-
-            <a href="index.html" class="logo">
-                <i data-lucide="leaf" class="logo-simbolo"></i>
-                <span>EcoConta</span>
-            </a>
-
-            <button class="menu-toggle" type="button"
-                aria-label="Abrir menu"
-                aria-expanded="false"
-                aria-controls="menu-principal">
-                <i data-lucide="menu"></i>
-            </button>
-
+        <nav class="navegacao" aria-label="Menu principal"><a href="index.html" class="logo"><i data-lucide="leaf"
+                    class="logo-simbolo" aria-hidden="true"></i><span class="logo-nome">EcoConta</span></a><button
+                class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false"
+                aria-controls="menu-principal"><i data-lucide="menu" aria-hidden="true"></i></button>
             <ul class="menu" id="menu-principal">
                 <li><a href="index.html">Início</a></li>
                 <li><a href="sobre.html">Sobre</a></li>
@@ -49,8 +38,8 @@
                 <li><a href="integrantes.html">Integrantes</a></li>
                 <li><a href="faq.html" class="ativo" aria-current="page">FAQ</a></li>
                 <li><a href="contato.html">Contato</a></li>
+                <li><a href="acesso.html" data-link-conta>Minha conta</a></li>
             </ul>
-
         </nav>
     </header>
 
@@ -80,8 +69,7 @@
 
             <div class="grade-cards">
 
-                <button class="card-categoria" type="button"
-                    data-categoria="sobre" aria-pressed="false">
+                <button class="card-categoria" type="button" data-categoria="sobre" aria-pressed="false">
 
                     <i data-lucide="leaf" class="card-icone"></i>
 
@@ -95,8 +83,7 @@
                     </span>
                 </button>
 
-                <button class="card-categoria" type="button"
-                    data-categoria="consumo" aria-pressed="false">
+                <button class="card-categoria" type="button" data-categoria="consumo" aria-pressed="false">
 
                     <i data-lucide="droplets" class="card-icone"></i>
 
@@ -110,8 +97,7 @@
                     </span>
                 </button>
 
-                <button class="card-categoria" type="button"
-                    data-categoria="metas" aria-pressed="false">
+                <button class="card-categoria" type="button" data-categoria="metas" aria-pressed="false">
 
                     <i data-lucide="target" class="card-icone"></i>
 
@@ -125,8 +111,7 @@
                     </span>
                 </button>
 
-                <button class="card-categoria" type="button"
-                    data-categoria="ecobot" aria-pressed="false">
+                <button class="card-categoria" type="button" data-categoria="ecobot" aria-pressed="false">
 
                     <i data-lucide="bot" class="card-icone"></i>
 
@@ -340,77 +325,7 @@
 
     </footer>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-
-            if (window.lucide) {
-                lucide.createIcons();
-            }
-
-            // MENU MOBILE
-            const botaoMenu = document.querySelector(".menu-toggle");
-            const menu = document.querySelector(".menu");
-
-            botaoMenu.addEventListener("click", function () {
-                const aberto = menu.classList.toggle("aberto");
-
-                botaoMenu.setAttribute("aria-expanded", String(aberto));
-                botaoMenu.setAttribute(
-                    "aria-label",
-                    aberto ? "Fechar menu" : "Abrir menu"
-                );
-            });
-
-            // CATEGORIAS DO FAQ
-            const cards = document.querySelectorAll(".card-categoria");
-            const grupos = document.querySelectorAll(".grupo-perguntas");
-            const titulo = document.querySelector("#titulo-perguntas");
-            const secao = document.querySelector("#perguntas");
-
-            const titulos = {
-                sobre: "Sobre o EcoConta",
-                consumo: "Água e energia",
-                metas: "Metas de economia",
-                ecobot: "EcoBot"
-            };
-
-            function selecionarCategoria(categoria) {
-
-                cards.forEach(function (card) {
-                    const selecionado = card.dataset.categoria === categoria;
-
-                    card.classList.toggle("selecionado", selecionado);
-                    card.setAttribute("aria-pressed", String(selecionado));
-                });
-
-                grupos.forEach(function (grupo) {
-                    grupo.hidden = grupo.dataset.grupo !== categoria;
-
-                    grupo.querySelectorAll("details").forEach(function (pergunta) {
-                        pergunta.open = false;
-                    });
-                });
-
-                titulo.textContent = titulos[categoria];
-
-                secao.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
-            }
-
-            cards.forEach(function (card) {
-                card.addEventListener("click", function () {
-                    selecionarCategoria(card.dataset.categoria);
-                });
-            });
-
-            // CATEGORIA INICIAL
-            cards[0].classList.add("selecionado");
-            cards[0].setAttribute("aria-pressed", "true");
-
-        });
-    </script>
-
+    <script src="js/navegacao.js" defer></script>
 </body>
+
 </html>
