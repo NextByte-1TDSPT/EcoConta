@@ -38,12 +38,13 @@ document.addEventListener("DOMContentLoaded", function () {
   if (linkConta) {
     const estaLogado = sessionStorage.getItem("ecoconta_autenticado");
     const perfil = localStorage.getItem("ecoconta_perfil");
+    const dentroDePages = window.location.pathname.includes("/pages/");
+    const caminhoBase = dentroDePages ? "" : "pages/";
 
-    if (estaLogado === "true" && perfil) {
-      linkConta.href = "perfil.html";
-    } else {
-      linkConta.href = "acesso.html";
-    }
+    linkConta.href =
+      estaLogado === "true" && perfil
+        ? `${caminhoBase}perfil.html`
+        : `${caminhoBase}acesso.html`;
 
     linkConta.textContent = "Minha conta";
   }

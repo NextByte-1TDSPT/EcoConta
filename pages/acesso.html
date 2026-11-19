@@ -17,25 +17,27 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/navegacao.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    
+    <link rel="stylesheet" href="../css/navegacao.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="css/acesso.css" />
+    <link rel="stylesheet" href="../css/acesso.css" />
 
     <!-- Scripts da página -->
-    <script src="js/dados.js" defer></script>
-    <script src="js/acesso.js" defer></script>
-  </head>
+    <script src="../js/dados.js" defer></script>
+    <script src="../js/acesso.js" defer></script>
+    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+</head>
 
   <body>
     <!-- Cabeçalho e menu de navegação -->
     <header class="cabecalho">
       <nav class="navegacao" aria-label="Menu principal">
-        <a href="index.html" class="logo"
-          ><i class="fas fa-leaf logo-simbolo" aria-hidden="true"></i
-          ><span class="logo-nome">EcoConta</span></a
+        <a href="../index.html" class="logo"
+          ><i data-lucide="leaf" class="logo-simbolo" aria-hidden="true"></i><span class="logo-nome">EcoConta</span></a
         ><button
           class="menu-toggle"
           type="button"
@@ -43,18 +45,19 @@
           aria-expanded="false"
           aria-controls="menu-principal"
         >
-          <i class="fas fa-bars" aria-hidden="true"></i>
+          <i data-lucide="menu" aria-hidden="true"></i>
         </button>
         <ul class="menu" id="menu-principal">
-          <li><a href="index.html">Início</a></li>
-          <li><a href="sobre.html">Sobre</a></li>
-          <li><a href="ecobot.html">EcoBot</a></li>
-          <li><a href="integrantes.html">Integrantes</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="contato.html">Contato</a></li>
-          <li><a href="acesso.html" data-link-conta>Minha conta</a></li>
-          <li><a href="dashboard.html">Painel</a></li>
-          <li><a href="consumo.html">Consumo</a></li>
+          <li><a href="../index.html">Início</a></li>
+          <li><a href="./sobre.html">Sobre</a></li>
+          <li><a href="./ecobot.html">EcoBot</a></li>
+          <li><a href="./integrantes.html">Integrantes</a></li>
+          <li><a href="./faq.html">FAQ</a></li>
+          <li><a href="./contato.html">Contato</a></li>
+          <li><a href="./acesso.html" data-link-conta class="ativo" aria-current="page" >Minha conta</a></li>
+          <li><a href="./dashboard.html">Painel</a></li>
+          <li><a href="./consumo.html">Consumo</a></li>
+          <li><a href="./metas.html">Metas</a></li>
         </ul>
       </nav>
     </header>
@@ -280,39 +283,43 @@
 
     <!-- Rodapé com informações do projeto -->
     <footer class="rodape">
-      <div class="container">
-        <div class="rodape-conteudo">
-          <div class="rodape-marca">
-            <h2>EcoConta</h2>
-            <p>Consumo inteligente, um futuro mais sustentável.</p>
-          </div>
-
-          <div class="rodape-navegacao">
-            <h3>Navegação</h3>
-            <a href="index.html">Início</a>
-            <a href="sobre.html">Sobre</a>
-            <a href="integrantes.html">Integrantes</a>
-            <a href="faq.html">FAQ</a>
-            <a href="contato.html">Contato</a>
-            <a href="dashboard.html">Painel</a>
-            <a href="consumo.html">Consumo</a>
-          </div>
-
-          <div class="rodape-projeto">
-            <h3>Projeto acadêmico</h3>
-            <p>FIAP — Global Solution 2026/2</p>
-            <p>Equipe NextBythe</p>
-          </div>
+      <div class="rodape-conteudo">
+        <div>
+          <h2>EcoConta</h2>
+          <p>
+            Tecnologia e sustentabilidade para um consumo residencial mais
+            consciente.
+          </p>
         </div>
 
-        <div class="rodape-inferior">
-          <p>© 2026 EcoConta. Todos os direitos reservados.</p>
-          <p>Desenvolvido pela equipe NextBythe.</p>
+        <div>
+          <h3>Navegação</h3>
+          <ul>
+            <li><a href="../index.html">Início</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="integrantes.html">Integrantes</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contato.html">Contato</a></li>
+            <li><a href="dashboard.html">Painel</a></li>
+            <li><a href="consumo.html">Consumo</a></li>
+          </ul>
         </div>
+
+        <div>
+          <h3>Projeto acadêmico</h3>
+          <p>Global Solution 2026/2</p>
+          <p>FIAP</p>
+          <p>Equipe NextByte</p>
+        </div>
+      </div>
+
+      <div class="rodape-inferior">
+        <p>© 2026 EcoConta. Projeto acadêmico.</p>
+        <p>Desenvolvido pela equipe NextByte.</p>
       </div>
     </footer>
 
     <!-- Script do menu de navegação -->
-    <script src="js/navegacao.js" defer></script>
+    <script src="../js/navegacao.js" defer></script>
   </body>
 </html>
