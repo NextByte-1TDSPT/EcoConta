@@ -1,3 +1,4 @@
+// Aguarda o carregamento da página e verifica o acesso do usuário
 document.addEventListener("DOMContentLoaded", function () {
   if (!EcoContaDados.autenticado()) {
     window.location.href = "acesso.html";
@@ -11,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     return;
   }
 
+  // Recupera e exibe os dados pessoais do usuário
   let nome = "Não informado";
   let email = "Não informado";
 
@@ -25,12 +27,14 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("perfil-nome").textContent = nome;
   document.getElementById("perfil-email").textContent = email;
 
+  // Recupera as informações da residência
   let r = {};
 
   if (perfil.residencia) {
     r = perfil.residencia;
   }
 
+  // Organiza os equipamentos cadastrados e suas frequências de uso
   let equipamentos = [];
 
   if (r.equipamentos) {
@@ -52,6 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  // Prepara os textos das informações da residência
   let cidadeEstado = "Não informada";
 
   if (r.cidade && r.estado) {
@@ -84,6 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
     criancasTexto = r.criancas;
   }
 
+  // Reúne os equipamentos em um único texto
   let equipamentosTexto = "Nenhum informado";
 
   if (equipamentos.length > 0) {
@@ -98,6 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  // Prepara os dados de identificação e estrutura do imóvel
   let identificacao = "Não configurada";
   let tipoImovel = "Não informado";
   let rotina = "Não informada";
@@ -138,6 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let estrutura =
     banheiros + " banheiro(s) · piscina: " + piscina + " · jardim: " + jardim;
 
+  // Organiza as informações que serão exibidas no resumo
   const dados = [
     ["Identificação", identificacao],
     ["Tipo de imóvel", tipoImovel],
@@ -151,6 +159,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ["Equipamentos", equipamentosTexto],
   ];
 
+  // Monta e exibe o resumo das informações da residência
   let resumo = "";
 
   for (let i = 0; i < dados.length; i++) {
@@ -164,11 +173,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.getElementById("resumo-residencia").innerHTML = resumo;
 
+  // Realiza o logout e retorna à página de acesso
   document.getElementById("botao-sair").addEventListener("click", function () {
     EcoContaDados.sair();
     window.location.href = "acesso.html";
   });
 
+  // Protege o conteúdo exibido contra caracteres HTML
   function escapar(texto) {
     return String(texto).replace(/[&<>"']/g, function (char) {
       return {
