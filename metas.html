@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="EcoConta: defina metas de economia, acompanhe alertas de consumo e ganhe EcoPoints.">
+
+    <title>EcoConta | Metas e Recompensas</title>
+
+    <!-- FONTE POPPINS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/metas.css">
+
+    <!-- ÍCONES LUCIDE -->
+    <script
+        src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"
+        defer>
+    </script>
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="cabecalho">
+
+        <nav class="navegacao" aria-label="Menu principal">
+
+            <a href="index.html" class="logo">
+                <i data-lucide="leaf"
+                   class="logo-simbolo"
+                   aria-hidden="true"></i>
+                <span class="logo-nome">EcoConta</span>
+            </a>
+
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+                aria-controls="menu-principal">
+
+                <i data-lucide="menu" aria-hidden="true"></i>
+            </button>
+
+            <ul class="menu" id="menu-principal">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li>
+                    <a href="metas.html" aria-current="page">Metas</a>
+                </li>
+                <li><a href="ecobot.html">EcoBot</a></li>
+                <li><a href="integrantes.html">Integrantes</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main>
+
+        <!-- INTRODUÇÃO DA PÁGINA -->
+        <section class="apresentacao metas-intro">
+
+            <div class="secao-conteudo">
+
+                <span class="secao-etiqueta">
+                    METAS E RECOMPENSAS
+                </span>
+
+                <h2>
+                    Defina metas, acompanhe alertas
+                    e ganhe EcoPoints.
+                </h2>
+
+                <p>
+                    Escolha quanto quer economizar,
+                    veja como está o seu consumo
+                    e seja recompensado por cada meta atingida.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- SEÇÃO 1: METAS -->
+        <section class="funcionalidades metas-secao" id="metas"
+                 aria-labelledby="titulo-metas">
+
+            <div class="secao-titulo">
+
+                <span class="secao-etiqueta">METAS</span>
+
+                <h2 id="titulo-metas">Suas metas de economia</h2>
+
+                <p>
+                    Crie metas para água e energia
+                    e acompanhe o progresso de cada uma.
+                </p>
+
+            </div>
+
+            <div class="metas-layout">
+
+                <!-- FORMULÁRIO: NOVA META -->
+                <form class="metas-form" id="form-meta" novalidate>
+
+                    <h3>Nova meta</h3>
+
+                    <div class="metas-campo">
+                        <label for="meta-nome">Nome da meta</label>
+                        <input type="text" id="meta-nome" name="nome"
+                               placeholder="Ex.: Banhos mais curtos"
+                               maxlength="40" autocomplete="off">
+                        <span class="metas-erro" id="erro-nome"
+                              role="alert"></span>
+                    </div>
+
+                    <div class="metas-campo">
+                        <label for="meta-tipo">Recurso</label>
+                        <select id="meta-tipo" name="tipo">
+                            <option value="">Selecione</option>
+                            <option value="agua">Água</option>
+                            <option value="energia">Energia</option>
+                        </select>
+                        <span class="metas-erro" id="erro-tipo"
+                              role="alert"></span>
+                    </div>
+
+                    <div class="metas-campo">
+                        <label for="meta-reducao">
+                            Redução desejada (%)
+                        </label>
+                        <input type="number" id="meta-reducao"
+                               name="reducao" min="5" max="50"
+                               step="1" placeholder="Entre 5 e 50">
+                        <span class="metas-erro" id="erro-reducao"
+                              role="alert"></span>
+                    </div>
+
+                    <button type="submit" class="botao botao-principal">
+                        Criar meta
+                    </button>
+
+                    <p class="metas-status" id="status-form"
+                       role="status"></p>
+
+                </form>
+
+                <!-- LISTA DE METAS -->
+                <div class="metas-lista" id="lista-metas"
+                     aria-live="polite"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SEÇÃO 2: ALERTAS -->
+        <section class="funcionalidades metas-secao" id="alertas"
+                 aria-labelledby="titulo-alertas">
+
+            <div class="secao-titulo">
+
+                <span class="secao-etiqueta">ALERTAS</span>
+
+                <h2 id="titulo-alertas">Alertas de consumo</h2>
+
+                <p>
+                    Saiba quando o consumo passa do esperado
+                    para agir antes de a conta subir.
+                </p>
+
+            </div>
+
+            <div class="metas-alertas-barra">
+
+                <div class="metas-filtros" role="group"
+                     aria-label="Filtrar alertas por recurso">
+                    <button type="button" class="metas-filtro"
+                            data-filtro="todos" aria-pressed="true">
+                        Todos
+                    </button>
+                    <button type="button" class="metas-filtro"
+                            data-filtro="agua" aria-pressed="false">
+                        Água
+                    </button>
+                    <button type="button" class="metas-filtro"
+                            data-filtro="energia" aria-pressed="false">
+                        Energia
+                    </button>
+                </div>
+
+                <p class="metas-contagem" id="contagem-alertas"
+                   aria-live="polite"></p>
+
+            </div>
+
+            <div class="metas-alertas" id="lista-alertas"></div>
+
+        </section>
+
+
+        <!-- SEÇÃO 3: ECOREWARDS -->
+        <section class="funcionalidades metas-secao" id="ecorewards"
+                 aria-labelledby="titulo-ecorewards">
+
+            <div class="secao-titulo">
+
+                <span class="secao-etiqueta">ECOREWARDS</span>
+
+                <h2 id="titulo-ecorewards">Seus EcoPoints</h2>
+
+                <p>
+                    Cada meta atingida vira pontos.
+                    Bata as duas metas e ganhe um bônus.
+                </p>
+
+            </div>
+
+            <div class="metas-rewards">
+
+                <!-- SALDO E NÍVEL -->
+                <div class="metas-saldo">
+
+                    <i data-lucide="award" class="metas-saldo-icone"
+                       aria-hidden="true"></i>
+
+                    <p class="metas-saldo-rotulo">Saldo de EcoPoints</p>
+                    <p class="metas-saldo-valor" id="saldo-pontos">0</p>
+                    <p class="metas-nivel" id="nivel-nome"></p>
+
+                    <div class="metas-barra" id="barra-nivel"
+                         role="progressbar" aria-label="Progresso do nível"
+                         aria-valuemin="0" aria-valuemax="100"
+                         aria-valuenow="0">
+                        <div class="metas-barra-preenchimento"
+                             id="barra-nivel-preenchimento"></div>
+                    </div>
+
+                    <p class="metas-nivel-info" id="nivel-info"></p>
+
+                </div>
+
+                <!-- PONTUAÇÃO POR CATEGORIA -->
+                <div class="metas-pontuacao">
+
+                    <article class="metas-pontos-card">
+                        <i data-lucide="droplets" class="metas-card-icone"
+                           aria-hidden="true"></i>
+                        <h3>Água</h3>
+                        <p class="metas-pontos-valor" id="pontos-agua">0</p>
+                        <p class="metas-pontos-texto">pontos</p>
+                    </article>
+
+                    <article class="metas-pontos-card">
+                        <i data-lucide="zap" class="metas-card-icone"
+                           aria-hidden="true"></i>
+                        <h3>Energia</h3>
+                        <p class="metas-pontos-valor" id="pontos-energia">0</p>
+                        <p class="metas-pontos-texto">pontos</p>
+                    </article>
+
+                    <article class="metas-pontos-card" id="card-bonus">
+                        <i data-lucide="sparkles" class="metas-card-icone"
+                           aria-hidden="true"></i>
+                        <h3>Bônus</h3>
+                        <p class="metas-pontos-valor" id="pontos-bonus">0</p>
+                        <p class="metas-pontos-texto" id="bonus-status"></p>
+                    </article>
+
+                </div>
+
+            </div>
+
+            <!-- SIMULAÇÃO DE ECONOMIA (DEMONSTRATIVO) -->
+            <div class="metas-simulacao">
+
+                <p>
+                    Teste o sistema: simule uma economia de
+                    0,5 m³ de água e 5 kWh de energia.
+                </p>
+
+                <div class="metas-simulacao-botoes">
+                    <button type="button" class="botao botao-principal"
+                            id="btn-simular">
+                        Simular economia
+                    </button>
+                    <button type="button" class="botao botao-secundario"
+                            id="btn-restaurar">
+                        Restaurar valores
+                    </button>
+                </div>
+
+            </div>
+
+            <p class="metas-regras">
+                Cada meta vale até 100 pontos, de acordo com o progresso.
+                Se você atingir uma meta de água e uma de energia,
+                ganha 50 pontos de bônus.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+    <footer class="rodape">
+
+        <div class="rodape-conteudo">
+
+            <div class="rodape-marca">
+
+                <h2>EcoConta</h2>
+
+                <p>
+                    Consumo inteligente,
+                    um futuro mais sustentável.
+                </p>
+
+            </div>
+
+            <div class="rodape-links">
+
+                <h3>Navegação</h3>
+
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="integrantes.html">Integrantes</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+
+            </div>
+
+            <div class="rodape-projeto">
+
+                <h3>Projeto acadêmico</h3>
+
+                <p>FIAP — Global Solution 2026/2</p>
+                <p>Equipe NextBythe</p>
+
+            </div>
+
+        </div>
+
+        <div class="rodape-inferior">
+
+            <p>
+                © 2026 EcoConta.
+                Todos os direitos reservados.
+            </p>
+
+            <p>
+                Desenvolvido pela equipe NextBythe.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="js/metas.js"></script>
+
+</body>
+</html>
+    
