@@ -25,6 +25,7 @@
 
     <!-- CSS DAS PÁGINAS DE CONSUMO -->
     <link rel="stylesheet" href="css/painel.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
 
     <!-- ÍCONES LUCIDE -->
     <script
@@ -34,6 +35,8 @@
 
     <!-- JAVASCRIPT -->
     <script src="js/painel.js" defer></script>
+    <script src="js/consumo-dados.js" defer></script>
+    <script src="js/dashboard.js" defer></script>
   </head>
 
   <body>
@@ -94,6 +97,35 @@
         Ambiente demonstrativo: os valores são fictícios e ficam salvos apenas
         neste navegador.
       </p>
+
+      <!-- CONSUMO DO ÚLTIMO MÊS: ÁGUA E ENERGIA -->
+      <section class="painel-secao" aria-labelledby="titulo-cartoes">
+        <h2 class="sr-only" id="titulo-cartoes">
+          Consumo do último mês registrado
+        </h2>
+
+        <div class="cartoes-consumo">
+          <article
+            class="cartao-consumo"
+            id="cartao-agua"
+            data-recurso="agua"
+            aria-label="Consumo de água"
+          ></article>
+          <article
+            class="cartao-consumo"
+            id="cartao-energia"
+            data-recurso="energia"
+            aria-label="Consumo de energia"
+          ></article>
+        </div>
+
+        <p class="painel-nota">
+          Referências fictícias de demonstração: 15 m³ de água e 200 kWh de
+          energia por mês. A economia em reais é uma estimativa com tarifas
+          fictícias (R$ 6,50/m³ e R$ 0,85/kWh).
+        </p>
+      </section>
+      
     </main>
 
     <!-- RODAPÉ -->

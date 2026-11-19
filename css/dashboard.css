@@ -1,0 +1,233 @@
+/* ==========================================
+   ECOCONTA - PAINEL DE CONSUMO (dashboard.html)
+   ========================================== */
+
+/* 1. CARTÕES DE ÁGUA E ENERGIA */
+
+.cartoes-consumo {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.cartao-consumo {
+  --cor-recurso: var(--agua);
+  background-color: var(--superficie);
+  border: 1px solid var(--borda);
+  border-top: 3px solid var(--cor-recurso);
+  border-radius: 20px;
+  padding: 28px 28px 24px;
+}
+
+.cartao-consumo[data-recurso="energia"] {
+  --cor-recurso: var(--energia);
+}
+
+.cartao-topo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cartao-icone {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background-color: var(--superficie-forte);
+  color: var(--cor-recurso);
+}
+
+.cartao-icone svg {
+  width: 20px;
+  height: 20px;
+}
+
+.cartao-topo h3 {
+  color: var(--bege);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.cartao-mes {
+  margin-left: auto;
+  color: var(--texto-suave);
+  font-size: 13px;
+}
+
+.cartao-valor {
+  color: var(--bege);
+  font-size: clamp(44px, 5vw, 60px);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -1px;
+  margin: 26px 0 30px;
+}
+
+.cartao-valor span {
+  color: var(--texto-suave);
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.cartao-vazio {
+  color: var(--texto-suave);
+  font-size: 15px;
+  margin-top: 24px;
+}
+
+.cartao-vazio a {
+  color: var(--verde-claro);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* 2. MEDIDOR: CONSUMO X REFERÊNCIA */
+
+.medidor {
+  position: relative;
+  padding-top: 26px;
+  margin-bottom: 18px;
+}
+
+.medidor-trilho {
+  position: relative;
+  height: 14px;
+  border-radius: 7px;
+  background-color: var(--superficie-forte);
+  overflow: hidden;
+}
+
+.medidor-consumo,
+.medidor-excesso {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+.medidor-consumo {
+  left: 0;
+  background-color: var(--cor-recurso);
+  border-radius: 7px 0 0 7px;
+}
+
+.medidor-excesso {
+  background-color: var(--alerta);
+  border-left: 2px solid var(--superficie);
+  border-radius: 0 7px 7px 0;
+}
+
+.medidor-referencia {
+  position: absolute;
+  top: 0;
+  bottom: -6px;
+  width: 2px;
+  background-color: var(--bege);
+  transform: translateX(-1px);
+}
+
+.medidor-referencia span {
+  position: absolute;
+  top: 0;
+  right: 8px;
+  color: var(--texto-suave);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* 3. SITUAÇÃO E DETALHES */
+
+.cartao-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--bege);
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 22px;
+}
+
+.cartao-status svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.cartao-status.abaixo svg {
+  color: var(--verde-claro);
+}
+
+.cartao-status.acima svg {
+  color: var(--alerta);
+}
+
+.cartao-detalhes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  border-top: 1px solid var(--borda);
+  padding-top: 18px;
+}
+
+.cartao-detalhes dt {
+  color: var(--texto-suave);
+  font-size: 12px;
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+
+.cartao-detalhes dd {
+  color: var(--bege);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.cartao-alerta {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 14px 16px;
+  border: 1px solid #6b3f37;
+  border-radius: 14px;
+  background-color: #33241f;
+  color: var(--bege);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.cartao-alerta svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--alerta);
+}
+
+.painel-nota {
+  color: var(--texto-suave);
+  font-size: 13px;
+  line-height: 1.6;
+  margin-top: 16px;
+  max-width: 760px;
+}
+
+/* 4. RESPONSIVIDADE */
+
+@media (max-width: 900px) {
+  .cartoes-consumo {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 460px) {
+  .cartao-consumo {
+    padding: 22px 18px 20px;
+  }
+
+  .cartao-detalhes {
+    grid-template-columns: 1fr 1fr;
+  }
+}
